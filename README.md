@@ -1,38 +1,18 @@
-# CV Website
+# Jack Lee | Software Engineering Resume
 
-A simple, fast personal CV website built with plain HTML, CSS, and JavaScript.
+Live site: [jack-lee.dev](https://jack-lee.dev)
 
-## Run locally
+This repository contains the source for my personal software engineering resume and portfolio.
 
-Open `index.html` directly in your browser.
+## Built With
 
-Optional: run a local server from this folder:
+- HTML, CSS, and vanilla JavaScript
+- Responsive, accessible static-site design
+- GitHub Actions and GitHub Pages for deployment
+- Dynadot DNS with a custom domain
 
-```bash
-python3 -m http.server 8080
-```
+## Contact
 
-Then visit `http://localhost:8080`.
-
-## Edit your CV content
-
-Update content in:
-
-- `index.html` for text, sections, links, and structure
-- `assets/css/styles.css` for colors, spacing, and typography
-- `assets/js/main.js` for small interactions
-
-## First things to replace
-
-In `index.html`, replace placeholder values for:
-
-- Name and hero summary
-- Experience entries
-- Project titles/descriptions/links
-- Education details
-- Skills list
-- Contact links (`mailto`, LinkedIn, GitHub)
-
-## Deploy
-
-You can deploy this static site to GitHub Pages, Netlify, or Vercel.
+- Website: [jack-lee.dev](https://jack-lee.dev)
+- LinkedIn: [linkedin.com/in/jack-lee12](https://www.linkedin.com/in/jack-lee12)
+- GitHub: [github.com/JackLee504](https://github.com/JackLee504)

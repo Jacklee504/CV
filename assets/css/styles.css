@@ -1,13 +1,13 @@
 :root {
-  --bg: #f7f3ec;
-  --surface: #fffdf8;
-  --surface-alt: #efe7da;
-  --text: #1f1c19;
-  --muted: #5f564d;
-  --accent: #c44f2f;
-  --accent-strong: #93361f;
-  --border: #d9cebf;
-  --shadow: 0 10px 30px rgba(25, 20, 14, 0.08);
+  --bg: #f4f3ef;
+  --surface: #fcfbf7;
+  --surface-alt: #e8edf0;
+  --text: #162c45;
+  --muted: #506070;
+  --accent: #17324d;
+  --accent-strong: #0e2439;
+  --border: #cbd4db;
+  --shadow: 0 10px 30px rgba(23, 50, 77, 0.08);
 }
 
 * {
@@ -23,8 +23,8 @@ body {
   font-family: "Source Serif 4", Georgia, serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 10% 10%, #f1e5d4 0%, transparent 42%),
-    radial-gradient(circle at 90% 20%, #f7ddcc 0%, transparent 36%),
+    radial-gradient(circle at 10% 10%, #e1eaf0 0%, transparent 42%),
+    radial-gradient(circle at 90% 20%, #e8edf0 0%, transparent 36%),
     var(--bg);
   line-height: 1.65;
 }
@@ -54,6 +54,12 @@ p {
   padding: 3.5rem 0;
 }
 
+/* Keep anchor targets clear of the sticky header after smooth navigation. */
+main[id],
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 .section.alt {
   background: color-mix(in srgb, var(--surface-alt) 70%, white);
   border-top: 1px solid var(--border);
@@ -65,7 +71,7 @@ p {
   top: 0;
   z-index: 100;
   backdrop-filter: blur(10px);
-  background: rgba(247, 243, 236, 0.86);
+  background: rgba(244, 243, 239, 0.86);
   border-bottom: 1px solid var(--border);
 }
 
@@ -170,7 +176,7 @@ li {
 
 .button.primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--surface);
 }
 
 .button.primary:hover,
