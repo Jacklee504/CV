@@ -54,10 +54,10 @@ p {
   padding: 3.5rem 0;
 }
 
-/* Keep anchor targets clear of the sticky header after smooth navigation. */
+/* Section padding already clears most of the sticky header. */
 main[id],
 section[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 1.25rem;
 }
 
 .section.alt {
