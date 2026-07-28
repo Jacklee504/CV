@@ -139,6 +139,15 @@ h1 {
   color: var(--muted);
 }
 
+.availability {
+  max-width: 64ch;
+  margin-top: 1.2rem;
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
 p,
 li {
   max-width: 72ch;
@@ -345,13 +354,11 @@ h2 {
   font-size: 0.95rem;
 }
 
-.cert-badge-embed {
-  width: 100%;
-  min-height: 190px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+.cert-badge-image {
+  display: block;
+  width: min(180px, 100%);
+  height: auto;
   margin: 0.35rem 0 0.65rem;
-  background: var(--surface);
 }
 
 a {
