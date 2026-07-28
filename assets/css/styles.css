@@ -106,6 +106,14 @@ section[id] {
   outline: none;
 }
 
+a:focus-visible,
+.button:focus-visible,
+summary:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 72%, white);
+  outline-offset: 3px;
+}
+
 .nav-toggle {
   display: none;
   background: transparent;
@@ -143,15 +151,6 @@ h1 {
 .lead {
   max-width: 54ch;
   color: var(--muted);
-}
-
-.availability {
-  max-width: 64ch;
-  margin-top: 1.2rem;
-  font-family: "Sora", "Avenir Next", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.55;
 }
 
 p,
