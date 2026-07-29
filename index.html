@@ -8,6 +8,17 @@
       name="description"
       content="Jack Lee is a University of Galway Computer Science student and Software Engineering Intern with hands-on experience in Python CI tooling, cloud-native delivery workflows, and client web development."
     />
+    <link rel="canonical" href="https://jack-lee.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jack-lee.dev/" />
+    <meta property="og:title" content="Jack Lee | Software Engineering Student & Intern" />
+    <meta property="og:description" content="University of Galway Computer Science student and Software Engineering Intern with experience in Python CI tooling, cloud-native delivery workflows, and client web development." />
+    <meta property="og:image" content="https://jack-lee.dev/assets/jack-lee-mark.png" />
+    <meta property="og:image:alt" content="JL monogram for Jack Lee" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Jack Lee | Software Engineering Student & Intern" />
+    <meta name="twitter:description" content="University of Galway Computer Science student and Software Engineering Intern with experience in Python CI tooling, cloud-native delivery workflows, and client web development." />
+    <meta name="twitter:image" content="https://jack-lee.dev/assets/jack-lee-mark.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="assets/jack-lee-mark.png" />
     <link rel="apple-touch-icon" href="assets/jack-lee-mark.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,15 +31,16 @@
     <script defer src="assets/js/main.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#top">Jack Lee</a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-navigation" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <nav class="site-nav" aria-label="Main navigation">
+        <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
@@ -39,7 +51,7 @@
       </div>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="hero section">
         <div class="container">
           <p class="eyebrow">University of Galway | Computer Science &amp; Information Technology</p>
@@ -49,7 +61,7 @@
             and deployment systems for cloud-native services. Experience spans Python engineering, Jenkins and
             Spinnaker pipeline development, Kubernetes and Docker infrastructure, client web development, and
             independently built automation-focused systems. Previously completed a web-development internship
-            delivering responsive client websites with PHP and SCSS. Studying BSc (Hons) Computer Science &amp;
+            delivering responsive client websites with PHP and SCSS. Completing a BSc (Hons) Computer Science &amp;
             Information Technology at the University of Galway, with expected graduation in 2027.
           </p>
           <div class="hero-actions">
@@ -64,13 +76,12 @@
         <div class="container">
           <h2>About Me</h2>
           <p>
-            I am a Computer Science student and Software Engineering Intern at Ericsson. After starting in a
-            broader support role, I moved to a newly formed central CI/CD pipeline team, where I work on the build,
-            test, and deployment workflows behind cloud-native services. My work spans modular Python tooling,
-            Jenkins and Spinnaker pipelines, Docker and Kubernetes infrastructure, and root-cause investigation.
-            I have independently delivered a large Python refactor across 14 modules, improved pipeline verification,
-            and worked with engineers across teams to turn production issues into tested, maintainable fixes. I also
-            bring client web-development experience, with a focus on responsive, practical user-facing work.
+            Software Engineering Intern at Ericsson, working on build, test, and deployment systems for cloud-native
+            services. After moving from a broader support role into the central CI/CD pipeline team, experience has
+            included modular Python tooling, Jenkins and Spinnaker pipeline changes, Docker and Kubernetes
+            investigation, and a 14-module refactor delivered through testing and peer review. Earlier client
+            web-development experience adds practical experience delivering responsive, user-facing changes with PHP
+            and SCSS.
           </p>
         </div>
       </section>
@@ -82,7 +93,7 @@
             <article class="card">
               <div class="card-head">
                 <h3>Intern Software Engineer</h3>
-                <p class="meta">Ericsson, Athlone, Co. Westmeath | January 2026 - Present</p>
+                <p class="meta">Ericsson, Athlone, Co. Westmeath | January 2026&ndash;Present</p>
               </div>
               <ul>
                 <li>Moved from a broader support role into Ericsson&apos;s newly formed central CI/CD pipeline team, supporting build, test, and deployment workflows for cloud-native services.</li>
@@ -95,7 +106,7 @@
             <article class="card">
               <div class="card-head">
                 <h3>Intern Web Developer</h3>
-                <p class="meta">Ossark, Athlone, Co. Westmeath | May 2025 - August 2025</p>
+                <p class="meta">Ossark, Athlone, Co. Westmeath | May 2025&ndash;August 2025</p>
               </div>
               <ul>
                 <li>Helped build and maintain client websites with PHP and SCSS, translating feedback into responsive and accessible page updates.</li>
@@ -114,7 +125,7 @@
             <article class="card">
               <div class="card-head">
                 <h3>Cashier & Customer Service Representative</h3>
-                <p class="meta">Casey's Londis, Roscommon Town | May 2024 - March 2026</p>
+                <p class="meta">Casey's Londis, Roscommon Town | May 2024&ndash;March 2026</p>
               </div>
               <ul>
                 <li>Handled checkout, customer queries, and day-to-day store tasks in a busy retail setting, keeping service accurate and calm during peak periods.</li>
@@ -125,7 +136,7 @@
             <article class="card">
               <div class="card-head">
                 <h3>Fast Food Crew Member (Cashier & Kitchen Team Member)</h3>
-                <p class="meta">Blue Thunder, Roscommon Town | April 2022 - August 2022</p>
+                <p class="meta">Blue Thunder, Roscommon Town | April 2022&ndash;August 2022</p>
               </div>
               <ul>
                 <li>Worked across cashier and kitchen duties, maintaining accurate orders and clear handovers during busy shifts.</li>
@@ -143,7 +154,6 @@
           <div class="grid">
             <article class="card featured-project">
               <h3>Deal Ledger</h3>
-              <p class="project-tech">Hugo &middot; Python &middot; GitHub Actions &middot; Cloudflare Workers</p>
               <p>
                 Building and maintaining <a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Deal Ledger</a>,
                 a multilingual affiliate deal-discovery site that helps readers find relevant product offers and set email alerts.
@@ -153,7 +163,7 @@
                 <li>Developed Python workflows to import Amazon deal candidates into a manual review queue, sync listing metadata, and validate price freshness before release.</li>
                 <li>Automated builds, content checks, SEO auditing, and alert-email workflows with GitHub Actions; managed domain and DNS configuration alongside market routing with Cloudflare Workers.</li>
               </ul>
-              <p class="meta">Skills demonstrated: Hugo, Python automation, GitHub Actions CI/CD, internationalisation, responsive front-end development, Cloudflare Workers, domain and DNS configuration, technical SEO, data-quality validation</p>
+              <p class="meta">Hugo, Python automation, GitHub Actions CI/CD, internationalisation, responsive front-end development, Cloudflare Workers, domain and DNS configuration, technical SEO, data-quality validation</p>
             </article>
 
             <article class="card">
@@ -167,7 +177,7 @@
                 <li>Recorded signals, orders, and account snapshots in SQLite; produced dashboards and run artifacts for reviewing execution and strategy behaviour.</li>
                 <li>Added risk-aware controls, broker smoke checks, automated test coverage, and operational tooling for repeatable paper sessions.</li>
               </ul>
-              <p class="meta">Skills demonstrated: Python, API integration, modular architecture, paper-trading workflows, SQLite, risk controls, observability, automated testing</p>
+              <p class="meta">Python, API integration, modular architecture, paper-trading workflows, SQLite, risk controls, observability, automated testing</p>
             </article>
 
             <article class="card">
@@ -180,7 +190,7 @@
                 <li>Designed the core gameplay flow, bot competition, lap timing, and leaderboard handling.</li>
                 <li>Used the project to practise building responsive interactions and managing application state reliably.</li>
               </ul>
-              <p class="meta">Skills demonstrated: application logic, state management, leaderboard design</p>
+              <p class="meta">Application logic, state management, leaderboard design</p>
             </article>
 
             <article class="card">
@@ -192,19 +202,23 @@
                 <li>Projects include a persistent binary-tree item-guessing game, an Alien Invaders game, and an A* pathfinding game.</li>
                 <li>Used persistence, pathfinding, and game-state problems to build confidence with core programming concepts.</li>
               </ul>
-              <p class="meta">Skills demonstrated: data structures, algorithms, persistence, game logic</p>
+              <p class="meta">Data structures, algorithms, persistence, game logic</p>
             </article>
 
             <article class="card">
               <h3>Client Website Contributions</h3>
               <p>
-                Contributed to client-facing websites, including work connected with Kerry International Film Festival.
+                Contributed to client-facing websites for
+                <a href="https://kerryfilmfestival.com/" target="_blank" rel="noopener noreferrer">Kerry International Film Festival</a>,
+                <a href="https://mclelectrical.ie/" target="_blank" rel="noopener noreferrer">MCL Electrical</a>,
+                <a href="https://anushkapowertherapy.ie/" target="_blank" rel="noopener noreferrer">Anushka Power Therapy</a>,
+                <a href="https://dailyirishproduce.ie/" target="_blank" rel="noopener noreferrer">Daily Irish Produce</a>, and Capital Homes.
               </p>
               <ul>
                 <li>Supported practical web delivery with usability, visual consistency, and real end users in mind.</li>
                 <li>Worked collaboratively to move client work from feedback to production-ready pages.</li>
               </ul>
-              <p class="meta">Skills demonstrated: client delivery, usability, collaboration</p>
+              <p class="meta">Client delivery, usability, collaboration</p>
             </article>
           </div>
         </div>
@@ -216,7 +230,7 @@
 
           <article class="card">
             <h3>BSc (Hons) Computer Science &amp; Information Technology</h3>
-            <p class="meta">University of Galway, Ireland | 2023 - 2027</p>
+            <p class="meta">University of Galway, Ireland | 2023&ndash;2027</p>
             <p>
               Expected graduation: 2027. <strong>Relevant coursework:</strong> Object-Oriented Programming, Data Structures &amp; Algorithms,
               Database Systems, Software Engineering, Networks &amp; Data Communications, Discrete Mathematics,
@@ -226,7 +240,7 @@
 
           <article class="card">
             <h3>Leaving Certificate</h3>
-            <p class="meta">Scoil Mhuire, Strokestown, Co. Roscommon | 2017 - 2023</p>
+            <p class="meta">Scoil Mhuire, Strokestown, Co. Roscommon | 2017&ndash;2023</p>
             <p>
               Achieved 520 points, including Higher-Level German, Irish, Geography, Design &amp; Communication Graphics,
               and Mathematics.
@@ -239,10 +253,11 @@
         <div class="container">
           <h2>Technical Skills</h2>
           <ul class="skills-list">
-            <li><strong>Languages &amp; scripting:</strong> Python, Groovy, Bash, Java, C, PHP, SQL, data structures &amp; algorithms</li>
-            <li><strong>Web development:</strong> HTML, JavaScript, CSS, SCSS, WordPress</li>
-            <li><strong>CI/CD &amp; cloud-native:</strong> Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus</li>
-            <li><strong>Engineering practice:</strong> Git, Gerrit, Jira, Confluence, unit testing, code review, incident investigation, root-cause analysis, Agile delivery</li>
+            <li><strong>CI/CD &amp; Cloud-Native:</strong> Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus</li>
+            <li><strong>Delivery &amp; Reliability:</strong> Git, Gerrit, Jira, Confluence, Unit Testing, Code Review, Incident Investigation, Root-Cause Analysis, Agile Delivery</li>
+            <li><strong>Programming &amp; Scripting:</strong> Python, Groovy, Bash, Java, C, PHP, SQL, R</li>
+            <li><strong>Web Development:</strong> Hugo, HTML, JavaScript, CSS, SCSS, WordPress</li>
+            <li><strong>Engineering Foundations:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Systems, Computer Networks</li>
           </ul>
           <p class="meta">Recent professional learning includes Claude Code, Google Cloud DevOps, Kubernetes, cloud security, and cybersecurity. <a href="#certifications">View credentials and coursework</a>.</p>
         </div>
@@ -330,7 +345,7 @@
                 <details class="cert-card">
                   <summary>
                     <span class="cert-title">Generative AI Driver&apos;s License 2026</span>
-                    <span class="cert-meta">ERICSSON | February 2026</span>
+                    <span class="cert-meta">Ericsson | February 2026</span>
                   </summary>
                   <div class="cert-detail">
                     <p>Badge received for reaching the Fundamental Level in the Generative AI area.</p>
@@ -369,6 +384,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20755400"
                       alt="CCSP 2022 Cloud Computing Concepts and Reference Architectures digital badge"
                     />
@@ -385,6 +404,10 @@
                     <p><strong>Issued:</strong> July 10, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21068312"
                       alt="Certified in Cybersecurity Networking and Security Infrastructure digital badge"
                     />
@@ -401,6 +424,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20755902"
                       alt="AWS Certified Machine Learning digital badge"
                     />
@@ -417,6 +444,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20935494"
                       alt="AWS Certified Machine Learning Model Training and Evaluation digital badge"
                     />
@@ -433,6 +464,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20757498"
                       alt="Microsoft Azure DevOps Solutions digital badge"
                     />
@@ -449,6 +484,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20757521"
                       alt="Google Professional DevOps Engineer digital badge"
                     />
@@ -465,6 +504,10 @@
                     <p><strong>Issued:</strong> July 10, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21068584"
                       alt="Google Professional DevOps Engineer CI/CD Architecture Stack in Google Cloud digital badge"
                     />
@@ -481,6 +524,10 @@
                     <p><strong>Issued:</strong> July 10, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21068860"
                       alt="Google Professional DevOps Engineer Implementing CI/CD Pipelines for a Service digital badge"
                     />
@@ -509,6 +556,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20858940"
                       alt="Kubernetes Application Developer GitOps and Continuous Delivery on Kubernetes digital badge"
                     />
@@ -526,6 +577,10 @@
                     <p><strong>Certificate No:</strong> 239093</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21200362"
                       alt="Kubernetes Application Developer local development, testing, and continuous integration digital badge"
                     />
@@ -543,6 +598,10 @@
                     <p><strong>Certificate No:</strong> 239094</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21200885"
                       alt="SCOR security vulnerabilities, attack mitigations, and cryptographic solutions digital badge"
                     />
@@ -560,6 +619,10 @@
                     <p><strong>Certificate No:</strong> 239095</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21201204"
                       alt="SCOR SDN APIs and security appliance API calls digital badge"
                     />
@@ -577,6 +640,10 @@
                     <p><strong>Certificate No:</strong> 239096</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21201423"
                       alt="CCSP 2022 cloud security concepts and design principles digital badge"
                     />
@@ -601,6 +668,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20757581"
                       alt="CompTIA Cloud Essentials+ digital badge"
                     />
@@ -617,6 +688,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20757594"
                       alt="CompTIA Data+ digital badge"
                     />
@@ -633,6 +708,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20757597"
                       alt="CompTIA Data+ digital badge"
                     />
@@ -649,6 +728,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20757599"
                       alt="CompTIA Data+ digital badge"
                     />
@@ -665,6 +748,10 @@
                     <p><strong>Issued:</strong> July 5, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20757614"
                       alt="CompTIA Network+ digital badge"
                     />
@@ -681,6 +768,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20935778"
                       alt="CompTIA Cloud+ Containers and Virtualization digital badge"
                     />
@@ -697,6 +788,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20935832"
                       alt="CompTIA Cloud+ Cloud Networking digital badge"
                     />
@@ -713,6 +808,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20935896"
                       alt="CompTIA Cloud+ Automation and Orchestration Troubleshooting digital badge"
                     />
@@ -729,6 +828,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20959396"
                       alt="CompTIA Cloud+ Version Management and CI/CD digital badge"
                     />
@@ -745,6 +848,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20939181"
                       alt="CompTIA Cloud+ Systems Integration and DevOps digital badge"
                     />
@@ -761,6 +868,10 @@
                     <p><strong>Issued:</strong> July 7, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/20939094"
                       alt="CompTIA Cloud+ Cloud Deployment and Migration digital badge"
                     />
@@ -777,6 +888,10 @@
                     <p><strong>Issued:</strong> July 10, 2026</p>
                     <img
                       class="cert-badge-image"
+                      loading="lazy"
+                      decoding="async"
+                      width="180"
+                      height="180"
                       src="https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/21070277"
                       alt="CompTIA Cloud+ Cloud Observability, Scaling, Backup, and Life Cycle digital badge"
                     />

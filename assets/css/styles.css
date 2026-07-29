@@ -57,7 +57,27 @@ p {
 /* Section padding already clears most of the sticky header. */
 main[id],
 section[id] {
-  scroll-margin-top: 1.25rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--surface);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 .section.alt {
@@ -116,6 +136,10 @@ summary:focus-visible,
 
 .nav-toggle {
   display: none;
+  place-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -126,7 +150,7 @@ summary:focus-visible,
   width: 22px;
   height: 2px;
   background: var(--text);
-  margin: 5px 0;
+  margin: 3px 0;
 }
 
 .hero {
@@ -149,7 +173,7 @@ h1 {
 }
 
 .lead {
-  max-width: 70ch;
+  max-width: 90ch;
   color: var(--muted);
 }
 
@@ -227,17 +251,12 @@ h2 {
   font-size: 1.35rem;
 }
 
-.project-tech {
-  color: var(--accent-strong);
-  font-family: "Sora", "Avenir Next", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-bottom: 0.9rem;
-}
-
 .card-head {
   margin-bottom: 0.7rem;
+}
+
+#education .card + .card {
+  margin-top: 1rem;
 }
 
 .meta {
@@ -250,7 +269,7 @@ h2 {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.6rem;
 }
 
@@ -405,7 +424,7 @@ a {
   .site-nav {
     position: absolute;
     right: 4vw;
-    top: 3.5rem;
+    top: 4rem;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -422,10 +441,6 @@ a {
 
   .hero-actions {
     flex-wrap: wrap;
-  }
-
-  .skills-list {
-    grid-template-columns: 1fr;
   }
 
   .featured-project {

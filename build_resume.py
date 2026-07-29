@@ -359,8 +359,8 @@ def main():
     skills.style = "Resume Body"
     set_paragraph_spacing(skills, after=0, line=1.05)
     for label, value in [
-        ("Languages & Scripting: ", "Python, Groovy, Bash, Java, C, SQL, JavaScript, PHP, HTML/CSS/SCSS, R"),
         ("CI/CD & Cloud-Native: ", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus"),
+        ("Languages & Scripting: ", "Python, Groovy, Bash, Java, C, SQL, JavaScript, PHP, HTML/CSS/SCSS, R"),
         ("Testing & Data: ", "unit testing, pylint, pytest, pytest-cov, Bandit, pandas, NumPy"),
         ("Practices: ", "CI/CD, code review, incident investigation, root-cause analysis, Agile delivery, responsive web development"),
     ]:
@@ -370,7 +370,7 @@ def main():
         set_font(r, size=9.15, color=INK)
         if label != "Practices: ":
             skills.add_run("\n")
-    document.core_properties.title = "Jack Lee — Resume"
+    document.core_properties.title = "Jack Lee – Resume"
     document.core_properties.author = "Jack Lee"
     document.core_properties.subject = "Software Engineering Resume"
     document.save(OUT)

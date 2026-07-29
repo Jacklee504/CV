@@ -19,6 +19,12 @@ if (navToggle && nav) {
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    nav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
 }
 
 const revealTargets = [
@@ -32,18 +38,22 @@ revealTargets.forEach((element, index) => {
   element.style.setProperty('--reveal-delay', `${Math.min(index * 35, 220)}ms`);
 });
 
-const revealObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('in-view');
-      observer.unobserve(entry.target);
-    });
-  },
-  {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px',
-  },
-);
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px',
+    },
+  );
 
-revealTargets.forEach((element) => revealObserver.observe(element));
+  revealTargets.forEach((element) => revealObserver.observe(element));
+} else {
+  revealTargets.forEach((element) => element.classList.add('in-view'));
+}
