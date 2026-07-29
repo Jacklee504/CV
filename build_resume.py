@@ -10,7 +10,7 @@ from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.shared import Inches, Pt, RGBColor
 
 
-OUT = Path("output/Jack_Lee_Resume_US_One_Page.docx")
+OUT = Path("output/Jack_Lee_Software_Engineering_Resume.docx")
 INK = "111827"
 MUTED = "4B5563"
 RULE = "1F4E79"
@@ -258,7 +258,7 @@ def main():
     add_bottom_border(contact)
     r = contact.add_run("Roscommon, Ireland  |  ")
     set_font(r, size=8.8, color=MUTED)
-    add_hyperlink(contact, "0jacklee05@gmail.com", "mailto:0jacklee05@gmail.com")
+    add_hyperlink(contact, "jack@jack-lee.dev", "mailto:jack@jack-lee.dev")
     r = contact.add_run("  |  ")
     set_font(r, size=8.8, color=MUTED)
     add_hyperlink(contact, "linkedin.com/in/jack-lee12", "https://www.linkedin.com/in/jack-lee12")
@@ -269,18 +269,18 @@ def main():
     summary = document.add_paragraph()
     summary.style = "Resume Body"
     set_paragraph_spacing(summary, after=2, line=1.07)
-    r = summary.add_run("Software engineering student with internships at Ericsson and Ossark. "
-                        "Experience in CI-driven delivery, debugging, and responsive web development, with a focus on reliable, user-centered products.")
+    r = summary.add_run("Software engineering student and Ericsson intern with hands-on experience in Python CI tooling, "
+                        "Jenkins and Spinnaker pipelines, cloud-native delivery workflows, and responsive client web development.")
     set_font(r, size=9.4, color=INK)
 
     add_section(document, "Experience")
     add_role(
         document, "Software Engineer Intern", "Ericsson", "Athlone, Ireland", "Jan 2026–Present", num_id,
         [
-            "Contribute to software support and delivery in a ticket-based engineering team through sprint planning, code reviews, and CI pipelines.",
-            "Helped refactor shared CI script components, improving code organization and maintainability for the team.",
-            "Diagnose documentation and command failures by reproducing issues, validating fixes, and creating clear, actionable tickets.",
-            "Developed working knowledge of Docker, Kubernetes, Gerrit, Jira, Jenkins, and Spinnaker in modern delivery workflows.",
+            "Moved from a broader support role into a central CI/CD pipeline team supporting build, test, and deployment workflows for cloud-native services.",
+            "Independently decomposed a 2,000+ line Python CI component into shared and executor-specific modules across 14 modules, adding parameterisation, unit tests, and lint compliance.",
+            "Develop and maintain Jenkins/Groovy and Spinnaker pipeline changes for configurable build and packaging workflows, including verification stages and test-flow improvements.",
+            "Investigate build and infrastructure issues across Kubernetes, Docker, and pipeline integrations, collaborating through Gerrit review, Jira, and technical documentation.",
         ],
     )
     add_role(
@@ -302,18 +302,17 @@ def main():
     add_section(document, "Projects")
     add_project_group(document, "Independent Projects")
     add_project(
-        document, "DealLedger.eu (in development)", "Localization, SEO, UX, QA", num_id,
+        document, "Deal Ledger", "Hugo, Python, GitHub Actions, Cloudflare Workers, DNS", num_id,
         [
-            "Developing a multilingual deals platform with market-specific content and UX across English, German, Dutch, and French.",
-            "Own iterative release workflows and quality checks; apply SEO and structured-data practices to support discoverability and conversion quality.",
+            "Built a responsive Hugo affiliate deal-discovery site with localised interfaces and market-specific routing across English, German, Dutch, and French.",
+            "Automated Amazon candidate review, listing and price validation, builds, SEO checks, alert emails, domain/DNS configuration, and Cloudflare routing with Python and GitHub Actions.",
         ],
     )
     add_project(
-        document, "Multi-Broker Quality Trader", "Python, APIs, testing, risk systems", num_id,
+        document, "Multi-Broker Paper Trading Platform", "Python, APIs, SQLite, testing, observability", num_id,
         [
-            "Built a modular M5/H1 trading system with Fair Value Gap strategies, quality gates, risk controls, journaling, and dashboard monitoring.",
-            "Implemented simulated, paper-live, and broker-connected execution paths across IG, Capital.com, and Alpaca profiles for controlled validation.",
-            "Implemented pytest/coverage checks and Bandit SAST scanning; added repeatable local/VPS pipeline tooling for execution artifacts and performance reporting.",
+            "Built a modular Python paper-trading platform for FX, CFDs, and US equities, separating strategy, execution, risk, market data, journaling, and dashboards.",
+            "Integrated IG, Capital.com, and Alpaca paper/demo workflows with SQLite journaling, risk checks, and automated tests.",
         ],
     )
     add_project_group(document, "University Coursework Projects")
@@ -349,15 +348,21 @@ def main():
     set_font(r, size=9.15, color=INK)
     set_paragraph_spacing(details, after=1, line=1.03)
 
+    school = document.add_paragraph()
+    school.style = "Resume Body"
+    r = school.add_run("Scoil Mhuire, Strokestown, Co. Roscommon | Leaving Certificate: 520 points (2023)")
+    set_font(r, size=9.15, color=INK)
+    set_paragraph_spacing(school, after=1, line=1.03)
+
     add_section(document, "Technical Skills")
     skills = document.add_paragraph()
     skills.style = "Resume Body"
     set_paragraph_spacing(skills, after=0, line=1.05)
     for label, value in [
-        ("Languages: ", "Java, Python, C, SQL, JavaScript, PHP, HTML/CSS/SCSS, R"),
-        ("Tools & Platforms: ", "Docker, Kubernetes, Helm, Jenkins, Spinnaker, Maven, Gerrit, Jira, Confluence"),
-        ("Testing & Data: ", "pytest, pytest-cov, Bandit, pandas, NumPy"),
-        ("Practices: ", "CI/CD, code review, ticket-based sprint delivery, debugging, responsive web development"),
+        ("Languages & Scripting: ", "Python, Groovy, Bash, Java, C, SQL, JavaScript, PHP, HTML/CSS/SCSS, R"),
+        ("CI/CD & Cloud-Native: ", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus"),
+        ("Testing & Data: ", "unit testing, pylint, pytest, pytest-cov, Bandit, pandas, NumPy"),
+        ("Practices: ", "CI/CD, code review, incident investigation, root-cause analysis, Agile delivery, responsive web development"),
     ]:
         r = skills.add_run(label)
         set_font(r, size=9.15, bold=True, color=INK)
@@ -365,12 +370,6 @@ def main():
         set_font(r, size=9.15, color=INK)
         if label != "Practices: ":
             skills.add_run("\n")
-    skills.add_run("\n")
-    r = skills.add_run("Professional Development: ")
-    set_font(r, size=9.15, bold=True, color=INK)
-    r = skills.add_run("Ericsson Generative AI Driver's License (2026); Kubernetes GitOps coursework")
-    set_font(r, size=9.15, color=INK)
-
     document.core_properties.title = "Jack Lee — Resume"
     document.core_properties.author = "Jack Lee"
     document.core_properties.subject = "Software Engineering Resume"

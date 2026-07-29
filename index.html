@@ -6,7 +6,7 @@
     <title>Jack Lee | Software Engineering Student &amp; Intern</title>
     <meta
       name="description"
-      content="Jack Lee is a University of Galway Computer Science student and Software Engineering Intern with experience in CI tooling, web development, and cloud-native workflows."
+      content="Jack Lee is a University of Galway Computer Science student and Software Engineering Intern with hands-on experience in Python CI tooling, cloud-native delivery workflows, and client web development."
     />
     <link rel="icon" type="image/png" sizes="512x512" href="assets/jack-lee-mark.png" />
     <link rel="apple-touch-icon" href="assets/jack-lee-mark.png" />
@@ -43,16 +43,19 @@
       <section class="hero section">
         <div class="container">
           <p class="eyebrow">University of Galway | Computer Science &amp; Information Technology</p>
-          <h1>Software engineering student learning how reliable products and developer tools are built.</h1>
+          <h1>Building reliable delivery systems and web products.</h1>
           <p class="lead">
-            I am a current Software Engineering Intern at Ericsson and a Computer Science student at the
-            University of Galway. I enjoy turning unclear problems into practical improvements, whether that
-            means working in an existing codebase, improving delivery workflows, or building for the web.
+            Software Engineering Intern on Ericsson&apos;s central CI/CD pipeline team, contributing to build, test,
+            and deployment systems for cloud-native services. Experience spans Python engineering, Jenkins and
+            Spinnaker pipeline development, Kubernetes and Docker infrastructure, client web development, and
+            independently built automation-focused systems. Previously completed a web-development internship
+            delivering responsive client websites with PHP and SCSS. Studying BSc (Hons) Computer Science &amp;
+            Information Technology at the University of Galway, with expected graduation in 2027.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#contact">Get in touch</a>
             <a class="button ghost" href="#projects">View projects</a>
-            <a class="button ghost" href="output/Jack_Lee_Resume_US_One_Page.pdf" download="Jack_Lee_Resume_US_One_Page.pdf">Download resume (PDF)</a>
+            <a class="button ghost" href="output/Jack_Lee_Software_Engineering_Resume.pdf" download="Jack_Lee_Software_Engineering_Resume.pdf">Download resume (PDF)</a>
           </div>
         </div>
       </section>
@@ -61,10 +64,13 @@
         <div class="container">
           <h2>About Me</h2>
           <p>
-            I am comfortable joining an existing team, asking good questions, and working through a problem
-            methodically. My recent experience combines Python-based CI tooling and cloud-native engineering
-            workflows with practical web development. I am keen to contribute as a collaborative junior engineer
-            who learns quickly and takes ownership of useful improvements.
+            I am a Computer Science student and Software Engineering Intern at Ericsson. After starting in a
+            broader support role, I moved to a newly formed central CI/CD pipeline team, where I work on the build,
+            test, and deployment workflows behind cloud-native services. My work spans modular Python tooling,
+            Jenkins and Spinnaker pipelines, Docker and Kubernetes infrastructure, and root-cause investigation.
+            I have independently delivered a large Python refactor across 14 modules, improved pipeline verification,
+            and worked with engineers across teams to turn production issues into tested, maintainable fixes. I also
+            bring client web-development experience, with a focus on responsive, practical user-facing work.
           </p>
         </div>
       </section>
@@ -79,10 +85,10 @@
                 <p class="meta">Ericsson, Athlone, Co. Westmeath | January 2026 - Present</p>
               </div>
               <ul>
-                <li>Work in a support engineering team that plans work in sprints, handles tickets, and uses peer review and CI checks before changes are merged.</li>
-                <li>Refactored part of a shared Python component used by CI scripts, separating common logic from executor-specific code and validating each change through Gerrit jobs.</li>
-                <li>Investigate issues from first report to documented fix, including reproducing command failures, maintaining technical documentation, and writing clear follow-up tickets.</li>
-                <li>Use Docker, Kubernetes, Helm, Git/Gerrit, Jira, Jenkins, and Spinnaker as part of day-to-day engineering workflows.</li>
+                <li>Moved from a broader support role into Ericsson&apos;s newly formed central CI/CD pipeline team, supporting build, test, and deployment workflows for cloud-native services.</li>
+                <li>Independently decomposed a 2,000+ line Python CI component into shared and executor-specific modules across 14 modules, adding parameterisation, unit tests, and lint compliance.</li>
+                <li>Develop and maintain Jenkins/Groovy and Spinnaker pipeline changes, including configurable parameters, job orchestration, packaging verification, and more efficient test flows.</li>
+                <li>Investigate and resolve build and infrastructure issues across Kubernetes, Docker, and pipeline integrations, collaborating through Gerrit review, Jira, and technical documentation.</li>
               </ul>
             </article>
 
@@ -135,30 +141,33 @@
           <h2>Projects</h2>
           <p class="meta">More projects available on <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
           <div class="grid">
-            <article class="card">
-              <h3>DealLedger.eu</h3>
+            <article class="card featured-project">
+              <h3>Deal Ledger</h3>
+              <p class="project-tech">Hugo &middot; Python &middot; GitHub Actions &middot; Cloudflare Workers</p>
               <p>
-                Building and maintaining <a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">DealLedger.eu</a>,
-                a multilingual e-commerce deals platform for European markets.
+                Building and maintaining <a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Deal Ledger</a>,
+                a multilingual affiliate deal-discovery site that helps readers find relevant product offers and set email alerts.
               </p>
               <ul>
-                <li>Work across static-site architecture, localization for EN/DE/NL/FR, responsive user interface work, and SEO foundations.</li>
-                <li>Own the release process and lightweight data checks that keep market-specific content consistent and up to date.</li>
+                <li>Built a responsive Hugo site with localised interfaces in English, German, Dutch, and French, plus market-specific content and routing.</li>
+                <li>Developed Python workflows to import Amazon deal candidates into a manual review queue, sync listing metadata, and validate price freshness before release.</li>
+                <li>Automated builds, content checks, SEO auditing, and alert-email workflows with GitHub Actions; managed domain and DNS configuration alongside market routing with Cloudflare Workers.</li>
               </ul>
-              <p class="meta">Skills demonstrated: localization, SEO, responsive UI, QA, release ownership</p>
+              <p class="meta">Skills demonstrated: Hugo, Python automation, GitHub Actions CI/CD, internationalisation, responsive front-end development, Cloudflare Workers, domain and DNS configuration, technical SEO, data-quality validation</p>
             </article>
 
             <article class="card">
-              <h3>Algorithmic Trading Platform</h3>
+              <h3>Multi-Broker Paper Trading Platform</h3>
               <p>
-                Developing a Python platform for researching and testing rules-based crypto spot trading strategies.
+                Developed a Python platform for researching, testing, and operating rules-based trading strategies across FX, CFDs, and US equities.
               </p>
               <ul>
-                <li>Keep strategy, execution, risk management, journaling, analytics, and dashboard components separate so that each area can be tested and improved independently.</li>
-                <li>Use paper trading and Binance Spot Testnet modes to test execution flows and risk controls before any real-world use.</li>
-                <li>Record signals, trades, and account snapshots in SQLite to make results reviewable and guide later improvements.</li>
+                <li>Built separate strategy, execution, risk, market-data, journaling, and dashboard components to keep the system testable and maintainable.</li>
+                <li>Integrated paper/demo workflows for IG FX, Capital.com CFDs, and Alpaca equities, including fully simulated and live-price, simulated-execution modes.</li>
+                <li>Recorded signals, orders, and account snapshots in SQLite; produced dashboards and run artifacts for reviewing execution and strategy behaviour.</li>
+                <li>Added risk-aware controls, broker smoke checks, automated test coverage, and operational tooling for repeatable paper sessions.</li>
               </ul>
-              <p class="meta">Skills demonstrated: Python, modular design, risk controls, SQLite, analytics, operational dashboards</p>
+              <p class="meta">Skills demonstrated: Python, API integration, modular architecture, paper-trading workflows, SQLite, risk controls, observability, automated testing</p>
             </article>
 
             <article class="card">
@@ -214,6 +223,15 @@
               Web Development, and Computing Systems.
             </p>
           </article>
+
+          <article class="card">
+            <h3>Leaving Certificate</h3>
+            <p class="meta">Scoil Mhuire, Strokestown, Co. Roscommon | 2017 - 2023</p>
+            <p>
+              Achieved 520 points, including Higher-Level German, Irish, Geography, Design &amp; Communication Graphics,
+              and Mathematics.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -221,10 +239,10 @@
         <div class="container">
           <h2>Technical Skills</h2>
           <ul class="skills-list">
-            <li><strong>Languages &amp; data:</strong> Java, Python, C, PHP, SQL, data structures &amp; algorithms</li>
+            <li><strong>Languages &amp; scripting:</strong> Python, Groovy, Bash, Java, C, PHP, SQL, data structures &amp; algorithms</li>
             <li><strong>Web development:</strong> HTML, JavaScript, CSS, SCSS, WordPress</li>
-            <li><strong>Delivery &amp; platforms:</strong> Docker, Kubernetes, Helm, Maven, Jenkins, Spinnaker, CI/CD</li>
-            <li><strong>Team workflow:</strong> Git, Gerrit, Jira, Confluence, Agile sprint delivery</li>
+            <li><strong>CI/CD &amp; cloud-native:</strong> Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus</li>
+            <li><strong>Engineering practice:</strong> Git, Gerrit, Jira, Confluence, unit testing, code review, incident investigation, root-cause analysis, Agile delivery</li>
           </ul>
           <p class="meta">Recent professional learning includes Claude Code, Google Cloud DevOps, Kubernetes, cloud security, and cybersecurity. <a href="#certifications">View credentials and coursework</a>.</p>
         </div>
@@ -250,7 +268,6 @@
                     <p><strong>Issued:</strong> March 14, 2026</p>
                     <p><strong>Certificate No:</strong> 6k8opoxrrhma</p>
                     <p><strong>View:</strong> <a href="https://verify.skilljar.com/c/6k8opoxrrhma" target="_blank" rel="noopener noreferrer">Verify certificate</a></p>
-                    <p><strong>PDF:</strong> <a href="images/certificates/certificate-6k8opoxrrhma-1773508101.pdf" target="_blank" rel="noopener noreferrer">Open certificate PDF</a></p>
                   </div>
                 </details>
 
@@ -263,7 +280,6 @@
                     <p><strong>Issued:</strong> May 23, 2026</p>
                     <p><strong>Certificate No:</strong> dmrtaagtapsk</p>
                     <p><strong>View:</strong> <a href="https://verify.skilljar.com/c/dmrtaagtapsk" target="_blank" rel="noopener noreferrer">Verify certificate</a></p>
-                    <p><strong>PDF:</strong> <a href="images/certificates/certificate-dmrtaagtapsk-1779552888.pdf" target="_blank" rel="noopener noreferrer">Open certificate PDF</a></p>
                   </div>
                 </details>
 
@@ -276,7 +292,6 @@
                     <p><strong>Issued:</strong> May 23, 2026</p>
                     <p><strong>Certificate No:</strong> f8ttba29rxzq</p>
                     <p><strong>View:</strong> <a href="https://verify.skilljar.com/c/f8ttba29rxzq" target="_blank" rel="noopener noreferrer">Verify certificate</a></p>
-                    <p><strong>PDF:</strong> <a href="images/certificates/certificate-f8ttba29rxzq-1779556520.pdf" target="_blank" rel="noopener noreferrer">Open certificate PDF</a></p>
                   </div>
                 </details>
 
@@ -289,7 +304,6 @@
                     <p><strong>Issued:</strong> May 23, 2026</p>
                     <p><strong>Certificate No:</strong> f5guswh3k9e7</p>
                     <p><strong>View:</strong> <a href="https://verify.skilljar.com/c/f5guswh3k9e7" target="_blank" rel="noopener noreferrer">Verify certificate</a></p>
-                    <p><strong>PDF:</strong> <a href="images/certificates/certificate-f5guswh3k9e7-1779556803.pdf" target="_blank" rel="noopener noreferrer">Open certificate PDF</a></p>
                   </div>
                 </details>
 
@@ -302,7 +316,6 @@
                     <p><strong>Issued:</strong> May 23, 2026</p>
                     <p><strong>Certificate No:</strong> 7yvgfvhscy96</p>
                     <p><strong>View:</strong> <a href="https://verify.skilljar.com/c/7yvgfvhscy96" target="_blank" rel="noopener noreferrer">Verify certificate</a></p>
-                    <p><strong>PDF:</strong> <a href="images/certificates/certificate-7yvgfvhscy96-1779558873.pdf" target="_blank" rel="noopener noreferrer">Open certificate PDF</a></p>
                   </div>
                 </details>
               </div>
@@ -483,7 +496,7 @@
                   <div class="cert-detail">
                     <p><strong>Issued:</strong> July 14, 2026</p>
                     <p><strong>Certificate No:</strong> 200455</p>
-                    <p><strong>View:</strong> <a href="images/certificates/Google Professional DevOps Engineer_ Infrastructure as Code (IaC) on GCP.pdf" target="_blank" rel="noopener noreferrer">View certificate</a></p>
+                    <p><strong>Record:</strong> Course-completion certificate held locally.</p>
                   </div>
                 </details>
 
@@ -790,7 +803,6 @@
         <div class="container">
           <h2>Contact</h2>
           <p>
-            The best way to reach me is by email.<br />
             Email: <a href="mailto:jack@jack-lee.dev">jack@jack-lee.dev</a><br />
             LinkedIn: <a href="https://www.linkedin.com/in/jack-lee12" target="_blank" rel="noopener noreferrer">linkedin.com/in/jack-lee12</a><br />
             GitHub: <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">github.com/JackLee504</a>

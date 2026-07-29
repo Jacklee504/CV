@@ -1,0 +1,19 @@
+# macOS and local IDE state
+.DS_Store
+.idea/
+
+# Private working notes. These must never be deployed or committed.
+private/
+
+# Downloaded credential PDFs are local backups only. Public credential cards
+# use issuer-hosted verification links rather than repository file paths.
+images/certificates/
+
+# Local design backups
+*.before-*.html
+assets/css/*.before-*.css
+
+# Generated resume source files and visual QA renders.
+# The final PDF remains versioned because the website serves it.
+output/**
+!output/Jack_Lee_Software_Engineering_Resume.pdf

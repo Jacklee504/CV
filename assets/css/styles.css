@@ -149,13 +149,13 @@ h1 {
 }
 
 .lead {
-  max-width: 54ch;
+  max-width: 70ch;
   color: var(--muted);
 }
 
 p,
 li {
-  max-width: 72ch;
+  max-width: 100ch;
 }
 
 .hero-actions {
@@ -217,6 +217,25 @@ h2 {
   box-shadow: var(--shadow);
 }
 
+.featured-project {
+  background: color-mix(in srgb, var(--surface) 72%, var(--surface-alt));
+  border-color: color-mix(in srgb, var(--border) 72%, var(--accent));
+  padding: 1.3rem 1.4rem;
+}
+
+.featured-project h3 {
+  font-size: 1.35rem;
+}
+
+.project-tech {
+  color: var(--accent-strong);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.9rem;
+}
+
 .card-head {
   margin-bottom: 0.7rem;
 }
@@ -231,10 +250,12 @@ h2 {
   padding: 0;
   margin: 0;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.6rem;
 }
 
 .skills-list li {
+  max-width: none;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -401,6 +422,14 @@ a {
 
   .hero-actions {
     flex-wrap: wrap;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-project {
+    padding: 1.15rem;
   }
 
   .cert-area-group > summary::after {

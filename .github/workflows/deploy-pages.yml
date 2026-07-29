@@ -26,11 +26,11 @@ jobs:
 
       - name: Assemble static site
         run: |
-          test -f output/Jack_Lee_Resume_US_One_Page.pdf
+          test -f output/Jack_Lee_Software_Engineering_Resume.pdf
           mkdir -p _site/output
           cp index.html _site/
-          cp -R assets images _site/
-          cp output/Jack_Lee_Resume_US_One_Page.pdf _site/output/
+          cp -R assets _site/
+          cp output/Jack_Lee_Software_Engineering_Resume.pdf _site/output/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
