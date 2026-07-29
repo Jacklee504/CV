@@ -108,6 +108,13 @@ section[id] {
   color: var(--text);
 }
 
+.brand span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
 .site-nav {
   display: flex;
   gap: 1rem;
@@ -278,10 +285,6 @@ h2 {
   padding: 1.3rem 1.4rem;
 }
 
-.featured-project h3 {
-  font-size: 1.35rem;
-}
-
 .card-head {
   margin-bottom: 0.7rem;
 }
@@ -293,6 +296,24 @@ h2 {
 .meta {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.project-context {
+  color: var(--muted);
+  font-size: 0.78em;
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.project-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-title-link:hover,
+.project-title-link:focus-visible {
+  color: var(--accent);
 }
 
 .skills-list {

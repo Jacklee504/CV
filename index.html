@@ -34,14 +34,13 @@
     <a class="skip-link" href="#top">Skip to main content</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top">Jack Lee</a>
+        <a class="brand" href="#top">Jack Lee <span>· Computer Science Student</span></a>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-navigation" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
         <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
@@ -54,35 +53,20 @@
     <main id="top" tabindex="-1">
       <section class="hero section">
         <div class="container">
-          <p class="eyebrow">University of Galway | Computer Science &amp; Information Technology</p>
-          <h1>Building reliable delivery systems and web products.</h1>
+          <p class="eyebrow">University of Galway | BSc (Hons) Computer Science &amp; Information Technology</p>
+          <h2>Jack Lee</h2>
           <p class="lead">
             Software Engineering Intern on Ericsson&apos;s central CI/CD pipeline team, contributing to build, test,
-            and deployment systems for cloud-native services. Experience spans Python engineering, Jenkins and
+            and deployment systems for cloud-native services. Experience spans Python tooling, Jenkins and
             Spinnaker pipeline development, Kubernetes and Docker infrastructure, client web development, and
             independently built automation-focused systems. Previously completed a web-development internship
-            delivering responsive client websites with PHP and SCSS. Completing a BSc (Hons) Computer Science &amp;
-            Information Technology at the University of Galway, with expected graduation in 2027.
+            delivering responsive client websites with PHP and SCSS.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#contact">Get in touch</a>
             <a class="button ghost" href="#projects">View projects</a>
             <a class="button ghost" href="output/Jack_Lee_Software_Engineering_Resume.pdf" download="Jack_Lee_Software_Engineering_Resume.pdf">Download resume (PDF)</a>
           </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="container">
-          <h2>About Me</h2>
-          <p>
-            Software Engineering Intern at Ericsson, working on build, test, and deployment systems for cloud-native
-            services. After moving from a broader support role into the central CI/CD pipeline team, experience has
-            included modular Python tooling, Jenkins and Spinnaker pipeline changes, Docker and Kubernetes
-            investigation, and a 14-module refactor delivered through testing and peer review. Earlier client
-            web-development experience adds practical experience delivering responsive, user-facing changes with PHP
-            and SCSS.
-          </p>
         </div>
       </section>
 
@@ -96,10 +80,10 @@
                 <p class="meta">Ericsson, Athlone, Co. Westmeath | January 2026&ndash;Present</p>
               </div>
               <ul>
-                <li>Moved from a broader support role into Ericsson&apos;s newly formed central CI/CD pipeline team, supporting build, test, and deployment workflows for cloud-native services.</li>
-                <li>Independently decomposed a 2,000+ line Python CI component into shared and executor-specific modules across 14 modules, adding parameterisation, unit tests, and lint compliance.</li>
+                <li>Contribute to CI/CD pipeline engineering for cloud-native services, supporting build, test, and deployment workflows.</li>
+                <li>Refactored a 2,000+ line Python CI component into shared and executor-specific modules across 14 files, adding parameterisation, unit tests, and lint compliance.</li>
                 <li>Develop and maintain Jenkins/Groovy and Spinnaker pipeline changes, including configurable parameters, job orchestration, packaging verification, and more efficient test flows.</li>
-                <li>Investigate and resolve build and infrastructure issues across Kubernetes, Docker, and pipeline integrations, collaborating through Gerrit review, Jira, and technical documentation.</li>
+                <li>Collaborate through Gerrit, Jira, and Confluence to deliver reviewed, documented changes across the CI/CD toolchain.</li>
               </ul>
             </article>
 
@@ -109,9 +93,9 @@
                 <p class="meta">Ossark, Athlone, Co. Westmeath | May 2025&ndash;August 2025</p>
               </div>
               <ul>
-                <li>Helped build and maintain client websites with PHP and SCSS, translating feedback into responsive and accessible page updates.</li>
-                <li>Tracked down frontend issues, made fixes, and worked with the team to release polished changes without disrupting existing pages.</li>
-                <li>Contributed to full-stack web work, building a practical understanding of how client-facing features move from development to release.</li>
+                <li>Built and maintained client websites with PHP and SCSS, turning feedback into responsive, accessible page updates.</li>
+                <li>Resolved frontend issues and delivered polished updates across existing client sites, maintaining visual consistency and responsive behaviour.</li>
+                <li>Contributed to full-stack website projects, supporting feature delivery from implementation through QA and release.</li>
               </ul>
             </article>
           </div>
@@ -153,7 +137,7 @@
           <p class="meta">More projects available on <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
           <div class="grid">
             <article class="card featured-project">
-              <h3>Deal Ledger</h3>
+              <h3>Deal Ledger <span class="project-context">&middot; Personal project</span></h3>
               <p>
                 Building and maintaining <a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Deal Ledger</a>,
                 a multilingual affiliate deal-discovery site that helps readers find relevant product offers and set email alerts.
@@ -167,7 +151,7 @@
             </article>
 
             <article class="card">
-              <h3>Multi-Broker Paper Trading Platform</h3>
+              <h3>Multi-Broker Paper Trading Platform <span class="project-context">&middot; Personal project</span></h3>
               <p>
                 Developed a Python platform for researching, testing, and operating rules-based trading strategies across FX, CFDs, and US equities.
               </p>
@@ -181,32 +165,20 @@
             </article>
 
             <article class="card">
-              <h3>Car Racing Application</h3>
+              <h3><a class="project-title-link" href="https://github.com/Jacklee504/unity-racing-game" target="_blank" rel="noopener noreferrer">Unity Racing Game</a> <span class="project-context">&middot; University Games Programming module</span></h3>
               <p>
-                Built a racing application where users can race against bots or compete for a place on a
-                fastest-lap leaderboard.
+                Developed a Unity/C# racing game with race and hot-lap modes, configurable lap counts, timers, and game-state UI.
               </p>
               <ul>
-                <li>Designed the core gameplay flow, bot competition, lap timing, and leaderboard handling.</li>
-                <li>Used the project to practise building responsive interactions and managing application state reliably.</li>
+                <li>Implemented a persistent top-10 lap-time leaderboard, storing and sorting player records in CSV through Unity&apos;s persistent storage.</li>
+                <li>Built three NavMesh-driven AI opponents using a 200+ node race path persisted as JSON, with corner-aware speed and turning adjustments.</li>
+                <li>Added checkpoint-gated lap validation, respawn and reset flows, and Blender-based track customisation.</li>
               </ul>
-              <p class="meta">Application logic, state management, leaderboard design</p>
+              <p class="meta">Unity, C#, NavMesh AI, JSON and CSV persistence, game-state management</p>
             </article>
 
             <article class="card">
-              <h3>Game Development Projects</h3>
-              <p>
-                Built several small games to practise applying data structures and algorithms in interactive software.
-              </p>
-              <ul>
-                <li>Projects include a persistent binary-tree item-guessing game, an Alien Invaders game, and an A* pathfinding game.</li>
-                <li>Used persistence, pathfinding, and game-state problems to build confidence with core programming concepts.</li>
-              </ul>
-              <p class="meta">Data structures, algorithms, persistence, game logic</p>
-            </article>
-
-            <article class="card">
-              <h3>Client Website Contributions</h3>
+              <h3>Client Website Contributions <span class="project-context">&middot; Ossark internship</span></h3>
               <p>
                 Contributed to client-facing websites for
                 <a href="https://kerryfilmfestival.com/" target="_blank" rel="noopener noreferrer">Kerry International Film Festival</a>,
@@ -231,20 +203,16 @@
           <article class="card">
             <h3>BSc (Hons) Computer Science &amp; Information Technology</h3>
             <p class="meta">University of Galway, Ireland | 2023&ndash;2027</p>
-            <p>
-              Expected graduation: 2027. <strong>Relevant coursework:</strong> Object-Oriented Programming, Data Structures &amp; Algorithms,
-              Database Systems, Software Engineering, Networks &amp; Data Communications, Discrete Mathematics,
-              Web Development, and Computing Systems.
-            </p>
+            <p>Expected graduation: 2027. Target classification: First Class Honours (1.1).</p>
+            <p><strong>Third year:</strong> Core modules: Programming III (78%), Professional Skills (67%), Networks &amp; Data Communications 2 (63%), and Software Engineering 2 (46%).</p>
+            <p><strong>Second year:</strong> Second Class Honours, Grade 1 (2.1), 68% average. Key modules: Introduction to Modelling (74%), Discrete Mathematics (72%), Networks &amp; Data Communications (72%), Database Systems (71%), Object-Oriented Programming DS&amp;A (68%), Software Engineering (68%), and Object-Oriented Programming (65%).</p>
+            <p><strong>First year:</strong> Second Class Honours, Grade 2 (2.2). Key modules: Web Development (68%), Programming (66%), and Computing Systems (57%).</p>
           </article>
 
           <article class="card">
             <h3>Leaving Certificate</h3>
             <p class="meta">Scoil Mhuire, Strokestown, Co. Roscommon | 2017&ndash;2023</p>
-            <p>
-              Achieved 520 points, including Higher-Level German, Irish, Geography, Design &amp; Communication Graphics,
-              and Mathematics.
-            </p>
+            <p>Achieved 520 points across seven Higher-Level subjects: German (H2), Irish (H2), Geography (H2), Design &amp; Communication Graphics (H2), Mathematics (H3), English (H4), and Physics &amp; Chemistry (H4).</p>
           </article>
         </div>
       </section>
@@ -254,8 +222,8 @@
           <h2>Technical Skills</h2>
           <ul class="skills-list">
             <li><strong>CI/CD &amp; Cloud-Native:</strong> Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus</li>
-            <li><strong>Delivery &amp; Reliability:</strong> Git, Gerrit, Jira, Confluence, Unit Testing, Code Review, Incident Investigation, Root-Cause Analysis, Agile Delivery</li>
-            <li><strong>Programming &amp; Scripting:</strong> Python, Groovy, Bash, Java, C, PHP, SQL, R</li>
+            <li><strong>Delivery &amp; Reliability:</strong> Git, Gerrit, Jira, Confluence, Unit Testing, Quality Assurance (QA), Technical Documentation, Agile Delivery</li>
+            <li><strong>Programming &amp; Scripting:</strong> Python, Groovy, Bash, Java, C#, C, PHP, SQL, R</li>
             <li><strong>Web Development:</strong> Hugo, HTML, JavaScript, CSS, SCSS, WordPress</li>
             <li><strong>Engineering Foundations:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Systems, Computer Networks</li>
           </ul>
