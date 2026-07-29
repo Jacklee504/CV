@@ -1,0 +1,87 @@
+{
+  "name": "Jack Lee",
+  "location": "Roscommon, Ireland",
+  "email": "jack@jack-lee.dev",
+  "links": [
+    { "label": "LinkedIn", "username": "jack-lee12", "url": "https://www.linkedin.com/in/jack-lee12" },
+    { "label": "GitHub", "username": "JackLee504", "url": "https://github.com/JackLee504" }
+  ],
+  "summary": "Computer Science & Information Technology student and Ericsson intern with hands-on experience in Python CI tooling, Jenkins and Spinnaker pipelines, cloud-native delivery workflows, and responsive client web development.",
+  "experience": [
+    {
+      "title": "Software Engineering Intern",
+      "organisation": "Ericsson",
+      "location": "Athlone, Ireland",
+      "dates": "Jan 2026–Present",
+      "bullets": [
+        "Contribute to CI/CD pipeline engineering for cloud-native services, supporting build, test, and deployment workflows.",
+        "Refactored a 2,000+ line Python CI component into shared and executor-specific modules across 14 files, adding parameterisation, unit tests, and lint compliance.",
+        "Develop and maintain Jenkins/Groovy and Spinnaker pipeline changes, including configurable parameters, job orchestration, packaging verification, and more efficient test flows.",
+        "Collaborate through Gerrit, Jira, and Confluence to deliver reviewed, documented changes across the CI/CD toolchain."
+      ]
+    },
+    {
+      "title": "Web Development Intern",
+      "organisation": "Ossark",
+      "location": "Athlone, Ireland",
+      "dates": "May 2025–Aug 2025",
+      "bullets": [
+        "Built and maintained client websites with PHP and SCSS, turning feedback into responsive, accessible page updates.",
+        "Resolved frontend issues and delivered polished updates across existing client sites, maintaining visual consistency and responsive behaviour.",
+        "Contributed to full-stack website projects, supporting feature delivery from implementation through QA and release."
+      ]
+    },
+    {
+      "title": "Cashier & Customer Service Representative",
+      "organisation": "Casey's Londis",
+      "location": "Roscommon, Ireland",
+      "dates": "May 2024–Mar 2026",
+      "bullets": [
+        "Handled checkout, customer queries, and day-to-day store tasks in a busy retail setting, keeping service accurate and calm during peak periods.",
+        "Coordinated with teammates to keep checkout operations efficient during busy periods."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Deal Ledger",
+      "technologies": "Hugo, Python, GitHub Actions, Cloudflare Workers, DNS",
+      "bullets": [
+        "Built a responsive Hugo affiliate deal-discovery site with localised interfaces and market-specific routing across English, German, Dutch, and French.",
+        "Automated Amazon candidate review, listing and price validation, builds, SEO checks, alert emails, domain and DNS configuration, and Cloudflare routing with Python and GitHub Actions."
+      ]
+    },
+    {
+      "title": "Multi-Broker Paper Trading Platform",
+      "technologies": "Python, APIs, SQLite, testing, observability",
+      "bullets": [
+        "Built a modular Python paper-trading platform for FX, CFDs, and US equities, separating strategy, execution, risk, market data, journaling, and dashboards.",
+        "Integrated IG, Capital.com, and Alpaca paper/demo workflows with SQLite journaling, risk checks, and automated tests."
+      ]
+    },
+    {
+      "title": "Unity Racing Game",
+      "technologies": "Unity, C#, NavMesh AI, JSON and CSV persistence",
+      "bullets": [
+        "Built race and hot-lap modes with configurable lap counts, checkpoint validation, timing, reset handling, and a CSV-backed top-10 leaderboard.",
+        "Implemented three NavMesh-controlled competitors that follow a 200+ node JSON race path, including corner-speed adjustments and respawn behaviour."
+      ]
+    }
+  ],
+  "skills": [
+    ["CI/CD & Cloud-Native", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus"],
+    ["Delivery & Reliability", "Git, Gerrit, Jira, Confluence, Unit Testing, Quality Assurance (QA), Technical Documentation, Agile Delivery"],
+    ["Programming & Scripting", "Python, Groovy, Bash, Java, C#, C, PHP, SQL, R"],
+    ["Web Development", "Hugo, HTML, JavaScript, CSS, SCSS, WordPress"],
+    ["Engineering Foundations", "Data Structures & Algorithms, Object-Oriented Programming, Database Systems, Computer Networks"]
+  ],
+  "education": {
+    "degree": "BSc (Hons) Computer Science & Information Technology",
+    "dates": "Expected 2027",
+    "details": "University of Galway | Target classification: First-Class Honours (1.1) | Selected modules: Programming III (78%), Introduction to Modelling (74%), Discrete Mathematics (72%), Networks & Data Communications (72%), Database Systems (71%), Software Engineering (68%), and Object-Oriented Programming DS&A (68%)",
+    "secondary": {
+      "qualification": "Leaving Certificate",
+      "details": "Scoil Mhuire, Strokestown, Co. Roscommon | 520 points (2023)"
+    }
+  }
+}

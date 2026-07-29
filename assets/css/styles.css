@@ -108,13 +108,6 @@ section[id] {
   color: var(--text);
 }
 
-.brand span {
-  color: var(--muted);
-  font-size: 0.86rem;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
 .site-nav {
   display: flex;
   gap: 1rem;
@@ -298,6 +291,11 @@ h2 {
   font-size: 0.95rem;
 }
 
+/* Keep every employment date on the same visual level in the shared timeline. */
+.timeline .meta {
+  font-weight: 600;
+}
+
 .project-context {
   color: var(--muted);
   font-size: 0.78em;
@@ -471,8 +469,24 @@ a {
 
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 1.2rem 0;
+  padding: 1.35rem 0;
   color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--muted);
+  font-weight: 600;
 }
 
 @media (max-width: 760px) {
@@ -504,6 +518,12 @@ a {
 
   .featured-project {
     padding: 1.15rem;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
   }
 
   .cert-area-group > summary::after {

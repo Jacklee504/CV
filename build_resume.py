@@ -1,24 +1,25 @@
+"""Build the recruiter-facing resume from the editable content/resume.json source."""
+
+import json
 from pathlib import Path
 
 from docx import Document
-from docx.enum.section import WD_SECTION
 from docx.enum.style import WD_STYLE_TYPE
-from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK, WD_TAB_ALIGNMENT
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_TAB_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.shared import Inches, Pt, RGBColor
 
 
+CONTENT = Path("content/resume.json")
 OUT = Path("output/Jack_Lee_Software_Engineering_Resume.docx")
 INK = "111827"
 MUTED = "4B5563"
 RULE = "1F4E79"
-
-
-def set_cell_margins(*_args, **_kwargs):
-    # Intentionally unused: this resume uses no tables for layout.
-    pass
+BODY_SIZE = 9.2
+ENTRY_SIZE = 9.7
+DATE_SIZE = 9.2
 
 
 def set_font(run, name="Arial", size=None, bold=None, color=None, italic=None):
@@ -35,8 +36,22 @@ def set_font(run, name="Arial", size=None, bold=None, color=None, italic=None):
         run.font.color.rgb = RGBColor.from_string(color)
 
 
+def set_paragraph_spacing(paragraph, before=0, after=0, line=1.0):
+    fmt = paragraph.paragraph_format
+    fmt.space_before = Pt(before)
+    fmt.space_after = Pt(after)
+    fmt.line_spacing = line
+
+
+def set_keep(paragraph, keep_with_next=False, keep_together=False):
+    pPr = paragraph._p.get_or_add_pPr()
+    if keep_with_next:
+        pPr.append(OxmlElement("w:keepNext"))
+    if keep_together:
+        pPr.append(OxmlElement("w:keepLines"))
+
+
 def add_hyperlink(paragraph, text, url, color=MUTED):
-    """Add a visible external hyperlink while preserving the resume's muted contact styling."""
     relationship_id = paragraph.part.relate_to(url, RT.HYPERLINK, is_external=True)
     hyperlink = OxmlElement("w:hyperlink")
     hyperlink.set(qn("r:id"), relationship_id)
@@ -63,21 +78,6 @@ def add_hyperlink(paragraph, text, url, color=MUTED):
     paragraph._p.append(hyperlink)
 
 
-def set_paragraph_spacing(paragraph, before=0, after=0, line=1.0):
-    fmt = paragraph.paragraph_format
-    fmt.space_before = Pt(before)
-    fmt.space_after = Pt(after)
-    fmt.line_spacing = line
-
-
-def set_keep(paragraph, keep_with_next=False, keep_together=False):
-    pPr = paragraph._p.get_or_add_pPr()
-    if keep_with_next:
-        pPr.append(OxmlElement("w:keepNext"))
-    if keep_together:
-        pPr.append(OxmlElement("w:keepLines"))
-
-
 def add_bottom_border(paragraph, color=RULE, size="8", space="4"):
     pPr = paragraph._p.get_or_add_pPr()
     pBdr = OxmlElement("w:pBdr")
@@ -94,7 +94,6 @@ def add_custom_bullet_numbering(document):
     numbering = document.part.numbering_part.element
     abstract_id = 73
     num_id = 73
-
     abstract = OxmlElement("w:abstractNum")
     abstract.set(qn("w:abstractNumId"), str(abstract_id))
     multi_level = OxmlElement("w:multiLevelType")
@@ -111,9 +110,9 @@ def add_custom_bullet_numbering(document):
     lvl_text = OxmlElement("w:lvlText")
     lvl_text.set(qn("w:val"), "•")
     level.append(lvl_text)
-    lvl_jc = OxmlElement("w:lvlJc")
-    lvl_jc.set(qn("w:val"), "left")
-    level.append(lvl_jc)
+    level_jc = OxmlElement("w:lvlJc")
+    level_jc.set(qn("w:val"), "left")
+    level.append(level_jc)
     pPr = OxmlElement("w:pPr")
     tabs = OxmlElement("w:tabs")
     tab = OxmlElement("w:tab")
@@ -126,25 +125,19 @@ def add_custom_bullet_numbering(document):
     ind.set(qn("w:hanging"), "180")
     pPr.append(ind)
     level.append(pPr)
-    rPr = OxmlElement("w:rPr")
-    rFonts = OxmlElement("w:rFonts")
-    rFonts.set(qn("w:ascii"), "Arial")
-    rFonts.set(qn("w:hAnsi"), "Arial")
-    rPr.append(rFonts)
-    level.append(rPr)
     abstract.append(level)
     numbering.append(abstract)
-
     num = OxmlElement("w:num")
     num.set(qn("w:numId"), str(num_id))
-    abs_ref = OxmlElement("w:abstractNumId")
-    abs_ref.set(qn("w:val"), str(abstract_id))
-    num.append(abs_ref)
+    abstract_ref = OxmlElement("w:abstractNumId")
+    abstract_ref.set(qn("w:val"), str(abstract_id))
+    num.append(abstract_ref)
     numbering.append(num)
     return num_id
 
 
-def add_bullet(paragraph, num_id, text):
+def add_bullet(document, num_id, text):
+    paragraph = document.add_paragraph(style="Resume Body")
     pPr = paragraph._p.get_or_add_pPr()
     numPr = OxmlElement("w:numPr")
     ilvl = OxmlElement("w:ilvl")
@@ -155,64 +148,72 @@ def add_bullet(paragraph, num_id, text):
     numPr.append(numId)
     pPr.append(numPr)
     run = paragraph.add_run(text)
-    set_font(run, size=9.25, color=INK)
-    set_paragraph_spacing(paragraph, after=2.2, line=1.05)
+    set_font(run, size=BODY_SIZE, color=INK)
+    set_paragraph_spacing(paragraph, after=3.2, line=1.07)
     set_keep(paragraph, keep_together=True)
 
 
 def add_section(document, title):
-    p = document.add_paragraph()
-    p.style = "Resume Section"
-    p.add_run(title.upper())
-    return p
+    paragraph = document.add_paragraph(style="Resume Section")
+    paragraph.add_run(title.upper())
+    return paragraph
 
 
-def add_role(document, title, employer, location, dates, num_id, bullets):
-    p = document.add_paragraph()
-    p.style = "Role"
-    p.paragraph_format.tab_stops.add_tab_stop(Inches(6.48), WD_TAB_ALIGNMENT.RIGHT)
-    r = p.add_run(title)
-    set_font(r, size=9.7, bold=True, color=INK)
-    r = p.add_run(f" | {employer}, {location}")
-    set_font(r, size=9.7, color=INK)
-    p.add_run("\t")
-    r = p.add_run(dates)
-    set_font(r, size=9.1, bold=True, color=MUTED)
-    set_paragraph_spacing(p, before=3, after=1.2, line=1.0)
-    set_keep(p, keep_with_next=True, keep_together=True)
-    for item in bullets:
-        bullet = document.add_paragraph()
-        bullet.style = "Resume Body"
-        add_bullet(bullet, num_id, item)
+def add_entry_header(document, title, detail, dates=None, detail_italic=False):
+    """Use one shared title/detail/date treatment for roles, projects, and education."""
+    paragraph = document.add_paragraph(style="Resume Entry")
+    paragraph.paragraph_format.tab_stops.add_tab_stop(Inches(6.48), WD_TAB_ALIGNMENT.RIGHT)
+    run = paragraph.add_run(title)
+    set_font(run, size=ENTRY_SIZE, bold=True, color=INK)
+    if detail:
+        run = paragraph.add_run(f" | {detail}")
+        set_font(run, size=ENTRY_SIZE, color=MUTED, italic=detail_italic)
+    if dates:
+        paragraph.add_run("\t")
+        run = paragraph.add_run(dates)
+        # All right-aligned dates intentionally use this single shared format.
+        set_font(run, size=DATE_SIZE, bold=True, color=MUTED)
+    set_paragraph_spacing(paragraph, before=5, after=1.6, line=1.0)
+    set_keep(paragraph, keep_with_next=True, keep_together=True)
+    return paragraph
 
 
-def add_project(document, title, technologies, num_id, bullets):
-    p = document.add_paragraph()
-    p.style = "Project"
-    r = p.add_run(title)
-    set_font(r, size=9.7, bold=True, color=INK)
-    r = p.add_run(f" | {technologies}")
-    set_font(r, size=9.3, italic=True, color=MUTED)
-    set_paragraph_spacing(p, before=3, after=1.2, line=1.0)
-    set_keep(p, keep_with_next=True, keep_together=True)
-    for item in bullets:
-        bullet = document.add_paragraph()
-        bullet.style = "Resume Body"
-        add_bullet(bullet, num_id, item)
+def add_role(document, role, num_id):
+    detail = f"{role['organisation']}, {role['location']}"
+    add_entry_header(document, role["title"], detail, role["dates"])
+    for item in role["bullets"]:
+        add_bullet(document, num_id, item)
 
 
-def add_project_group(document, title):
-    p = document.add_paragraph()
-    p.style = "Resume Body"
-    set_paragraph_spacing(p, before=3, after=0.5, line=1.0)
-    r = p.add_run(title.upper())
-    set_font(r, size=8.4, bold=True, color=MUTED)
-    set_keep(p, keep_with_next=True, keep_together=True)
+def add_project(document, project, num_id):
+    add_entry_header(document, project["title"], project["technologies"], detail_italic=True)
+    for item in project["bullets"]:
+        add_bullet(document, num_id, item)
 
 
-def main():
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    document = Document()
+def add_skills(document, skills):
+    paragraph = document.add_paragraph(style="Resume Body")
+    set_paragraph_spacing(paragraph, after=0, line=1.05)
+    for index, (label, value) in enumerate(skills):
+        run = paragraph.add_run(f"{label}: ")
+        set_font(run, size=9.15, bold=True, color=INK)
+        run = paragraph.add_run(value)
+        set_font(run, size=9.15, color=INK)
+        if index < len(skills) - 1:
+            paragraph.add_run("\n")
+
+
+def add_secondary_education(document, education):
+    """Separate school qualifications from university coursework without adding a second timeline row."""
+    paragraph = document.add_paragraph(style="Resume Body")
+    set_paragraph_spacing(paragraph, before=3, after=1, line=1.03)
+    run = paragraph.add_run(education["qualification"])
+    set_font(run, size=9.15, bold=True, color=INK)
+    run = paragraph.add_run(f" | {education['details']}")
+    set_font(run, size=9.15, color=INK)
+
+
+def configure_document(document):
     section = document.sections[0]
     section.top_margin = Inches(0.62)
     section.bottom_margin = Inches(0.62)
@@ -226,12 +227,12 @@ def main():
     normal.font.name = "Arial"
     normal._element.rPr.rFonts.set(qn("w:ascii"), "Arial")
     normal._element.rPr.rFonts.set(qn("w:hAnsi"), "Arial")
-    normal.font.size = Pt(9.2)
+    normal.font.size = Pt(BODY_SIZE)
     normal.font.color.rgb = RGBColor.from_string(INK)
 
-    for name, base in [("Resume Body", "Normal"), ("Role", "Normal"), ("Project", "Normal"), ("Resume Section", "Normal")]:
+    for name in ("Resume Body", "Resume Entry", "Resume Section"):
         style = styles.add_style(name, WD_STYLE_TYPE.PARAGRAPH)
-        style.base_style = styles[base]
+        style.base_style = normal
 
     section_style = styles["Resume Section"]
     section_style.font.name = "Arial"
@@ -240,138 +241,70 @@ def main():
     section_style.font.size = Pt(10.2)
     section_style.font.bold = True
     section_style.font.color.rgb = RGBColor.from_string(RULE)
-    section_style.paragraph_format.space_before = Pt(8)
-    section_style.paragraph_format.space_after = Pt(2.5)
+    section_style.paragraph_format.space_before = Pt(10.5)
+    section_style.paragraph_format.space_after = Pt(4)
 
-    num_id = add_custom_bullet_numbering(document)
 
-    # Header: name and contact information. The location is intentionally city/region only.
+def add_header(document, content):
     name = document.add_paragraph()
     name.alignment = WD_ALIGN_PARAGRAPH.CENTER
     set_paragraph_spacing(name, after=1, line=1.0)
-    r = name.add_run("JACK LEE")
-    set_font(r, size=19, bold=True, color=INK)
+    run = name.add_run(content["name"].upper())
+    set_font(run, size=19, bold=True, color=INK)
 
     contact = document.add_paragraph()
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
     set_paragraph_spacing(contact, after=5, line=1.0)
     add_bottom_border(contact)
-    r = contact.add_run("Roscommon, Ireland  |  ")
-    set_font(r, size=8.8, color=MUTED)
-    add_hyperlink(contact, "jack@jack-lee.dev", "mailto:jack@jack-lee.dev")
-    r = contact.add_run("  |  ")
-    set_font(r, size=8.8, color=MUTED)
-    add_hyperlink(contact, "linkedin.com/in/jack-lee12", "https://www.linkedin.com/in/jack-lee12")
-    r = contact.add_run("  |  ")
-    set_font(r, size=8.8, color=MUTED)
-    add_hyperlink(contact, "github.com/JackLee504", "https://github.com/JackLee504")
+    run = contact.add_run(f"{content['location']}  |  ")
+    set_font(run, size=8.8, color=MUTED)
+    run = contact.add_run("Email: ")
+    set_font(run, size=8.8, color=MUTED)
+    add_hyperlink(contact, content["email"], f"mailto:{content['email']}")
+    for link in content["links"]:
+        run = contact.add_run("  |  ")
+        set_font(run, size=8.8, color=MUTED)
+        run = contact.add_run(f"{link['label']}: ")
+        set_font(run, size=8.8, color=MUTED)
+        add_hyperlink(contact, link["username"], link["url"])
 
-    summary = document.add_paragraph()
-    summary.style = "Resume Body"
+
+def main():
+    content = json.loads(CONTENT.read_text(encoding="utf-8"))
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+
+    document = Document()
+    configure_document(document)
+    num_id = add_custom_bullet_numbering(document)
+    add_header(document, content)
+
+    summary = document.add_paragraph(style="Resume Body")
     set_paragraph_spacing(summary, after=2, line=1.07)
-    r = summary.add_run("Software engineering student and Ericsson intern with hands-on experience in Python CI tooling, "
-                        "Jenkins and Spinnaker pipelines, cloud-native delivery workflows, and responsive client web development.")
-    set_font(r, size=9.4, color=INK)
+    run = summary.add_run(content["summary"])
+    set_font(run, size=9.4, color=INK)
 
     add_section(document, "Experience")
-    add_role(
-        document, "Software Engineer Intern", "Ericsson", "Athlone, Ireland", "Jan 2026–Present", num_id,
-        [
-            "Moved from a broader support role into a central CI/CD pipeline team supporting build, test, and deployment workflows for cloud-native services.",
-            "Independently decomposed a 2,000+ line Python CI component into shared and executor-specific modules across 14 modules, adding parameterisation, unit tests, and lint compliance.",
-            "Develop and maintain Jenkins/Groovy and Spinnaker pipeline changes for configurable build and packaging workflows, including verification stages and test-flow improvements.",
-            "Investigate build and infrastructure issues across Kubernetes, Docker, and pipeline integrations, collaborating through Gerrit review, Jira, and technical documentation.",
-        ],
-    )
-    add_role(
-        document, "Web Developer Intern", "Ossark", "Athlone, Ireland", "May 2025–Aug 2025", num_id,
-        [
-            "Built and refined responsive client websites using PHP and SCSS, with attention to usability and accessibility across devices.",
-            "Contributed to full-stack projects with the team, helping deliver robust applications and client-facing web features.",
-            "Resolved defects and optimized site performance to support smooth, reliable user experiences.",
-        ],
-    )
-    add_role(
-        document, "Cashier & Customer Service Representative", "Casey's Londis", "Roscommon, Ireland", "May 2024–Mar 2026", num_id,
-        [
-            "Handle high-volume transactions accurately and resolve customer issues promptly, demonstrating attention to detail and clear communication.",
-            "Prioritize tasks and coordinate with teammates to maintain efficient checkout flow in a fast-paced setting.",
-        ],
-    )
+    for role in content["experience"]:
+        add_role(document, role, num_id)
 
     add_section(document, "Projects")
-    add_project_group(document, "Independent Projects")
-    add_project(
-        document, "Deal Ledger", "Hugo, Python, GitHub Actions, Cloudflare Workers, DNS", num_id,
-        [
-            "Built a responsive Hugo affiliate deal-discovery site with localised interfaces and market-specific routing across English, German, Dutch, and French.",
-            "Automated Amazon candidate review, listing and price validation, builds, SEO checks, alert emails, domain/DNS configuration, and Cloudflare routing with Python and GitHub Actions.",
-        ],
-    )
-    add_project(
-        document, "Multi-Broker Paper Trading Platform", "Python, APIs, SQLite, testing, observability", num_id,
-        [
-            "Built a modular Python paper-trading platform for FX, CFDs, and US equities, separating strategy, execution, risk, market data, journaling, and dashboards.",
-            "Integrated IG, Capital.com, and Alpaca paper/demo workflows with SQLite journaling, risk checks, and automated tests.",
-        ],
-    )
-    add_project_group(document, "University Coursework Projects")
-    add_project(
-        document, "Car Racing Application", "Gameplay logic, leaderboards, performance", num_id,
-        [
-            "Developed a racing application where users compete against bots or race for fastest-lap leaderboard rankings.",
-            "Designed core gameplay and lap-time ranking mechanics with responsive interaction and reliable score handling.",
-        ],
-    )
-    add_project(
-        document, "Data Structures & Algorithmic Games", "Algorithms, persistence, game logic", num_id,
-        [
-            "Built a savable Binary Tree item-guessing game, Alien Invaders, and a persistence-backed A* pathfinding game.",
-            "Applied data structures, algorithms, and AI/pathfinding patterns in interactive game systems.",
-        ],
-    )
-
-    add_section(document, "Education")
-    edu = document.add_paragraph()
-    edu.style = "Role"
-    edu.paragraph_format.tab_stops.add_tab_stop(Inches(6.48), WD_TAB_ALIGNMENT.RIGHT)
-    r = edu.add_run("BSc (Hons) Computer Science & Information Technology")
-    set_font(r, size=9.7, bold=True, color=INK)
-    edu.add_run("\t")
-    r = edu.add_run("Expected 2027")
-    set_font(r, size=9.1, bold=True, color=MUTED)
-    set_paragraph_spacing(edu, before=2, after=0, line=1.0)
-    set_keep(edu, keep_with_next=True, keep_together=True)
-    details = document.add_paragraph()
-    details.style = "Resume Body"
-    r = details.add_run("University of Galway | Expected First-Class Honours (1.1) | Relevant coursework: Database Systems, Algorithms & Data Structures, Software Engineering, Networks & Data Communications")
-    set_font(r, size=9.15, color=INK)
-    set_paragraph_spacing(details, after=1, line=1.03)
-
-    school = document.add_paragraph()
-    school.style = "Resume Body"
-    r = school.add_run("Scoil Mhuire, Strokestown, Co. Roscommon | Leaving Certificate: 520 points (2023)")
-    set_font(r, size=9.15, color=INK)
-    set_paragraph_spacing(school, after=1, line=1.03)
+    for project in content["projects"]:
+        add_project(document, project, num_id)
 
     add_section(document, "Technical Skills")
-    skills = document.add_paragraph()
-    skills.style = "Resume Body"
-    set_paragraph_spacing(skills, after=0, line=1.05)
-    for label, value in [
-        ("CI/CD & Cloud-Native: ", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus"),
-        ("Languages & Scripting: ", "Python, Groovy, Bash, Java, C, SQL, JavaScript, PHP, HTML/CSS/SCSS, R"),
-        ("Testing & Data: ", "unit testing, pylint, pytest, pytest-cov, Bandit, pandas, NumPy"),
-        ("Practices: ", "CI/CD, code review, incident investigation, root-cause analysis, Agile delivery, responsive web development"),
-    ]:
-        r = skills.add_run(label)
-        set_font(r, size=9.15, bold=True, color=INK)
-        r = skills.add_run(value)
-        set_font(r, size=9.15, color=INK)
-        if label != "Practices: ":
-            skills.add_run("\n")
-    document.core_properties.title = "Jack Lee – Resume"
-    document.core_properties.author = "Jack Lee"
+    add_skills(document, content["skills"])
+
+    add_section(document, "Education")
+    education = content["education"]
+    add_entry_header(document, education["degree"], None, education["dates"])
+    details = document.add_paragraph(style="Resume Body")
+    run = details.add_run(education["details"])
+    set_font(run, size=9.15, color=INK)
+    set_paragraph_spacing(details, after=1, line=1.03)
+    add_secondary_education(document, education["secondary"])
+
+    document.core_properties.title = f"{content['name']} – Resume"
+    document.core_properties.author = content["name"]
     document.core_properties.subject = "Software Engineering Resume"
     document.save(OUT)
     print(OUT)
