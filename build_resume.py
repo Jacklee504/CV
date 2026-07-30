@@ -51,7 +51,7 @@ def set_keep(paragraph, keep_with_next=False, keep_together=False):
         pPr.append(OxmlElement("w:keepLines"))
 
 
-def add_hyperlink(paragraph, text, url, color=MUTED):
+def add_hyperlink(paragraph, text, url, color=MUTED, size=9, bold=False):
     relationship_id = paragraph.part.relate_to(url, RT.HYPERLINK, is_external=True)
     hyperlink = OxmlElement("w:hyperlink")
     hyperlink.set(qn("r:id"), relationship_id)
@@ -65,10 +65,12 @@ def add_hyperlink(paragraph, text, url, color=MUTED):
     color_element.set(qn("w:val"), color)
     rPr.append(color_element)
     font_size = OxmlElement("w:sz")
-    font_size.set(qn("w:val"), "18")
+    font_size.set(qn("w:val"), str(round(size * 2)))
     rPr.append(font_size)
+    if bold:
+        rPr.append(OxmlElement("w:b"))
     underline = OxmlElement("w:u")
-    underline.set(qn("w:val"), "none")
+    underline.set(qn("w:val"), "single")
     rPr.append(underline)
     run.append(rPr)
     text_element = OxmlElement("w:t")
@@ -159,12 +161,15 @@ def add_section(document, title):
     return paragraph
 
 
-def add_entry_header(document, title, detail, dates=None, detail_italic=False):
+def add_entry_header(document, title, detail, dates=None, detail_italic=False, title_url=None):
     """Use one shared title/detail/date treatment for roles, projects, and education."""
     paragraph = document.add_paragraph(style="Resume Entry")
     paragraph.paragraph_format.tab_stops.add_tab_stop(Inches(6.48), WD_TAB_ALIGNMENT.RIGHT)
-    run = paragraph.add_run(title)
-    set_font(run, size=ENTRY_SIZE, bold=True, color=INK)
+    if title_url:
+        add_hyperlink(paragraph, title, title_url, color=INK, size=ENTRY_SIZE, bold=True)
+    else:
+        run = paragraph.add_run(title)
+        set_font(run, size=ENTRY_SIZE, bold=True, color=INK)
     if detail:
         run = paragraph.add_run(f" | {detail}")
         set_font(run, size=ENTRY_SIZE, color=MUTED, italic=detail_italic)
@@ -186,7 +191,13 @@ def add_role(document, role, num_id):
 
 
 def add_project(document, project, num_id):
-    add_entry_header(document, project["title"], project["technologies"], detail_italic=True)
+    add_entry_header(
+        document,
+        project["title"],
+        project["technologies"],
+        detail_italic=True,
+        title_url=project.get("url"),
+    )
     for item in project["bullets"]:
         add_bullet(document, num_id, item)
 
