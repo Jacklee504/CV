@@ -1,6 +1,7 @@
 # macOS and local IDE state
 .DS_Store
 .idea/
+__pycache__/
 
 # Private working notes. These must never be deployed or committed.
 private/
