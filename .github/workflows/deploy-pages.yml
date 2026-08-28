@@ -29,6 +29,7 @@ jobs:
           test -f output/Jack_Lee_Software_Engineering_Resume.pdf
           mkdir -p _site/output
           cp index.html _site/
+          cp credentials.html _site/
           cp certificates.html _site/
           cp -R assets _site/
           cp output/Jack_Lee_Software_Engineering_Resume.pdf _site/output/
