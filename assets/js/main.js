@@ -121,8 +121,8 @@ const certificateTrackFor = (title) => {
   return 'cloud';
 };
 
-if (certificateAreas) {
-  const certificateCards = [...certificateAreas.querySelectorAll('.cert-card')];
+const groupCertificates = (container) => {
+  const certificateCards = [...container.querySelectorAll('.cert-card')];
   const cardsByTrack = new Map(certificateTracks.map((track) => [track.id, []]));
 
   certificateCards.forEach((card) => {
@@ -156,7 +156,27 @@ if (certificateAreas) {
     groupedCertificates.append(group);
   });
 
-  certificateAreas.replaceChildren(groupedCertificates);
+  container.replaceChildren(groupedCertificates);
+};
+
+const loadCredentialsPage = async () => {
+  const response = await fetch('index.html');
+  if (!response.ok) throw new Error('Unable to load credential data.');
+
+  const documentSource = new DOMParser().parseFromString(await response.text(), 'text/html');
+  const template = documentSource.querySelector('#credential-data');
+  const sourceAreas = template?.content.querySelector('.cert-areas');
+  if (!sourceAreas) throw new Error('Credential data is unavailable.');
+
+  const sourceCopy = sourceAreas.cloneNode(true);
+  certificateAreas.replaceChildren(...sourceCopy.children);
+  groupCertificates(certificateAreas);
+};
+
+if (certificateAreas) {
+  loadCredentialsPage().catch(() => {
+    certificateAreas.innerHTML = '<p class="meta">Credentials could not be loaded. Please return to the <a href="index.html#certifications">main site</a> and try again.</p>';
+  });
 }
 
 const revealTargets = [
