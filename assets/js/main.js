@@ -63,11 +63,6 @@ const certificateAreas = document.querySelector('.cert-areas');
 
 const certificateTracks = [
   {
-    id: 'ai',
-    title: 'AI & Generative AI',
-    meta: 'LLM development, machine learning, RAG, agents, and AI foundations',
-  },
-  {
     id: 'devops',
     title: 'DevOps & CI/CD',
     meta: 'Delivery pipelines, infrastructure as code, automation, and operational practices',
@@ -78,9 +73,19 @@ const certificateTracks = [
     meta: 'Kubernetes application delivery, containerisation, and Linux administration',
   },
   {
-    id: 'security',
-    title: 'Security',
-    meta: 'Cloud, network, application, and cryptographic security',
+    id: 'llm-development',
+    title: 'LLM & MCP Development',
+    meta: 'Claude Code, the Claude API, and Model Context Protocol',
+  },
+  {
+    id: 'rag-agents',
+    title: 'RAG, Prompting & Agents',
+    meta: 'GenAI architecture, retrieval, prompting, and agent orchestration',
+  },
+  {
+    id: 'genai-reliability',
+    title: 'GenAI Reliability & Optimisation',
+    meta: 'Accuracy, evaluation, cost efficiency, performance, and validation',
   },
   {
     id: 'cloud',
@@ -88,18 +93,46 @@ const certificateTracks = [
     meta: 'Cloud platforms, networking, deployment, migration, and observability',
   },
   {
+    id: 'machine-learning',
+    title: 'Machine Learning',
+    meta: 'Machine-learning foundations, training, and evaluation',
+  },
+  {
+    id: 'security',
+    title: 'Security',
+    meta: 'Cloud, network, application, and cryptographic security',
+  },
+  {
     id: 'data',
     title: 'Data Engineering',
     meta: 'Data acquisition, processing, querying, and Google Cloud data engineering',
   },
+  {
+    id: 'ai-foundations',
+    title: 'AI Foundations',
+    meta: 'AI literacy, capabilities, limitations, and practical adoption',
+  },
 ];
 
 const certificateTrackFor = (title) => {
-  if (
-    /^(Claude |AI Fluency|Introduction to Model Context Protocol|Building with the Claude API|AI Capabilities|Generative AI Driver|AI Skills Fest|AWS Generative AI Developer|AWS Certified Machine Learning)/.test(title)
-    || title.includes('Google Machine Learning and AI')
-  ) {
-    return 'ai';
+  if (/^(AI Fluency|Generative AI Driver|AI Skills Fest)/.test(title)) {
+    return 'ai-foundations';
+  }
+
+  if (/^(Claude Code|Introduction to Model Context Protocol|Building with the Claude API|AI Capabilities)/.test(title)) {
+    return 'llm-development';
+  }
+
+  if (/AWS Generative AI Developer/.test(title) && /Architecting|Vector Store|Prompt Engineering|Agentic AI|Human-in-the-Loop/.test(title)) {
+    return 'rag-agents';
+  }
+
+  if (/AWS Generative AI Developer/.test(title) && /Hallucination|Token Efficiency|Performance|Validation/.test(title)) {
+    return 'genai-reliability';
+  }
+
+  if (title.startsWith('AWS Certified Machine Learning') || title.includes('Google Machine Learning and AI')) {
+    return 'machine-learning';
   }
 
   if (title.includes('Kubernetes') || title.startsWith('Red Hat') || title.includes('Containers and Virtualization')) {
@@ -171,10 +204,13 @@ const loadCredentialsPage = async () => {
   const sourceCopy = sourceAreas.cloneNode(true);
   certificateAreas.replaceChildren(...sourceCopy.children);
   groupCertificates(certificateAreas);
+  certificateAreas.setAttribute('aria-busy', 'false');
 };
 
 if (certificateAreas) {
+  certificateAreas.setAttribute('aria-busy', 'true');
   loadCredentialsPage().catch(() => {
+    certificateAreas.setAttribute('aria-busy', 'false');
     certificateAreas.innerHTML = '<p class="meta">Credentials could not be loaded. Please return to the <a href="index.html#certifications">main site</a> and try again.</p>';
   });
 }
