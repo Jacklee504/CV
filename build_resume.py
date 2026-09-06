@@ -151,7 +151,7 @@ def add_bullet(document, num_id, text):
     pPr.append(numPr)
     run = paragraph.add_run(text)
     set_font(run, size=BODY_SIZE, color=INK)
-    set_paragraph_spacing(paragraph, after=3.2, line=1.07)
+    set_paragraph_spacing(paragraph, after=2.5, line=1.07)
     set_keep(paragraph, keep_together=True)
 
 
@@ -252,7 +252,7 @@ def configure_document(document):
     section_style.font.size = Pt(10.2)
     section_style.font.bold = True
     section_style.font.color.rgb = RGBColor.from_string(RULE)
-    section_style.paragraph_format.space_before = Pt(10.5)
+    section_style.paragraph_format.space_before = Pt(8.5)
     section_style.paragraph_format.space_after = Pt(4)
 
 

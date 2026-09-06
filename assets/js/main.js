@@ -112,6 +112,11 @@ const certificateTracks = [
     title: 'AI Foundations',
     meta: 'AI literacy, capabilities, limitations, and practical adoption',
   },
+  {
+    id: 'hackathons',
+    title: 'Hackathons & Competitions',
+    meta: 'Participation certificates and project-based technical challenges',
+  },
 ];
 
 const certificateTrackFor = (title) => {
@@ -145,6 +150,10 @@ const certificateTrackFor = (title) => {
 
   if (/CCSP|Certified in Cybersecurity|SCOR/.test(title)) {
     return 'security';
+  }
+
+  if (/Hackathon|Competition/.test(title)) {
+    return 'hackathons';
   }
 
   if (title.startsWith('GCP Data Engineer') || title.startsWith('CompTIA Data+')) {

@@ -7,18 +7,18 @@
     { "label": "GitHub", "username": "JackLee504", "url": "https://github.com/JackLee504" },
     { "label": "Portfolio", "username": "jack-lee.dev", "url": "https://jack-lee.dev" }
   ],
-  "profile": "Computer Science & Information Technology student and Software Engineering Intern on a CI/CD platform team at Ericsson. Contributes to Jenkins/Groovy and Spinnaker workflows for cloud-native services, with hands-on experience in Python tooling, Kubernetes and Docker infrastructure, client web development, and automation-focused personal projects.",
+  "profile": "University of Galway Computer Science & Information Technology student with software engineering internship experience on Ericsson's CI/CD platform team. Developed CI/CD tooling with Python, Jenkins/Groovy, and Spinnaker; supported cloud-native build and deployment workflows; and delivered a major Python refactor and release-verification improvements.",
   "experience": [
     {
       "title": "Software Engineering Intern",
       "organisation": "Ericsson",
       "location": "Athlone, Co. Westmeath, Ireland",
-      "dates": "Jan 2026–Present",
+      "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Contribute to CI/CD delivery for cloud-native services, building and maintaining Jenkins/Groovy and Spinnaker workflows while supporting Kubernetes, Docker, and Helm/Helmfile infrastructure.",
-        "Proposed and implemented a 14-file refactor of a 2,000+ line Python CI module, separating shared and executor-specific decorators and using parameterisation to standardise definitions.",
-        "Improved release safety by adding packaging verification and Artifactory/Nexus checks to identify undeclared binary content before release, with automated test coverage.",
-        "Investigate CI/CD and cloud-native infrastructure issues across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations; document findings and coordinate fixes with other teams."
+        "Developed and maintained Jenkins/Groovy pipeline stages and Spinnaker configurations for build, deployment, testing, and cleanup workflows; parameterised pipelines for configurable behaviour.",
+        "Independently decomposed a monolithic 2,000+ line Python CI module into 14 modular executor-specific files, with shared functionality and a runtime configuration layer to reduce duplication.",
+        "Built packaging-verification stages and strengthened Artifactory/Nexus checks to identify undeclared binary content before release, supported by unit tests.",
+        "Diagnosed CI/CD and cloud-native infrastructure issues across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations; documented findings and coordinated fixes with teams in multiple countries."
       ]
     },
     {

@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 
 from docx import Document
-from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Inches
 
 import build_resume as resume
@@ -95,14 +94,6 @@ def add_education(document, education):
     add_body(document, secondary["details"], after=4.5, size=10.15, line=1.12)
 
 
-def add_page_number(paragraph):
-    run = paragraph.add_run("Page ")
-    resume.set_font(run, size=8.5, color=resume.MUTED)
-    field = resume.OxmlElement("w:fldSimple")
-    field.set(resume.qn("w:instr"), "PAGE")
-    paragraph._p.append(field)
-
-
 def main():
     content = json.loads(CONTENT.read_text(encoding="utf-8"))
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -116,15 +107,10 @@ def main():
     resume.configure_document(document)
     configure_cv_styles(document)
     section = document.sections[0]
-    section.top_margin = Inches(0.58)
+    section.top_margin = Inches(0.7)
     section.bottom_margin = Inches(0.58)
     section.left_margin = Inches(0.68)
     section.right_margin = Inches(0.68)
-
-    footer = section.footer.paragraphs[0]
-    footer.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    resume.set_paragraph_spacing(footer, before=0, after=0, line=1.0)
-    add_page_number(footer)
 
     num_id = resume.add_custom_bullet_numbering(document)
     resume.add_header(document, content)

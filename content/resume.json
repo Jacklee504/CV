@@ -6,17 +6,17 @@
     { "label": "LinkedIn", "username": "jack-lee12", "url": "https://www.linkedin.com/in/jack-lee12" },
     { "label": "GitHub", "username": "JackLee504", "url": "https://github.com/JackLee504" }
   ],
-  "summary": "Computer Science & Information Technology student and Ericsson intern building Python, Jenkins/Groovy, and Spinnaker tooling for cloud-native CI/CD and Kubernetes/Docker workflows, alongside responsive client web development.",
+  "summary": "University of Galway Computer Science & Information Technology student with software engineering internship experience at Ericsson. Developed CI/CD tooling with Python, Jenkins/Groovy, and Spinnaker, including pipeline improvements, a major Python refactor, and release-verification checks for cloud-native services.",
   "experience": [
     {
       "title": "Software Engineering Intern",
       "organisation": "Ericsson",
       "location": "Athlone, Ireland",
-      "dates": "Jan 2026–Present",
+      "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Contribute to CI/CD delivery for cloud-native services, building Jenkins/Groovy and Spinnaker workflows while supporting Kubernetes, Docker, and Helm/Helmfile infrastructure.",
-        "Proposed and implemented a 14-file refactor of a 2,000+ line Python CI module, separating shared and executor-specific decorators and using parameterisation to standardise definitions.",
-        "Improved release safety with packaging and Artifactory/Nexus verification; investigate CI/CD infrastructure issues across pipeline integrations."
+        "Developed and maintained Jenkins/Groovy pipeline stages and Spinnaker configurations for build, deployment, testing, and cleanup workflows; parameterised pipelines for configurable behaviour.",
+        "Independently decomposed a monolithic 2,000+ line Python CI module into 14 modular executor-specific files, with shared functionality and runtime configuration to reduce duplication.",
+        "Built packaging-verification stages and strengthened Artifactory/Nexus checks to identify undeclared binary content before release, supported by unit tests."
       ]
     },
     {
