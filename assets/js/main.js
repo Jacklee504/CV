@@ -47,8 +47,7 @@ const updateActiveNavLink = () => {
 };
 
 if (nav && 'IntersectionObserver' in window) {
-  const tracked = nav
-    .querySelectorAll('a[href^="#"]')
+  const tracked = [...nav.querySelectorAll('a[href^="#"]')]
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
   const navObserver = new IntersectionObserver(updateActiveNavLink, {

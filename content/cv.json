@@ -74,7 +74,7 @@
       "title": "PlanAround",
       "url": "https://github.com/JackLee504/Plan-Around",
       "context": "Pixel Forge AI Hackathon, Aug 2026",
-      "technologies": "Next.js, React, TypeScript, Tailwind CSS, Cloudflare Workers, Qwen3-VL",
+      "technologies": "Next.js, React, TypeScript, Tailwind CSS, Cloudflare Workers, Featherless",
       "bullets": [
         "Built a student planning application that converts timetable screenshots and assignment briefs into realistic study schedules around lectures, commitments, and deadlines.",
         "Designed an explainable scheduling system that derives workload from ECTS, assessment weighting, and rubric structure, using AI only for structured extraction while keeping workload and scheduling decisions deterministic."
@@ -103,7 +103,6 @@
     "institution": "University of Galway, Ireland",
     "dates": "2023–2027 (Expected)",
     "details": [
-      "Target classification: First-Class Honours (1.1).",
       "Relevant modules: Programming III, Software Engineering, Data Structures & Algorithms, Database Systems, Networks & Data Communications, Machine Learning."
     ],
     "secondary": {

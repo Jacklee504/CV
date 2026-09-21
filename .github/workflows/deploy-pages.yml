@@ -34,16 +34,22 @@ jobs:
           pip install -r requirements-docs.txt
           python build_documents.py
 
+      - name: Test generated PDFs
+        run: |
+          python -m unittest discover -s tests
+
       - name: Assemble static site
         run: |
           test -f output/Jack_Lee_Software_Engineering_Resume.pdf
           test -f output/Jack_Lee_CV.pdf
           mkdir -p _site/output
+          mkdir -p _site/content
           cp index.html _site/
           cp credentials.html _site/
           cp certificates.html _site/
           cp cover-letter.html _site/
           cp -R assets _site/
+          cp content/cv.json _site/content/
           cp output/Jack_Lee_Software_Engineering_Resume.pdf _site/output/
           cp output/Jack_Lee_CV.pdf _site/output/
 

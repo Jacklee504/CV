@@ -52,7 +52,7 @@ const lowerFirst = (value) => `${value.charAt(0).toLocaleLowerCase()}${value.sli
 const experienceFor = (cv, focus) => {
   const ericsson = cv.experience.find(({ organisation }) => organisation === 'Ericsson');
   const ossark = cv.experience.find(({ organisation }) => organisation === 'Ossark');
-  const tradingProject = cv.projects.find(({ title }) => title === 'Multi-Broker Paper Trading Platform');
+  const tradingProject = cv.projects.find(({ title }) => title === 'Multi-Broker Trading Research Platform');
 
   if (focus === 'web' && ossark) {
     return `At ${ossark.organisation}, I ${lowerFirst(ossark.bullets[0])} I also ${lowerFirst(ossark.bullets[2])}`;

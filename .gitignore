@@ -14,9 +14,7 @@ images/certificates/
 *.before-*.html
 assets/css/*.before-*.css
 
-# Generated resume/CV files (DOCX, PDF, and visual QA renders).
-# The final PDFs are built by GitHub Actions, so they are not versioned
-# here; they exist only as CI artifacts and on the deployed site.
-output/*.docx
-output/*.pdf
-output/**
+# Generated resume/CV outputs (DOCX, PDF, and visual QA renders).
+# The final PDFs are built by GitHub Actions on deploy, so the whole
+# directory is treated as generated artifacts.
+output/
