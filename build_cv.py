@@ -107,9 +107,12 @@ def build_education(renderer: PdfRenderer, education: dict):
     ]
     degree_block.extend(
         renderer.plain(
-            detail, size=CV_STYLE.education_size, leading=CV_STYLE.education_leading
+            detail,
+            size=CV_STYLE.education_size,
+            leading=CV_STYLE.education_leading,
+            space_after=6 if index == len(details) - 1 else 0,
         )
-        for detail in details
+        for index, detail in enumerate(details)
     )
     blocks.append(degree_block)
 
@@ -118,8 +121,12 @@ def build_education(renderer: PdfRenderer, education: dict):
         [
             renderer.entry_header(
                 title=secondary["qualification"],
-                detail=secondary["institution"],
                 dates=secondary["dates"],
+            ),
+            renderer.plain(
+                secondary["institution"],
+                size=CV_STYLE.education_size,
+                leading=CV_STYLE.education_leading,
             ),
             renderer.plain(
                 secondary["details"],
@@ -133,15 +140,20 @@ def build_education(renderer: PdfRenderer, education: dict):
 
 def add_additional_entry(renderer: PdfRenderer, entry: dict, index: int, total: int):
     detail = f"{entry['organisation']}, {entry['location']}"
-    return [
-        renderer.entry_header(title=entry["title"], detail=detail, dates=entry["dates"]),
+    block = [
+        renderer.entry_header(title=entry["title"], detail=detail, dates=entry["dates"])
+    ]
+    for item in entry["bullets"]:
+        block.append(renderer.bullet(item))
+    block.append(
         renderer.plain(
             entry["note"],
             size=CV_STYLE.education_size,
             leading=CV_STYLE.education_leading,
             space_after=4 if index < total - 1 else 0,
-        ),
-    ]
+        )
+    )
+    return block
 
 
 def validate_cv(path: Path) -> None:

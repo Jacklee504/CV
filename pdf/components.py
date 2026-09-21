@@ -172,8 +172,9 @@ class PdfRenderer:
         dates: Optional[str] = None,
         detail_italic: bool = False,
         title_url: Optional[str] = None,
+        space_before: Optional[float] = None,
     ) -> object:
-        left_text = _markup(title)
+        left_text = f"<b>{_markup(title)}</b>"
         if title_url:
             url = escape(str(title_url))
             left_text = f'<a href="{url}">{left_text}</a>'
@@ -182,7 +183,16 @@ class PdfRenderer:
             if detail_italic:
                 detail_text = f"<i>{detail_text}</i>"
             left_text += f'<font color="{MUTED_HEX}"> | {detail_text}</font>'
-        left = Paragraph(left_text, self.entry_left_ps)
+        left_style = self.entry_left_ps
+        date_style = self.entry_date_ps
+        if space_before is not None:
+            left_style = ParagraphStyle(
+                "entry_left_variant", parent=self.entry_left_ps, spaceBefore=space_before
+            )
+            date_style = ParagraphStyle(
+                "entry_date_variant", parent=self.entry_date_ps, spaceBefore=space_before
+            )
+        left = Paragraph(left_text, left_style)
 
         if not dates:
             return left
@@ -192,7 +202,7 @@ class PdfRenderer:
         date_width += self.style.date_col_padding
         left_width = max(self.content_width - date_width, 1)
         table = Table(
-            [[left, Paragraph(date_text, self.entry_date_ps)]],
+            [[left, Paragraph(date_text, date_style)]],
             colWidths=[left_width, date_width],
             hAlign="LEFT",
         )
@@ -212,8 +222,14 @@ class PdfRenderer:
     def summary_paragraph(self, text: str) -> Paragraph:
         return Paragraph(_markup(text), self.summary_ps)
 
-    def bullet(self, text: str) -> Paragraph:
-        return Paragraph(_markup(text), self.bullet_ps, bulletText="\u2022")
+    def bullet(self, text: str, *, space_after: Optional[float] = None) -> Paragraph:
+        if space_after is None:
+            style = self.bullet_ps
+        else:
+            style = ParagraphStyle(
+                "bullet_variant", parent=self.bullet_ps, spaceAfter=space_after
+            )
+        return Paragraph(_markup(text), style, bulletText="\u2022")
 
     def skills(self, skills) -> Paragraph:
         lines = []
@@ -302,20 +318,29 @@ def build_project(
     *,
     with_context: bool = False,
 ) -> List:
-    if with_context:
-        detail = f"{project['context']} | {project['technologies']}"
-    else:
-        detail = project["technologies"]
+    detail = project["context"] if with_context else project["technologies"]
     flowables = [
         renderer.entry_header(
             title=project["title"],
             detail=detail,
             detail_italic=True,
             title_url=project.get("url"),
+            space_before=3,
         )
     ]
+    if with_context:
+        flowables.append(
+            renderer.plain(
+                project["technologies"],
+                size=8.7,
+                leading=10.2,
+                italic=True,
+                color=MUTED,
+                space_after=0.5,
+            )
+        )
     for item in project["bullets"]:
-        flowables.append(renderer.bullet(item))
+        flowables.append(renderer.bullet(item, space_after=0))
     return flowables
 
 

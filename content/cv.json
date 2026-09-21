@@ -28,7 +28,9 @@
       "dates": "May 2025–Aug 2025",
       "bullets": [
         "Contributed to client website projects through implementation, QA, and release, delivering responsive PHP/SCSS changes across multiple production sites.",
-        "Diagnosed frontend issues and translated client/team feedback into layout, usability, and responsive-design improvements without disrupting established pages."
+        "Diagnosed frontend issues and translated client/team feedback into layout, usability, and responsive-design improvements without disrupting established pages.",
+        "Implemented and QA-tested feature and content updates across a portfolio of live client sites, coordinating releases with the wider team.",
+        "Maintained implementation notes and release-checklists that supported the team's review, testing, and deployment process."
       ],
       "note": "Selected clients: Kerry International Film Festival, MCL Electrical, Anushka Power Therapy, Daily Irish Produce, Capital Homes."
     }
@@ -39,14 +41,23 @@
       "organisation": "Casey's Londis",
       "location": "Roscommon, Ireland",
       "dates": "May 2024–Mar 2026",
-      "note": "Handled transactions and customer queries in a high-volume retail environment while coordinating with a small team during busy periods."
+      "note": "Handled transactions and customer queries in a high-volume retail environment while coordinating with a small team during busy periods.",
+      "bullets": [
+        "Operated the till and handled cash and card transactions, balancing the register at the end of each shift.",
+        "Resolved customer queries and complaints at the counter while keeping queues moving during peak times.",
+        "Coordinated with the small team during busy periods to keep stock replenished and the shop floor presentable."
+      ]
     },
     {
       "title": "Cashier & Kitchen Team Member",
       "organisation": "Blue Thunder",
       "location": "Roscommon Town, Ireland",
       "dates": "Apr 2022–Aug 2022",
-      "note": "Coordinated cashier and kitchen duties with clear handovers to keep customer orders accurate during high-volume shifts."
+      "note": "Coordinated cashier and kitchen duties with clear handovers to keep customer orders accurate during high-volume shifts.",
+      "bullets": [
+        "Split time between the till and the kitchen, taking orders and preparing food to keep service moving during rushes.",
+        "Used clear handovers between front-of-house and kitchen to ensure orders stayed accurate in a high-volume setting."
+      ]
     }
   ],
   "projects": [
@@ -54,7 +65,7 @@
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
       "context": "Personal project",
-      "technologies": "TypeScript, Node.js, MCP, LLM APIs",
+      "technologies": "TypeScript · Node.js · MCP · CLI/TUI · Git worktrees · Multi-provider LLM orchestration",
       "bullets": [
         "Built a provider-agnostic engineering orchestrator that routes bounded development tasks across local and cloud AI models based on task complexity, risk, and role.",
         "Developed a shared routing/runtime layer exposed through CLI, interactive TUI, and MCP interfaces, with isolated worktrees, verification steps, and multi-provider execution.",
@@ -62,19 +73,19 @@
       ]
     },
     {
-      "title": "Multi-Broker Trading Research Platform",
+      "title": "Multi-Broker Trading Platform",
       "context": "Personal project",
-      "technologies": "Python, APIs, SQLite, testing, observability",
+      "technologies": "Python · scikit-learn · PyTorch · Gymnasium · PPO · IG/Capital.com/Alpaca APIs · SQLite · Walk-forward validation",
       "bullets": [
-        "Built a modular Python trading research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, separating market data, strategy, risk, execution, journaling, analytics, and UI components.",
-        "Developed reproducible paper-trading and research infrastructure including multi-broker session orchestration, broker smoke tests, SQLite journaling, automated test/security gates, and VPS-based monitoring."
+        "Built a modular Python quantitative research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, with separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
+        "Developed supervised ML and reinforcement-learning pipelines using scikit-learn, PyTorch, Gymnasium, and PPO, with causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, negative controls, falsification tests, and sealed out-of-sample evaluation."
       ]
     },
     {
       "title": "PlanAround",
       "url": "https://github.com/JackLee504/Plan-Around",
       "context": "Pixel Forge AI Hackathon, Aug 2026",
-      "technologies": "Next.js, React, TypeScript, Tailwind CSS, Cloudflare Workers, Featherless",
+      "technologies": "Next.js · React · TypeScript · Tailwind CSS · Cloudflare Workers · Featherless · Structured extraction",
       "bullets": [
         "Built a student planning application that converts timetable screenshots and assignment briefs into realistic study schedules around lectures, commitments, and deadlines.",
         "Designed an explainable scheduling system that derives workload from ECTS, assessment weighting, and rubric structure, using AI only for structured extraction while keeping workload and scheduling decisions deterministic."
@@ -84,7 +95,7 @@
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
       "context": "Personal project",
-      "technologies": "Hugo, Python, GitHub Actions, Cloudflare Workers, DNS",
+      "technologies": "Hugo · Python · GitHub Actions · Cloudflare Workers · Product-data APIs · Validation/deduplication · Email alerts",
       "bullets": [
         "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts across multiple European markets.",
         "Developed a Python/GitHub Actions deal-ingestion pipeline with external product-data APIs, validation, deduplication, and human-review gates to prevent unverified pricing or listings from being automatically published.",
@@ -94,22 +105,24 @@
   ],
   "skills": [
     ["Languages", "Python, TypeScript/JavaScript, Java, C#, C, SQL, Groovy, Bash"],
-    ["Cloud & DevOps", "Docker, Kubernetes, Jenkins, Spinnaker, Helm/Helmfile, GitHub Actions, Cloudflare"],
-    ["Web", "React, Next.js, Hugo, Tailwind CSS, HTML/CSS"],
-    ["Tools & Data", "Git, Gerrit, SQLite, Artifactory, Nexus, Jira"]
+    ["Cloud & DevOps", "AWS, Google Cloud, Azure DevOps, Terraform, Docker, Kubernetes, Jenkins, Spinnaker, Helm/Helmfile, GitHub Actions, Cloudflare"],
+    ["Web", "React, Next.js, Hugo, Tailwind CSS, PHP, HTML/CSS"],
+    ["AI & LLM", "Model Context Protocol, Claude API, LLM APIs, prompt engineering, RAG"],
+    ["Tools & Data", "Git, Gerrit, Linux, SQLite, Artifactory, Nexus, Jira"]
   ],
   "education": {
     "degree": "BSc (Hons) Computer Science & Information Technology",
     "institution": "University of Galway, Ireland",
     "dates": "2023–2027 (Expected)",
     "details": [
-      "Relevant modules: Programming III, Software Engineering, Data Structures & Algorithms, Database Systems, Networks & Data Communications, Machine Learning."
+      "Target classification: First-Class Honours (1.1). Second year: Second Class Honours, Grade 1 (2.1), 68% average.",
+      "Selected modules: Programming III, Data Structures & Algorithms, Database Systems, Software Engineering, Networks & Data Communications, Machine Learning."
     ],
     "secondary": {
       "qualification": "Leaving Certificate",
-      "institution": "Scoil Mhuire, Strokestown",
+      "institution": "Scoil Mhuire, Strokestown, Co. Roscommon",
       "dates": "2017–2023",
-      "details": "520 points across seven Higher-Level subjects."
+      "details": "520 points across seven Higher-Level subjects, including H2s in German, Irish, Geography, and DCG."
     }
   },
   "activities": [
