@@ -23,10 +23,25 @@ body {
   font-family: "Source Serif 4", Georgia, serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 10% 10%, #e1eaf0 0%, transparent 42%),
-    radial-gradient(circle at 90% 20%, #e8edf0 0%, transparent 36%),
-    var(--bg);
+    linear-gradient(115deg,
+      #e2e9ef 0%,
+      var(--bg) 24%,
+      #edf1f4 46%,
+      #e4ebf1 68%,
+      var(--bg) 88%,
+      #e8eef3 100%);
+  background-size: 240% 240%;
+  animation: bg-drift 34s ease-in-out infinite alternate;
   line-height: 1.65;
+}
+
+@keyframes bg-drift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 40%;
+  }
 }
 
 h1,
@@ -81,9 +96,26 @@ section[id] {
 }
 
 .section.alt {
-  background: color-mix(in srgb, var(--surface-alt) 70%, white);
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--surface-alt) 40%, transparent) 0%,
+    color-mix(in srgb, var(--surface-alt) 74%, white) 26%,
+    color-mix(in srgb, var(--surface-alt) 74%, white) 74%,
+    color-mix(in srgb, var(--surface-alt) 40%, transparent) 100%
+  );
+  background-size: 150% 150%;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  animation: alt-drift 22s ease-in-out infinite alternate;
+}
+
+@keyframes alt-drift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 .site-header {
@@ -813,6 +845,19 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  body,
+  .section.alt {
+    animation: none;
+  }
+
+  body {
+    background-position: 50% 50%;
+  }
+
+  .section.alt {
+    background-position: 50% 50%;
   }
 
   .reveal {
