@@ -55,7 +55,7 @@ const experienceFor = (cv, focus) => {
   const tradingProject = cv.projects.find(({ title }) => title === 'Multi-Broker Trading Research Platform');
 
   if (focus === 'web' && ossark) {
-    return `At ${ossark.organisation}, I ${lowerFirst(ossark.bullets[0])} I also ${lowerFirst(ossark.bullets[2])}`;
+    return `At ${ossark.organisation}, I ${lowerFirst(ossark.bullets[0])} I also ${lowerFirst(ossark.bullets[1])}`;
   }
 
   if (focus === 'software' && ericsson && tradingProject) {
