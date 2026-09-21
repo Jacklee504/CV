@@ -24,15 +24,28 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build resume and CV PDFs
+        run: |
+          pip install -r requirements-docs.txt
+          python build_documents.py
+
       - name: Assemble static site
         run: |
           test -f output/Jack_Lee_Software_Engineering_Resume.pdf
+          test -f output/Jack_Lee_CV.pdf
           mkdir -p _site/output
           cp index.html _site/
           cp credentials.html _site/
           cp certificates.html _site/
+          cp cover-letter.html _site/
           cp -R assets _site/
           cp output/Jack_Lee_Software_Engineering_Resume.pdf _site/output/
+          cp output/Jack_Lee_CV.pdf _site/output/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

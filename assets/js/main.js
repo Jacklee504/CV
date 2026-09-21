@@ -30,6 +30,37 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const updateActiveNavLink = () => {
+  if (!nav) return;
+  const links = [...nav.querySelectorAll('a[href^="#"]')];
+  const edge = Math.min(window.innerHeight * 0.35, 320);
+  let current = null;
+
+  links.forEach((link) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    const bounds = target.getBoundingClientRect();
+    if (bounds.top <= edge && bounds.bottom > 0) current = link;
+  });
+
+  links.forEach((link) => link.classList.toggle('is-active', link === current));
+};
+
+if (nav && 'IntersectionObserver' in window) {
+  const tracked = nav
+    .querySelectorAll('a[href^="#"]')
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+  const navObserver = new IntersectionObserver(updateActiveNavLink, {
+    rootMargin: '-25% 0px -65% 0px',
+  });
+  tracked.forEach((section) => navObserver.observe(section));
+}
+
+window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+window.addEventListener('resize', updateActiveNavLink);
+updateActiveNavLink();
+
 if (navToggle && nav) {
   navToggle.addEventListener('click', () => {
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -220,7 +251,7 @@ if (certificateAreas) {
   certificateAreas.setAttribute('aria-busy', 'true');
   loadCredentialsPage().catch(() => {
     certificateAreas.setAttribute('aria-busy', 'false');
-    certificateAreas.innerHTML = '<p class="meta">Credentials could not be loaded. Please return to the <a href="index.html#certifications">main site</a> and try again.</p>';
+    certificateAreas.innerHTML = '<p class="meta">Credentials could not be loaded. Please return to the <a href="index.html#credentials">main site</a> and try again.</p>';
   });
 }
 

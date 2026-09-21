@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Letter Generator | Jack Lee</title>
+    <meta name="description" content="Create a tailored cover-letter draft from Jack Lee's CV and the role you are applying for." />
+    <link rel="canonical" href="https://jack-lee.dev/cover-letter.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jack-lee.dev/cover-letter.html" />
+    <meta property="og:title" content="Cover Letter Generator | Jack Lee" />
+    <meta property="og:description" content="Create a tailored cover-letter draft from CV experience and role-specific details." />
+    <meta property="og:image" content="https://jack-lee.dev/assets/jack-lee-mark.png" />
+    <meta property="og:image:alt" content="JL monogram for Jack Lee" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Cover Letter Generator | Jack Lee" />
+    <meta name="twitter:description" content="Create a tailored cover-letter draft from CV experience and role-specific details." />
+    <meta name="twitter:image" content="https://jack-lee.dev/assets/jack-lee-mark.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/jack-lee-mark-transparent.png" />
+    <link rel="apple-touch-icon" href="assets/jack-lee-mark-transparent.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260921-1" />
+    <script defer src="assets/js/main.js?v=20260921-1"></script>
+    <script defer src="assets/js/cover-letter.js?v=20260911-1"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#cover-letter-generator">Skip to generator</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Jack Lee</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="credentials.html">Credentials</a>
+          <a href="#cover-letter-generator" aria-current="page">Cover letters</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section id="cover-letter-generator" class="section hero">
+        <div class="container">
+          <p class="eyebrow">Application tool</p>
+          <h1>Cover letter generator</h1>
+          <p class="lead">Use your CV as the foundation, then tailor each draft to the role and company. Review and edit every letter before sending it.</p>
+
+          <div class="letter-workspace">
+            <form class="letter-form card" id="cover-letter-form">
+              <div class="form-field">
+                <label for="company">Company</label>
+                <input id="company" name="company" autocomplete="organization" required />
+              </div>
+              <div class="form-field">
+                <label for="role">Role</label>
+                <input id="role" name="role" autocomplete="organization-title" required />
+              </div>
+              <div class="form-field">
+                <label for="hiring-manager">Hiring manager <span>Optional</span></label>
+                <input id="hiring-manager" name="hiringManager" autocomplete="name" placeholder="e.g. Jane Smith" />
+              </div>
+              <div class="form-field">
+                <label for="focus">Most relevant experience</label>
+                <select id="focus" name="focus">
+                  <option value="platform">CI/CD and cloud-native engineering</option>
+                  <option value="software">Software development and Python</option>
+                  <option value="web">Web development</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="application-type">Application type</label>
+                <select id="application-type" name="applicationType">
+                  <option value="irish-graduate">Irish graduate role</option>
+                  <option value="us-internship">US internship</option>
+                </select>
+              </div>
+              <div class="form-field form-field-wide">
+                <label for="requirements">Job description or key requirements</label>
+                <textarea id="requirements" name="requirements" rows="3" required placeholder="Paste the job description or key requirements. Only supported terms will be used."></textarea>
+              </div>
+              <div class="form-field form-field-wide">
+                <label for="motivation">Why this company or role? <span>Optional</span></label>
+                <textarea id="motivation" name="motivation" rows="3" placeholder="Add a specific reason for applying. This is what makes the letter tailored."></textarea>
+              </div>
+              <button class="button primary" type="submit">Generate draft</button>
+            </form>
+
+            <section class="letter-output card" aria-labelledby="draft-heading">
+              <div class="letter-output-heading">
+                <div>
+                  <p class="eyebrow">Editable draft</p>
+                  <h2 id="draft-heading">Your cover letter</h2>
+                </div>
+                <button class="button ghost" id="copy-letter" type="button" disabled>Copy</button>
+              </div>
+              <textarea id="letter-draft" aria-label="Generated cover letter" rows="20" placeholder="Complete the form to create a draft."></textarea>
+              <section class="letter-match" id="keyword-match" aria-live="polite" hidden>
+                <p class="eyebrow">Keyword alignment</p>
+                <h3>Supported terms from the role</h3>
+                <p id="keyword-match-summary"></p>
+                <ul class="keyword-list" id="keyword-match-list"></ul>
+                <p class="meta">Use these terms only where they genuinely strengthen your CV or letter. Do not add unsupported skills.</p>
+              </section>
+              <p class="meta">The draft uses CV-supported experience. Check each claim against the role before sending.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Jack Lee. All rights reserved.</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>

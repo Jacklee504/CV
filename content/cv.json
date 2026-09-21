@@ -7,7 +7,7 @@
     { "label": "GitHub", "username": "JackLee504", "url": "https://github.com/JackLee504" },
     { "label": "Portfolio", "username": "jack-lee.dev", "url": "https://jack-lee.dev" }
   ],
-  "profile": "University of Galway Computer Science & Information Technology student with software engineering internship experience on Ericsson's CI/CD platform team. Developed CI/CD tooling with Python, Jenkins/Groovy, and Spinnaker; supported cloud-native build and deployment workflows; and delivered a major Python refactor and release-verification improvements.",
+  "profile": "Final-year Computer Science & Information Technology student with 8 months' software engineering experience on Ericsson's CI/CD platform team. Experience building Python automation, cloud-native CI/CD infrastructure, developer tooling, and independent software systems spanning trading, web applications, and AI-assisted workflows.",
   "experience": [
     {
       "title": "Software Engineering Intern",
@@ -15,10 +15,10 @@
       "location": "Athlone, Co. Westmeath, Ireland",
       "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Developed and maintained Jenkins/Groovy pipeline stages and Spinnaker configurations for build, deployment, testing, and cleanup workflows; parameterised pipelines for configurable behaviour.",
-        "Independently decomposed a monolithic 2,000+ line Python CI module into 14 modular executor-specific files, with shared functionality and a runtime configuration layer to reduce duplication.",
-        "Built packaging-verification stages and strengthened Artifactory/Nexus checks to identify undeclared binary content before release, supported by unit tests.",
-        "Diagnosed CI/CD and cloud-native infrastructure issues across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations; documented findings and coordinated fixes with teams in multiple countries."
+        "Independently refactored a monolithic 2,000+ line Python CI module into 14 executor-specific modules across approximately 25 development tasks, designing shared abstractions and runtime parameterisation to reduce duplicated logic and improve maintainability.",
+        "Developed and maintained Jenkins/Groovy and Spinnaker pipelines for build, deployment, testing, and cleanup workflows, including migrating test flows to lighter snapshot-based jobs to reduce execution time.",
+        "Built release-verification stages for cloud archive packaging and strengthened Artifactory/Nexus checks, identifying an undeclared ELF executable in production builds before release and raising remediation work.",
+        "Diagnosed CI/CD and cloud-native failures across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations, including resolving a blocker build regression and root-causing an RBAC cleanup failure to destructive Python file handling."
       ]
     },
     {
@@ -27,70 +27,76 @@
       "location": "Athlone, Co. Westmeath, Ireland",
       "dates": "May 2025–Aug 2025",
       "bullets": [
-        "Collaborated on full-stack website projects through implementation, QA, and release, communicating progress and incorporating feedback to help ensure changes were ready for client use.",
-        "Turned client and team feedback into practical page improvements, refining layouts and responsive behaviour while maintaining visual consistency across desktop and mobile.",
-        "Diagnosed and resolved frontend issues across existing sites, checking responsive behaviour and improving usability without disrupting established pages.",
-        "Delivered responsive, accessible PHP and SCSS updates for Kerry International Film Festival, MCL Electrical, Anushka Power Therapy, Daily Irish Produce, and Capital Homes."
-      ]
-    },
+        "Contributed to client website projects through implementation, QA, and release, delivering responsive PHP/SCSS changes across multiple production sites.",
+        "Diagnosed frontend issues and translated client/team feedback into layout, usability, and responsive-design improvements without disrupting established pages."
+      ],
+      "note": "Selected clients: Kerry International Film Festival, MCL Electrical, Anushka Power Therapy, Daily Irish Produce, Capital Homes."
+    }
+  ],
+  "additional_experience": [
     {
       "title": "Cashier & Customer Service Representative",
       "organisation": "Casey's Londis",
-      "location": "Roscommon",
+      "location": "Roscommon, Ireland",
       "dates": "May 2024–Mar 2026",
-      "bullets": [
-        "Provided clear, helpful service while handling transactions and resolving customer queries in a high-volume retail setting.",
-        "Coordinated with a small team to prioritise tasks, communicate changes, and keep checkout operations running smoothly during busy periods."
-      ]
+      "note": "Handled transactions and customer queries in a high-volume retail environment while coordinating with a small team during busy periods."
     },
     {
-      "title": "Fast Food Crew Member (Cashier & Kitchen Team Member)",
+      "title": "Cashier & Kitchen Team Member",
       "organisation": "Blue Thunder",
       "location": "Roscommon Town, Ireland",
       "dates": "Apr 2022–Aug 2022",
-      "bullets": [
-        "Coordinated cashier and kitchen duties with teammates, using clear handovers to keep customer orders accurate during high-volume shifts.",
-        "Responded constructively to changing customer needs and priorities, helping the team maintain efficient service under pressure."
-      ]
+      "note": "Coordinated cashier and kitchen duties with clear handovers to keep customer orders accurate during high-volume shifts."
     }
   ],
   "projects": [
+    {
+      "title": "Dynamic Task Router",
+      "url": "https://github.com/JackLee504/dynamic-task-router",
+      "context": "Personal project",
+      "technologies": "TypeScript, Node.js, MCP, LLM APIs",
+      "bullets": [
+        "Built a provider-agnostic engineering orchestrator that routes bounded development tasks across local and cloud AI models based on task complexity, risk, and role.",
+        "Developed a shared routing/runtime layer exposed through CLI, interactive TUI, and MCP interfaces, with isolated worktrees, verification steps, and multi-provider execution.",
+        "Added support for multiple coding/model providers including Codex, Claude Code, Qwen, OpenCode, OpenRouter, and local Ollama workflows."
+      ]
+    },
+    {
+      "title": "Multi-Broker Trading Research Platform",
+      "context": "Personal project",
+      "technologies": "Python, APIs, SQLite, testing, observability",
+      "bullets": [
+        "Built a modular Python trading research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, separating market data, strategy, risk, execution, journaling, analytics, and UI components.",
+        "Developed reproducible paper-trading and research infrastructure including multi-broker session orchestration, broker smoke tests, SQLite journaling, automated test/security gates, and VPS-based monitoring."
+      ]
+    },
+    {
+      "title": "PlanAround",
+      "url": "https://github.com/JackLee504/Plan-Around",
+      "context": "Pixel Forge AI Hackathon, Aug 2026",
+      "technologies": "Next.js, React, TypeScript, Tailwind CSS, Cloudflare Workers, Qwen3-VL",
+      "bullets": [
+        "Built a student planning application that converts timetable screenshots and assignment briefs into realistic study schedules around lectures, commitments, and deadlines.",
+        "Designed an explainable scheduling system that derives workload from ECTS, assessment weighting, and rubric structure, using AI only for structured extraction while keeping workload and scheduling decisions deterministic."
+      ]
+    },
     {
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
       "context": "Personal project",
       "technologies": "Hugo, Python, GitHub Actions, Cloudflare Workers, DNS",
       "bullets": [
-        "Build and maintain a multilingual affiliate deal-discovery site with localised interfaces and market-specific routing across English, German, Dutch, and French.",
-        "Automated Amazon deal-candidate review, listing and price validation, builds, SEO checks, alert emails, domain and DNS configuration, and Cloudflare routing with Python and GitHub Actions."
-      ]
-    },
-    {
-      "title": "Multi-Broker Paper Trading Platform",
-      "context": "Personal project",
-      "technologies": "Python, APIs, SQLite, testing, observability",
-      "bullets": [
-        "Built a modular Python platform for researching and operating rules-based paper-trading strategies across FX, CFDs, and US equities, separating strategy, execution, risk, market data, journaling, and dashboards.",
-        "Integrated IG, Capital.com, and Alpaca paper/demo workflows with SQLite journaling, risk controls, broker smoke checks, and automated tests."
-      ]
-    },
-    {
-      "title": "Unity Racing Game",
-      "url": "https://github.com/Jacklee504/unity-racing-game",
-      "context": "University Games Programming module",
-      "technologies": "Unity, C#, NavMesh AI, JSON and CSV persistence",
-      "bullets": [
-        "Developed race and hot-lap modes with configurable lap counts, checkpoint validation, timing, reset handling, and a CSV-backed top-10 leaderboard.",
-        "Implemented three NavMesh-controlled competitors following a 200+ node JSON race path, including corner-speed adjustments and respawn behaviour."
+        "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts across multiple European markets.",
+        "Developed a Python/GitHub Actions deal-ingestion pipeline with external product-data APIs, validation, deduplication, and human-review gates to prevent unverified pricing or listings from being automatically published.",
+        "Implemented automated deployment, alert workflows, and market-specific site behaviour using GitHub Actions and Cloudflare."
       ]
     }
   ],
   "skills": [
-    ["CI/CD & Cloud-Native", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Maven, Artifactory, Nexus"],
-    ["Delivery & Reliability", "Git, Gerrit, Jira, Confluence, Unit Testing, Build Verification, Artifact Repositories, Quality Assurance (QA), Technical Documentation, Agile Delivery"],
-    ["Programming & Scripting", "Python, Groovy, Bash, Java, C#, C, PHP, SQL, R"],
-    ["Web Development", "Hugo, HTML, JavaScript, CSS, SCSS, WordPress"],
-    ["Engineering Foundations", "Data Structures & Algorithms, Object-Oriented Programming, Database Systems, Computer Networks"]
+    ["Languages", "Python, TypeScript/JavaScript, Java, C#, C, SQL, Groovy, Bash"],
+    ["Cloud & DevOps", "Docker, Kubernetes, Jenkins, Spinnaker, Helm/Helmfile, GitHub Actions, Cloudflare"],
+    ["Web", "React, Next.js, Hugo, Tailwind CSS, HTML/CSS"],
+    ["Tools & Data", "Git, Gerrit, SQLite, Artifactory, Nexus, Jira"]
   ],
   "education": {
     "degree": "BSc (Hons) Computer Science & Information Technology",
@@ -98,17 +104,17 @@
     "dates": "2023–2027 (Expected)",
     "details": [
       "Target classification: First-Class Honours (1.1).",
-      "Third year: Programming III (78%), Professional Skills (67%), Networks & Data Communications 2 (63%), and Software Engineering 2 (46%).",
-      "Second year: Second Class Honours, Grade 1 (2.1), 68% average. Key modules: Introduction to Modelling (74%), Discrete Mathematics (72%), Networks & Data Communications (72%), Database Systems (71%), Object-Oriented Programming DS&A (68%), Software Engineering (68%), and Object-Oriented Programming (65%).",
-      "First year: Second Class Honours, Grade 2 (2.2). Key modules: Web Development (68%), Programming (66%), and Computing Systems (57%)."
+      "Relevant modules: Programming III, Software Engineering, Data Structures & Algorithms, Database Systems, Networks & Data Communications, Machine Learning."
     ],
     "secondary": {
       "qualification": "Leaving Certificate",
-      "institution": "Scoil Mhuire, Strokestown, Co. Roscommon",
+      "institution": "Scoil Mhuire, Strokestown",
       "dates": "2017–2023",
-      "details": "520 points across seven Higher-Level subjects: German (H2), Irish (H2), Geography (H2), Design & Communication Graphics (H2), Mathematics (H3), English (H4), and Physics & Chemistry (H4)."
+      "details": "520 points across seven Higher-Level subjects."
     }
   },
-  "professional_learning": "Selected verified coursework: Google Professional DevOps Engineer studies in CI/CD techniques and security, CI/CD architecture, service pipelines, and infrastructure as code; Kubernetes Application Developer studies in GitOps, continuous delivery, local development, and testing; AWS machine-learning coursework; Anthropic courses in Claude Code, the Claude API, and Model Context Protocol; cloud security and cybersecurity coursework.",
-  "activities": "Former competitive soccer and Gaelic football player, including a soccer Player of the Year award; member of the University of Galway Pool & Snooker Society."
+  "activities": [
+    "Former competitive soccer and Gaelic football player, including a soccer Player of the Year award.",
+    "Member of the University of Galway Pool & Snooker Society."
+  ]
 }

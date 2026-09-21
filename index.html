@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Lee | Computer Science &amp; Information Technology Student</title>
+    <title>Jack Lee | Software Engineering Portfolio</title>
     <meta
       name="description"
-      content="University of Galway Computer Science &amp; Information Technology student with software engineering internship experience in CI/CD tooling, cloud-native delivery workflows, and client web development."
+      content="Final-year Computer Science student focused on software engineering, developer tooling, and CI/CD. Eight months' software engineering experience on Ericsson's CI/CD platform team, with independent projects across developer tooling, trading systems, full-stack applications, and AI-assisted workflows."
     />
     <link rel="canonical" href="https://jack-lee.dev/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jack-lee.dev/" />
-    <meta property="og:title" content="Jack Lee | Computer Science & Information Technology Student" />
-    <meta property="og:description" content="University of Galway Computer Science & Information Technology student with experience in CI/CD tooling, cloud-native delivery workflows, and client web development." />
+    <meta property="og:title" content="Jack Lee | Software Engineering Portfolio" />
+    <meta property="og:description" content="Final-year Computer Science student focused on software engineering, developer tooling, and CI/CD, with experience on Ericsson's CI/CD platform team and independent projects across trading, web applications, and AI-assisted workflows." />
     <meta property="og:image" content="https://jack-lee.dev/assets/jack-lee-mark.png" />
     <meta property="og:image:alt" content="JL monogram for Jack Lee" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Jack Lee | Computer Science & Information Technology Student" />
-    <meta name="twitter:description" content="University of Galway Computer Science & Information Technology student with experience in CI/CD tooling, cloud-native delivery workflows, and client web development." />
+    <meta name="twitter:title" content="Jack Lee | Software Engineering Portfolio" />
+    <meta name="twitter:description" content="Final-year Computer Science student focused on software engineering, developer tooling, and CI/CD, with experience on Ericsson's CI/CD platform team." />
     <meta name="twitter:image" content="https://jack-lee.dev/assets/jack-lee-mark.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="assets/jack-lee-mark-transparent.png" />
     <link rel="apple-touch-icon" href="assets/jack-lee-mark-transparent.png" />
@@ -27,8 +27,8 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260828-5" />
-    <script defer src="assets/js/main.js?v=20260828-8"></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260921-1" />
+    <script defer src="assets/js/main.js?v=20260921-1"></script>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to main content</a>
@@ -41,11 +41,12 @@
           <span></span>
         </button>
         <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
-          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
-          <a href="credentials.html">Credentials</a>
+          <a href="#education">Education</a>
+          <a href="#credentials">Credentials</a>
+          <a href="cover-letter.html">Cover letters</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -55,23 +56,125 @@
       <section class="hero section">
         <div class="container">
           <p class="eyebrow">University of Galway | BSc (Hons) Computer Science &amp; Information Technology</p>
+          <h1>Jack Lee</h1>
           <p class="lead">
-            University of Galway Computer Science &amp; Information Technology student with software engineering internship
-            experience at Ericsson. Developed CI/CD tooling with Python, Jenkins/Groovy, and Spinnaker; improved build,
-            testing, packaging, and deployment workflows for cloud-native services; and delivered responsive client
-            websites and automation-focused personal projects.
+            Final-year Computer Science student focused on software engineering, developer tooling, and CI/CD.
+          </p>
+          <p>
+            Software engineering experience on Ericsson&apos;s CI/CD platform team, with independent projects across
+            developer tooling, trading systems, full-stack applications, and AI-assisted workflows.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="mailto:jack@jack-lee.dev">Email me</a>
-            <a class="button ghost" href="#projects">View projects</a>
-            <a class="button ghost" href="output/Jack_Lee_Software_Engineering_Resume.pdf" target="_blank" rel="noopener noreferrer">View resume (PDF)</a>
+            <a class="button primary" href="#projects">View projects</a>
+            <a class="button ghost" href="output/Jack_Lee_CV.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
+            <a class="button ghost" href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button ghost" href="mailto:jack@jack-lee.dev">Email me</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Featured Projects</h2>
+          <p class="meta">More projects available on <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+          <div class="grid">
+            <article class="card project-card">
+              <div class="card-head">
+                <h3><a class="project-title-link" href="https://github.com/JackLee504/dynamic-task-router" target="_blank" rel="noopener noreferrer">Dynamic Task Router</a> <span class="project-context">&middot; Personal project</span></h3>
+                <p>
+                  Routes development work to the right AI model instead of making the engineer pick every time.
+                </p>
+              </div>
+              <ul>
+                <li>Classifies bounded tasks by complexity, risk, and role, then dispatches to Codex, Claude Code, Qwen, OpenCode, OpenRouter, or local Ollama models.</li>
+                <li>One shared routing/runtime layer exposed through a CLI, an interactive TUI, and an MCP server.</li>
+                <li>Isolated worktrees and verification steps keep routed runs reviewable and side-effect free.</li>
+              </ul>
+              <ul class="project-chips" aria-label="Technologies">
+                <li>TypeScript</li>
+                <li>Node.js</li>
+                <li>MCP</li>
+                <li>CLI &amp; TUI</li>
+                <li>LLM APIs</li>
+              </ul>
+              <p class="project-links"><a href="https://github.com/JackLee504/dynamic-task-router" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            </article>
+
+            <article class="card project-card">
+              <div class="card-head">
+                <h3>Multi-Broker Trading Research Platform <span class="project-context">&middot; Personal project</span></h3>
+                <p>
+                  A modular Python research platform for designing and testing rules-based trading strategies across three brokers without risking capital.
+                </p>
+              </div>
+              <ul>
+                <li>Separate market-data, strategy, risk, execution, journaling, analytics, and UI components keep the system testable and maintainable.</li>
+                <li>Reproducible paper-trading sessions orchestrated across IG, Capital.com, and Alpaca for FX, CFDs, and US equities.</li>
+                <li>SQLite journaling, broker smoke tests, and automated test/security gates make runs repeatable and observable.</li>
+              </ul>
+              <ul class="project-chips" aria-label="Technologies">
+                <li>Python</li>
+                <li>IG &middot; Capital.com &middot; Alpaca</li>
+                <li>SQLite</li>
+                <li>VPS monitoring</li>
+              </ul>
+            </article>
+
+            <article class="card project-card">
+              <div class="card-head">
+                <h3><a class="project-title-link" href="https://github.com/JackLee504/Plan-Around" target="_blank" rel="noopener noreferrer">PlanAround</a> <span class="project-context">&middot; Pixel Forge AI Hackathon, August 2026</span></h3>
+                <p>
+                  Turns timetable screenshots and assignment briefs into a realistic study schedule that fits around lectures, commitments, and deadlines.
+                </p>
+              </div>
+              <ul>
+                <li>AI only extracts structure from messy inputs; workload estimation and scheduling stay deterministic and explainable.</li>
+                <li>Workload is derived from ECTS, assessment weighting, and rubric structure, not guessed by the model.</li>
+                <li>Recurring commitments, progress tracking, JSON backup, and ICS calendar export in a responsive PWA.</li>
+              </ul>
+              <ul class="project-chips" aria-label="Technologies">
+                <li>Next.js</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Tailwind CSS</li>
+                <li>Cloudflare Workers</li>
+                <li>Qwen3-VL</li>
+              </ul>
+              <p class="project-links">
+                <a href="https://github.com/JackLee504/Plan-Around" target="_blank" rel="noopener noreferrer">GitHub</a>
+                &middot; <a href="https://planaround.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo</a>
+                &middot; <a href="https://devpost.com/software/plan-around" target="_blank" rel="noopener noreferrer">Devpost</a>
+              </p>
+            </article>
+
+            <article class="card project-card">
+              <div class="card-head">
+                <h3>Deal Ledger <span class="project-context">&middot; Personal project</span></h3>
+                <p>
+                  Building and maintaining a multilingual deal-discovery platform across European markets, with human review before anything is published.
+                </p>
+              </div>
+              <ul>
+                <li>Market-specific routing, search, and email alerts across English, German, Dutch, and French.</li>
+                <li>A Python/GitHub Actions ingestion pipeline validates, deduplicates, and queues Amazon deal candidates for human review.</li>
+                <li>GitHub Actions and Cloudflare automate deployment, alerting, and market-specific behaviour.</li>
+              </ul>
+              <ul class="project-chips" aria-label="Technologies">
+                <li>Hugo</li>
+                <li>Python</li>
+                <li>GitHub Actions</li>
+                <li>Cloudflare Workers</li>
+              </ul>
+              <p class="project-links"><a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Live demo</a></p>
+            </article>
+
           </div>
         </div>
       </section>
 
       <section id="experience" class="section">
         <div class="container">
-          <h2>Internships</h2>
+          <h2>Experience</h2>
           <div class="timeline">
             <article class="card">
               <div class="card-head">
@@ -79,10 +182,10 @@
                 <p class="meta">Ericsson, Athlone, Co. Westmeath | January 2026&ndash;August 2026</p>
               </div>
               <ul>
-                <li>Developed and maintained Jenkins/Groovy pipeline stages and Spinnaker configurations for build, deployment, testing, and cleanup workflows; parameterised pipelines for configurable behaviour.</li>
-                <li>Independently decomposed a monolithic 2,000+ line Python CI module into 14 modular executor-specific files, with shared functionality and runtime configuration to reduce duplication.</li>
-                <li>Built packaging-verification stages and strengthened Artifactory/Nexus checks to identify undeclared binary content before release, supported by unit tests.</li>
-                <li>Diagnosed CI/CD and cloud-native infrastructure issues across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations; documented findings and coordinated fixes with other teams.</li>
+                <li>Independently refactored a monolithic 2,000+ line Python CI module into 14 executor-specific modules across approximately 25 development tasks, designing shared abstractions and runtime parameterisation to reduce duplicated logic and improve maintainability.</li>
+                <li>Developed and maintained Jenkins/Groovy and Spinnaker pipelines for build, deployment, testing, and cleanup workflows, including migrating test flows to lighter snapshot-based jobs to reduce execution time.</li>
+                <li>Built release-verification stages for cloud archive packaging and strengthened Artifactory/Nexus checks, identifying an undeclared ELF executable in production builds before release and raising remediation work.</li>
+                <li>Diagnosed CI/CD and cloud-native failures across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations, including resolving a blocker build regression and root-causing an RBAC cleanup failure to destructive Python file handling.</li>
               </ul>
             </article>
 
@@ -92,98 +195,72 @@
                 <p class="meta">Ossark, Athlone, Co. Westmeath | May 2025&ndash;August 2025</p>
               </div>
               <ul>
-                <li>Collaborated on full-stack website projects through implementation, QA, and release, communicating progress and incorporating feedback to help ensure changes were ready for client use.</li>
-                <li>Turned client and team feedback into practical page improvements, refining layouts and responsive behaviour while maintaining visual consistency across desktop and mobile.</li>
-                <li>Diagnosed and resolved frontend issues across existing sites, checking responsive behaviour and improving usability without disrupting established pages.</li>
-                <li>Delivered responsive, accessible PHP and SCSS updates for client websites.</li>
+                <li>Contributed to client website projects through implementation, QA, and release, delivering responsive PHP/SCSS changes across multiple production sites.</li>
+                <li>Diagnosed frontend issues and translated client/team feedback into layout, usability, and responsive-design improvements without disrupting established pages.</li>
               </ul>
               <p class="meta">
                 Selected client sites:
                 <a href="https://kerryfilmfestival.com/" target="_blank" rel="noopener noreferrer">Kerry International Film Festival</a>,
                 <a href="https://mclelectrical.ie/" target="_blank" rel="noopener noreferrer">MCL Electrical</a>,
                 <a href="https://anushkapowertherapy.ie/" target="_blank" rel="noopener noreferrer">Anushka Power Therapy</a>,
-                and <a href="https://dailyirishproduce.ie/" target="_blank" rel="noopener noreferrer">Daily Irish Produce</a>.
+                <a href="https://dailyirishproduce.ie/" target="_blank" rel="noopener noreferrer">Daily Irish Produce</a>,
+                and Capital Homes.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="work-experience" class="section alt">
+      <section id="skills" class="section">
         <div class="container">
-          <h2>Work Experience</h2>
-          <div class="timeline">
-            <article class="card">
-              <div class="card-head">
-                <h3>Cashier & Customer Service Representative</h3>
-                <p class="meta">Casey's Londis, Roscommon Town | May 2024&ndash;March 2026</p>
-              </div>
-              <ul>
-                <li>Provided clear, helpful service while handling transactions and resolving customer queries in a high-volume retail setting.</li>
-                <li>Coordinated with a small team to prioritise tasks, communicate changes, and keep checkout operations running smoothly during busy periods.</li>
+          <h2>Technical Skills</h2>
+          <div class="skills-groups">
+            <div class="skill-group">
+              <p><strong>Languages</strong></p>
+              <ul class="project-chips" aria-label="Languages">
+                <li>Python</li>
+                <li>TypeScript / JavaScript</li>
+                <li>Java</li>
+                <li>C#</li>
+                <li>C</li>
+                <li>SQL</li>
+                <li>Groovy</li>
+                <li>Bash</li>
               </ul>
-            </article>
-
-            <article class="card">
-              <div class="card-head">
-                <h3>Fast Food Crew Member (Cashier & Kitchen Team Member)</h3>
-                <p class="meta">Blue Thunder, Roscommon Town | April 2022&ndash;August 2022</p>
-              </div>
-              <ul>
-                <li>Coordinated cashier and kitchen duties with teammates, using clear handovers to keep customer orders accurate during high-volume shifts.</li>
-                <li>Responded constructively to changing customer needs and priorities, helping the team maintain efficient service under pressure.</li>
+            </div>
+            <div class="skill-group">
+              <p><strong>Cloud &amp; DevOps</strong></p>
+              <ul class="project-chips" aria-label="Cloud and DevOps">
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>Jenkins</li>
+                <li>Spinnaker</li>
+                <li>Helm / Helmfile</li>
+                <li>GitHub Actions</li>
+                <li>Cloudflare</li>
               </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="container">
-          <h2>Projects</h2>
-          <p class="meta">More projects available on <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-          <div class="grid">
-            <article class="card">
-              <h3>Multi-Broker Paper Trading Platform <span class="project-context">&middot; Personal project</span></h3>
-              <p>
-                Developed a Python platform for researching, testing, and operating rules-based trading strategies across FX, CFDs, and US equities.
-              </p>
-              <ul>
-                <li>Built separate strategy, execution, risk, market-data, journaling, and dashboard components to keep the system testable and maintainable.</li>
-                <li>Integrated paper/demo workflows for IG FX, Capital.com CFDs, and Alpaca equities, including fully simulated and live-price, simulated-execution modes.</li>
-                <li>Recorded signals, orders, and account snapshots in SQLite; produced dashboards and run artifacts for reviewing execution and strategy behaviour.</li>
-                <li>Added risk-aware controls, broker smoke checks, automated test coverage, and operational tooling for repeatable paper sessions.</li>
+            </div>
+            <div class="skill-group">
+              <p><strong>Web</strong></p>
+              <ul class="project-chips" aria-label="Web technologies">
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Hugo</li>
+                <li>Tailwind CSS</li>
+                <li>HTML / CSS</li>
               </ul>
-              <p class="meta">Python, API integration, modular architecture, paper-trading workflows, SQLite, risk controls, observability, automated testing</p>
-            </article>
-
-            <article class="card featured-project">
-              <h3>Deal Ledger <span class="project-context">&middot; Personal project</span></h3>
-              <p>
-                Building and maintaining <a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Deal Ledger</a>,
-                a multilingual affiliate deal-discovery site that helps readers find relevant product offers and set email alerts.
-              </p>
-              <ul>
-                <li>Built a responsive Hugo site with localised interfaces in English, German, Dutch, and French, plus market-specific content and routing.</li>
-                <li>Developed Python workflows to import Amazon deal candidates into a manual review queue, sync listing metadata, and validate price freshness before release.</li>
-                <li>Automated builds, content checks, SEO auditing, and alert-email workflows with GitHub Actions; managed domain and DNS configuration alongside market routing with Cloudflare Workers.</li>
+            </div>
+            <div class="skill-group">
+              <p><strong>Tools &amp; Data</strong></p>
+              <ul class="project-chips" aria-label="Tools and data">
+                <li>Git</li>
+                <li>Gerrit</li>
+                <li>SQLite</li>
+                <li>Artifactory</li>
+                <li>Nexus</li>
+                <li>Jira</li>
               </ul>
-              <p class="meta">Hugo, Python automation, GitHub Actions CI/CD, internationalisation, responsive front-end development, Cloudflare Workers, domain and DNS configuration, technical SEO, data-quality validation</p>
-            </article>
-
-            <article class="card">
-              <h3><a class="project-title-link" href="https://github.com/Jacklee504/unity-racing-game" target="_blank" rel="noopener noreferrer">Unity Racing Game</a> <span class="project-context">&middot; University Games Programming module</span></h3>
-              <p>
-                Developed a Unity/C# racing game with race and hot-lap modes, configurable lap counts, timers, and game-state UI.
-              </p>
-              <ul>
-                <li>Implemented a persistent top-10 lap-time leaderboard, storing and sorting player records in CSV through Unity&apos;s persistent storage.</li>
-                <li>Built three NavMesh-driven AI opponents using a 200+ node race path persisted as JSON, with corner-aware speed and turning adjustments.</li>
-                <li>Added checkpoint-gated lap validation, respawn and reset flows, and Blender-based track customisation.</li>
-              </ul>
-              <p class="meta">Unity, C#, NavMesh AI, JSON and CSV persistence, game-state management</p>
-            </article>
-
+            </div>
           </div>
         </div>
       </section>
@@ -195,30 +272,15 @@
           <article class="card">
             <h3>BSc (Hons) Computer Science &amp; Information Technology</h3>
             <p class="meta">University of Galway, Ireland | 2023&ndash;2027</p>
-            <p>Expected graduation: 2027. Target classification: First Class Honours (1.1).</p>
-            <p><strong>Third year:</strong> Core modules: Programming III (78%), Professional Skills (67%), Networks &amp; Data Communications 2 (63%), and Games Programming (63%).</p>
-            <p><strong>Second year:</strong> Second Class Honours, Grade 1 (2.1), 68% average. Key modules: Introduction to Modelling (74%), Discrete Mathematics (72%), Networks &amp; Data Communications (72%), Database Systems (71%), Object-Oriented Programming DS&amp;A (68%), Software Engineering (68%), and Object-Oriented Programming (65%).</p>
-            <p><strong>First year:</strong> Second Class Honours, Grade 2 (2.2). Key modules: Web Development (68%), Programming (66%), and Computing Systems (57%).</p>
+            <p>Target classification: First-Class Honours (1.1).</p>
+            <p>Relevant modules: Programming III, Software Engineering, Data Structures &amp; Algorithms, Database Systems, Networks &amp; Data Communications, Machine Learning.</p>
           </article>
 
           <article class="card">
             <h3>Leaving Certificate</h3>
-            <p class="meta">Scoil Mhuire, Strokestown, Co. Roscommon | 2017&ndash;2023</p>
-            <p>Achieved 520 points across seven Higher-Level subjects: German (H2), Irish (H2), Geography (H2), Design &amp; Communication Graphics (H2), Mathematics (H3), English (H4), and Physics &amp; Chemistry (H4).</p>
+            <p class="meta">Scoil Mhuire, Strokestown | 2017&ndash;2023</p>
+            <p>520 points.</p>
           </article>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <div class="container">
-          <h2>Technical Skills</h2>
-          <ul class="skills-list">
-            <li><strong>CI/CD &amp; Cloud-Native:</strong> Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Artifactory</li>
-            <li><strong>Delivery &amp; Reliability:</strong> Git, Gerrit, Jira, Confluence, Unit Testing, Build Verification, Artifact Repositories, Quality Assurance (QA), Technical Documentation, Agile Delivery</li>
-            <li><strong>Programming &amp; Scripting:</strong> Python, Groovy, Bash, Java, C#, C, PHP, SQL, R</li>
-            <li><strong>Web Development:</strong> HTML, JavaScript, CSS, SCSS, WordPress, Hugo</li>
-            <li><strong>Engineering Foundations:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Systems, Computer Networks</li>
-          </ul>
         </div>
       </section>
 
@@ -309,10 +371,23 @@
                   </summary>
                   <div class="cert-detail">
                     <p>Certificate of participation recognising creative and technical contribution to the Pixel Forge AI Hackathon, held in August 2026.</p>
-                    <p><strong>Project:</strong> Plan-Around</p>
+                    <p><strong>Project:</strong> PlanAround</p>
                     <p><strong>Issued:</strong> September 3, 2026</p>
                     <p><strong>Issued by:</strong> Rishabh Mittal, organiser</p>
                     <p><strong>Links:</strong> <a href="https://devpost.com/software/plan-around" target="_blank" rel="noopener noreferrer">Devpost submission</a> · <a href="https://planaround.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo</a> · <a href="https://github.com/Jacklee504/Plan-Around" target="_blank" rel="noopener noreferrer">GitHub repository</a></p>
+                  </div>
+                </details>
+
+                <details class="cert-card">
+                  <summary>
+                    <span class="cert-title">Impact Forge Summer 2026 Hackathon</span>
+                    <span class="cert-meta">Participant | August 2026</span>
+                  </summary>
+                  <div class="cert-detail">
+                    <p>Participated in a 48-hour virtual code sprint held August 14&ndash;16, 2026, and submitted a completed project for judging by industry engineers.</p>
+                    <p><strong>Issued:</strong> August 19, 2026</p>
+                    <p><strong>Issued by:</strong> Ayaan Rustagi, organiser</p>
+                    <p><strong>Event:</strong> <a href="https://impactforge26.devpost.com/" target="_blank" rel="noopener noreferrer">Impact Forge Summer 2026 Hackathon</a></p>
                   </div>
                 </details>
               </div>
@@ -1288,7 +1363,7 @@
       </section>
       </template>
 
-      <section id="certifications" class="section alt">
+      <section id="credentials" class="section alt">
         <div class="container">
           <h2>Credentials</h2>
           <p class="credential-intro">
@@ -1298,14 +1373,29 @@
         </div>
       </section>
 
-      <section id="awards" class="section">
+      <section id="additional" class="section">
         <div class="container">
-          <h2>Activities &amp; Interests</h2>
+          <h2>Additional Experience &amp; Activities</h2>
+          <div class="timeline">
+            <article class="card">
+              <div class="card-head">
+                <h3>Cashier &amp; Customer Service Representative</h3>
+                <p class="meta">Casey&apos;s Londis, Roscommon Town | May 2024&ndash;March 2026</p>
+              </div>
+              <p>Handled transactions and customer queries in a high-volume retail environment while coordinating with a small team during busy periods.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-head">
+                <h3>Cashier &amp; Kitchen Team Member</h3>
+                <p class="meta">Blue Thunder, Roscommon Town | April 2022&ndash;August 2022</p>
+              </div>
+              <p>Coordinated cashier and kitchen duties with clear handovers to keep customer orders accurate during high-volume shifts.</p>
+            </article>
+          </div>
           <ul>
-            <li>Hackathon participant, including Impact Forge 2026 and the Pixel Forge AI Hackathon.</li>
             <li>Build independent software projects alongside coursework, with interests in AI tools, web platforms, and algorithmic trading systems.</li>
-            <li>Competitive soccer and Gaelic football player; multiple competition winner and recipient of a soccer Player of the Year award.</li>
-            <li>Member of the University of Galway Pool &amp; Snooker Society.</li>
+            <li>Former competitive soccer and Gaelic football player, including a soccer Player of the Year award; member of the University of Galway Pool &amp; Snooker Society.</li>
           </ul>
         </div>
       </section>
@@ -1316,7 +1406,9 @@
           <p>
             Email: <a href="mailto:jack@jack-lee.dev">jack@jack-lee.dev</a><br />
             LinkedIn: <a href="https://www.linkedin.com/in/jack-lee12" target="_blank" rel="noopener noreferrer">linkedin.com/in/jack-lee12</a><br />
-            GitHub: <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">github.com/JackLee504</a>
+            GitHub: <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">github.com/JackLee504</a><br />
+            CV: <a href="output/Jack_Lee_CV.pdf" target="_blank" rel="noopener noreferrer">Jack_Lee_CV.pdf</a> &middot;
+            <a href="output/Jack_Lee_Software_Engineering_Resume.pdf" target="_blank" rel="noopener noreferrer">One-page resume (PDF)</a>
           </p>
         </div>
       </section>

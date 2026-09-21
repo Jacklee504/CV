@@ -1,0 +1,1 @@
+"""Shared direct-PDF rendering layer for the resume and the CV."""

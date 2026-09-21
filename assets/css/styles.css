@@ -126,6 +126,14 @@ section[id] {
   outline: none;
 }
 
+.site-nav a.is-active {
+  background: var(--surface-alt);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
 a:focus-visible,
 .button:focus-visible,
 summary:focus-visible,
@@ -302,6 +310,220 @@ h2 {
   font-size: 0.92em;
   font-weight: 600;
   white-space: nowrap;
+}
+
+.letter-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.letter-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-field-wide {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-field label span {
+  color: var(--muted);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.92em;
+  font-weight: 400;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea,
+.letter-output textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  color: var(--text);
+  background: var(--surface);
+  font: inherit;
+  line-height: 1.5;
+}
+
+.form-field textarea,
+.letter-output textarea {
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus,
+.letter-output textarea:focus {
+  outline: 3px solid color-mix(in srgb, var(--accent) 45%, white);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.letter-output-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.letter-output-heading .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.letter-output-heading h2 {
+  margin-bottom: 0;
+}
+
+.letter-output .button {
+  flex: none;
+}
+
+.letter-output textarea {
+  min-height: 29rem;
+}
+
+.letter-output .meta {
+  margin: 0.8rem 0 0;
+}
+
+.letter-match {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.letter-match h3 {
+  margin: 0 0 0.35rem;
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 1rem;
+}
+
+.letter-match .eyebrow {
+  margin-bottom: 0.3rem;
+}
+
+.letter-match p:not(.eyebrow):not(.meta) {
+  margin: 0;
+}
+
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.75rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.keyword-list li {
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  color: var(--accent-strong);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.project-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-chips li {
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  border-radius: 999px;
+  padding: 0.22rem 0.55rem;
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--surface) 78%, var(--surface-alt));
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition:
+    border-color 180ms ease-out,
+    background 180ms ease-out;
+}
+
+.project-links {
+  margin: 0.7rem 0 0;
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.project-links a {
+  text-decoration: none;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+  text-decoration: underline;
+}
+
+.project-card {
+  transition:
+    transform 220ms ease-out,
+    border-color 220ms ease-out,
+    box-shadow 220ms ease-out;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: 0 14px 34px rgba(23, 50, 77, 0.14);
+}
+
+.project-card:hover .project-chips li,
+.project-card:focus-within .project-chips li {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: var(--surface);
+}
+
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+.skill-group > p {
+  margin: 0 0 0.55rem;
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+}
+
+.skill-group .project-chips {
+  margin-top: 0;
 }
 
 /* Keep every employment date on the same visual level in the shared timeline. */
@@ -538,8 +760,20 @@ a {
     flex-wrap: wrap;
   }
 
+  .letter-workspace {
+    grid-template-columns: 1fr;
+  }
+
   .featured-project {
     padding: 1.15rem;
+  }
+
+  .letter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-wide {
+    grid-column: auto;
   }
 
   .footer-inner {
@@ -577,6 +811,10 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;
@@ -590,5 +828,16 @@ a {
 
   .section.nav-target h2::after {
     animation: none;
+  }
+
+  .project-card,
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: none;
+    transition: none;
+  }
+
+  .project-chips li {
+    transition: none;
   }
 }

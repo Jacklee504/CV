@@ -1,149 +1,177 @@
-"""Build a fuller recruiter-facing CV from content/cv.json."""
+"""Build the full CV PDF directly from content/cv.json."""
+
+from __future__ import annotations
 
 import json
 from pathlib import Path
 
-from docx import Document
-from docx.shared import Inches
+from pypdf import PdfReader
 
-import build_resume as resume
-
-
-CONTENT = Path("content/cv.json")
-OUT = Path("output/Jack_Lee_CV.docx")
-
-
-def add_body(document, text, *, after=2.5, size=9.5, line=1.08):
-    paragraph = document.add_paragraph(style="Resume Body")
-    resume.set_paragraph_spacing(paragraph, after=after, line=line)
-    run = paragraph.add_run(text)
-    resume.set_font(run, size=size, color=resume.INK)
-    return paragraph
+from pdf.components import (
+    PdfRenderer,
+    build_contact_markup,
+    build_project,
+    build_role,
+    build_section,
+)
+from pdf.layout import CV_STYLE, make_document, register_fonts
 
 
-def configure_cv_styles(document):
-    """Apply the roomier CV scale without changing the one-page resume styles."""
-    section_style = document.styles["Resume Section"]
-    section_style.font.size = resume.Pt(10.9)
-    section_style.paragraph_format.space_before = resume.Pt(13.5)
-    section_style.paragraph_format.space_after = resume.Pt(5.5)
+REQUIRED_TEXT = ("Jack Lee", "Ericsson", "University of Galway")
 
 
-def add_project(document, project, num_id):
-    detail = f"{project['context']} | {project['technologies']}"
-    paragraphs = [resume.add_entry_header(
-        document,
-        project["title"],
-        detail,
-        detail_italic=True,
-        title_url=project.get("url"),
-    )]
-    for bullet in project["bullets"]:
-        paragraph = document.add_paragraph(style="Resume Body")
-        pPr = paragraph._p.get_or_add_pPr()
-        numPr = resume.OxmlElement("w:numPr")
-        ilvl = resume.OxmlElement("w:ilvl")
-        ilvl.set(resume.qn("w:val"), "0")
-        num_id_element = resume.OxmlElement("w:numId")
-        num_id_element.set(resume.qn("w:val"), str(num_id))
-        numPr.append(ilvl)
-        numPr.append(num_id_element)
-        pPr.append(numPr)
-        run = paragraph.add_run(bullet)
-        resume.set_font(run, size=resume.BODY_SIZE, color=resume.INK)
-        resume.set_paragraph_spacing(paragraph, after=3.2, line=1.07)
-        resume.set_keep(paragraph, keep_together=True)
-        paragraphs.append(paragraph)
+def build_cv(
+    content_path: Path = Path("content/cv.json"),
+    output_path: Path = Path("output/Jack_Lee_CV.pdf"),
+) -> Path:
+    """Generate the two-page CV PDF from the JSON content source."""
+    try:
+        content = json.loads(content_path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        raise RuntimeError(f"Content file not found: {content_path}")
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"Invalid JSON in {content_path}: {exc}") from exc
 
-    # Keep each project as one block, while allowing completed projects to fill page one.
-    for paragraph in paragraphs[:-1]:
-        resume.set_keep(paragraph, keep_with_next=True, keep_together=True)
+    register_fonts()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
 
+    renderer = PdfRenderer(CV_STYLE)
+    story = build_cv_story(renderer, content)
 
-def add_cv_skills(document, skills):
-    paragraph = document.add_paragraph(style="Resume Body")
-    resume.set_paragraph_spacing(paragraph, after=2.5, line=1.15)
-    for index, (label, value) in enumerate(skills):
-        run = paragraph.add_run(f"{label}: ")
-        resume.set_font(run, size=10.15, bold=True, color=resume.INK)
-        run = paragraph.add_run(value)
-        resume.set_font(run, size=10.15, color=resume.INK)
-        if index < len(skills) - 1:
-            paragraph.add_run("\n")
-    return paragraph
-
-
-def add_education(document, education):
-    resume.add_entry_header(
-        document,
-        education["degree"],
-        None,
-        education["dates"],
+    document = make_document(
+        output_path,
+        title=f"{content['name']} - Curriculum Vitae",
+        author=content["name"],
+        subject="Curriculum Vitae",
+        style=CV_STYLE,
     )
-    add_body(document, education["institution"], after=4.5, size=10.15, line=1.12)
-    for detail in education["details"]:
-        add_body(document, detail, after=4.5, size=10.15, line=1.12)
+    document.build(story)
+    validate_cv(output_path)
+    print(output_path)
+    return output_path
+
+
+def build_cv_story(renderer: PdfRenderer, content: dict):
+    story = []
+    story.extend(renderer.header(content["name"], build_contact_markup(content)))
+
+    story.extend(
+        build_section(
+            renderer, "Profile", [[renderer.summary_paragraph(content["profile"])]]
+        )
+    )
+
+    experience_blocks = [build_role(renderer, role) for role in content["experience"]]
+    story.extend(build_section(renderer, "Professional Experience", experience_blocks))
+
+    story.extend(
+        build_section(
+            renderer, "Technical Skills", [[renderer.skills(content["skills"])]]
+        )
+    )
+
+    project_blocks = [
+        build_project(renderer, project, with_context=True)
+        for project in content["projects"]
+    ]
+    story.extend(build_section(renderer, "Selected Projects", project_blocks))
+
+    story.extend(build_section(renderer, "Education", build_education(renderer, content["education"])))
+
+    additional_blocks = [
+        add_additional_entry(renderer, entry, index, len(content["additional_experience"]))
+        for index, entry in enumerate(content["additional_experience"])
+    ]
+    story.extend(build_section(renderer, "Additional Experience", additional_blocks))
+
+    activity_blocks = [
+        [
+            renderer.plain(
+                activity,
+                size=CV_STYLE.education_size,
+                leading=CV_STYLE.education_leading,
+                space_after=3 if index < len(content["activities"]) - 1 else 0,
+            )
+        ]
+        for index, activity in enumerate(content["activities"])
+    ]
+    story.extend(build_section(renderer, "Activities & Interests", activity_blocks))
+    return story
+
+
+def build_education(renderer: PdfRenderer, education: dict):
+    blocks = []
+    details = [education["institution"]] + list(education["details"])
+    degree_block = [
+        renderer.entry_header(title=education["degree"], dates=education["dates"])
+    ]
+    degree_block.extend(
+        renderer.plain(
+            detail, size=CV_STYLE.education_size, leading=CV_STYLE.education_leading
+        )
+        for detail in details
+    )
+    blocks.append(degree_block)
 
     secondary = education["secondary"]
-    resume.add_entry_header(
-        document,
-        secondary["qualification"],
-        secondary["institution"],
-        secondary["dates"],
+    blocks.append(
+        [
+            renderer.entry_header(
+                title=secondary["qualification"],
+                detail=secondary["institution"],
+                dates=secondary["dates"],
+            ),
+            renderer.plain(
+                secondary["details"],
+                size=CV_STYLE.education_size,
+                leading=CV_STYLE.education_leading,
+            ),
+        ]
     )
-    add_body(document, secondary["details"], after=4.5, size=10.15, line=1.12)
+    return blocks
 
 
-def main():
-    content = json.loads(CONTENT.read_text(encoding="utf-8"))
-    OUT.parent.mkdir(parents=True, exist_ok=True)
+def add_additional_entry(renderer: PdfRenderer, entry: dict, index: int, total: int):
+    detail = f"{entry['organisation']}, {entry['location']}"
+    return [
+        renderer.entry_header(title=entry["title"], detail=detail, dates=entry["dates"]),
+        renderer.plain(
+            entry["note"],
+            size=CV_STYLE.education_size,
+            leading=CV_STYLE.education_leading,
+            space_after=4 if index < total - 1 else 0,
+        ),
+    ]
 
-    # A CV can breathe more than a one-page resume while retaining the same visual system.
-    resume.BODY_SIZE = 9.75
-    resume.ENTRY_SIZE = 10.2
-    resume.DATE_SIZE = 9.55
 
-    document = Document()
-    resume.configure_document(document)
-    configure_cv_styles(document)
-    section = document.sections[0]
-    section.top_margin = Inches(0.7)
-    section.bottom_margin = Inches(0.58)
-    section.left_margin = Inches(0.68)
-    section.right_margin = Inches(0.68)
+def validate_cv(path: Path) -> None:
+    reader = PdfReader(str(path))
+    page_count = len(reader.pages)
+    if page_count != 2:
+        raise RuntimeError(f"CV PDF must be exactly 2 pages, generated {page_count} pages: {path}")
+    text = "".join(page.extract_text() or "" for page in reader.pages).lower()
+    missing = [item for item in REQUIRED_TEXT if item.lower() not in text]
+    if missing:
+        raise RuntimeError(f"CV PDF missing expected text {missing}: {path}")
+    link_count = sum(
+        len(_uri_annotations(page)) for page in reader.pages
+    )
+    if link_count == 0:
+        raise RuntimeError(f"CV PDF contains no clickable links: {path}")
 
-    num_id = resume.add_custom_bullet_numbering(document)
-    resume.add_header(document, content)
 
-    resume.add_section(document, "Profile")
-    add_body(document, content["profile"], after=5, size=9.9)
-
-    resume.add_section(document, "Professional Experience")
-    for role in content["experience"]:
-        resume.add_role(document, role, num_id)
-
-    resume.add_section(document, "Selected Projects")
-    for project in content["projects"]:
-        add_project(document, project, num_id)
-
-    resume.add_section(document, "Technical Skills")
-    add_cv_skills(document, content["skills"])
-
-    resume.add_section(document, "Education")
-    add_education(document, content["education"])
-
-    resume.add_section(document, "Professional Learning")
-    add_body(document, content["professional_learning"], after=6, size=10.15, line=1.12)
-
-    resume.add_section(document, "Activities & Interests")
-    add_body(document, content["activities"], after=0, size=10.15, line=1.12)
-
-    document.core_properties.title = f"{content['name']} – Curriculum Vitae"
-    document.core_properties.author = content["name"]
-    document.core_properties.subject = "Curriculum Vitae"
-    document.save(OUT)
-    print(OUT)
+def _uri_annotations(page) -> list:
+    annots = page.get("/Annots")
+    if not annots:
+        return []
+    links = []
+    for ref in annots:
+        annot = ref.get_object()
+        action = annot.get("/A")
+        if action is not None and action.get("/S") == "/URI":
+            links.append(action.get("/URI"))
+    return links
 
 
 if __name__ == "__main__":
-    main()
+    build_cv()
