@@ -6,7 +6,7 @@
     { "label": "LinkedIn", "username": "jack-lee12", "url": "https://www.linkedin.com/in/jack-lee12" },
     { "label": "GitHub", "username": "JackLee504", "url": "https://github.com/JackLee504" }
   ],
-  "summary": "Final-year Computer Science & Information Technology student with 8 months' software engineering experience on Ericsson's CI/CD platform team, building Python automation, cloud-native CI/CD infrastructure, developer tooling, and independent software systems spanning trading, web applications, and AI-assisted workflows.",
+  "summary": "Final-year Computer Science & Information Technology student with 8 months' software engineering experience on a central CI/CD pipeline team at Ericsson, building Python automation, cloud-native CI/CD infrastructure, developer tooling, and independent software systems spanning trading, web applications, and AI-assisted workflows.",
   "experience": [
     {
       "title": "Software Engineering Intern",
