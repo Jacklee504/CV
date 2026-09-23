@@ -62,6 +62,15 @@
   ],
   "projects": [
     {
+      "title": "Multi-Broker Trading Platform",
+      "context": "Personal project",
+      "technologies": "Python · scikit-learn · PyTorch · Gymnasium · PPO · IG/Capital.com/Alpaca APIs · SQLite · Walk-forward validation",
+      "bullets": [
+        "Built a modular Python quantitative research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, with separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
+        "Developed supervised ML and reinforcement-learning pipelines using scikit-learn, PyTorch, Gymnasium, and PPO, with causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, negative controls, falsification tests, and sealed out-of-sample evaluation."
+      ]
+    },
+    {
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
       "context": "Personal project",
@@ -70,15 +79,6 @@
         "Built a provider-agnostic engineering orchestrator that routes bounded development tasks across local and cloud AI models based on task complexity, risk, and role.",
         "Developed a shared routing/runtime layer exposed through CLI, interactive TUI, and MCP interfaces, with isolated worktrees, verification steps, and multi-provider execution.",
         "Added support for multiple coding/model providers including Codex, Claude Code, Qwen, OpenCode, OpenRouter, and local Ollama workflows."
-      ]
-    },
-    {
-      "title": "Multi-Broker Trading Platform",
-      "context": "Personal project",
-      "technologies": "Python · scikit-learn · PyTorch · Gymnasium · PPO · IG/Capital.com/Alpaca APIs · SQLite · Walk-forward validation",
-      "bullets": [
-        "Built a modular Python quantitative research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, with separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
-        "Developed supervised ML and reinforcement-learning pipelines using scikit-learn, PyTorch, Gymnasium, and PPO, with causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, negative controls, falsification tests, and sealed out-of-sample evaluation."
       ]
     },
     {
