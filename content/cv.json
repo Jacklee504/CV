@@ -66,8 +66,8 @@
       "context": "Personal project",
       "technologies": "Python · scikit-learn · PyTorch · Gymnasium · PPO · IG/Capital.com/Alpaca APIs · SQLite · Walk-forward validation",
       "bullets": [
-        "Built a modular Python quantitative research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, with separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
-        "Developed supervised ML and reinforcement-learning pipelines using scikit-learn, PyTorch, Gymnasium, and PPO, with causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, negative controls, falsification tests, and sealed out-of-sample evaluation."
+        "Built a modular quantitative research and paper-trading platform spanning FX, CFDs, and US equities, integrating IG, Capital.com, and Alpaca demo APIs into separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
+        "Developed reproducible supervised ML and reinforcement-learning pipelines with scikit-learn, PyTorch, Gymnasium, and PPO, combining causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, broker smoke tests, and sealed out-of-sample evaluation."
       ]
     },
     {
@@ -76,9 +76,9 @@
       "context": "Personal project",
       "technologies": "TypeScript · Node.js · MCP · CLI/TUI · Git worktrees · Multi-provider LLM orchestration",
       "bullets": [
-        "Built a provider-agnostic engineering orchestrator that routes bounded development tasks across local and cloud AI models based on task complexity, risk, and role.",
-        "Developed a shared routing/runtime layer exposed through CLI, interactive TUI, and MCP interfaces, with isolated worktrees, verification steps, and multi-provider execution.",
-        "Added support for multiple coding/model providers including Codex, Claude Code, Qwen, OpenCode, OpenRouter, and local Ollama workflows."
+        "Built an open-source, provider-agnostic engineering orchestrator that turns cross-cutting work into bounded tasks with explicit ownership, verification, handoff, and token-budget controls.",
+        "Implemented shared deterministic routing, execution, and telemetry behind CLI, interactive TUI, and local STDIO MCP interfaces, isolating worktrees and run metadata outside target repositories.",
+        "Added configuration-driven model discovery and routing policies for Codex, Claude Code, Qwen, OpenCode, OpenRouter, and local Ollama workflows."
       ]
     },
     {
@@ -87,8 +87,8 @@
       "context": "Pixel Forge AI Hackathon, Aug 2026",
       "technologies": "Next.js · React · TypeScript · Tailwind CSS · Cloudflare Workers · Featherless · Structured extraction",
       "bullets": [
-        "Built a student planning application that converts timetable screenshots and assignment briefs into realistic study schedules around lectures, commitments, and deadlines.",
-        "Designed an explainable scheduling system that derives workload from ECTS, assessment weighting, and rubric structure, using AI only for structured extraction while keeping workload and scheduling decisions deterministic."
+        "Built an offline-capable student-planning app that imports timetable screenshots or PDFs and assignment briefs, combining classes, commitments, deadlines, and scheduling preferences into actionable study sessions.",
+        "Designed deterministic workload calculation, scheduling, stale-plan detection, and replanning that preserves completed work; restricted AI to reviewable extraction of unstructured input rather than calendar decisions."
       ]
     },
     {
@@ -97,9 +97,9 @@
       "context": "Personal project",
       "technologies": "Hugo · Python · GitHub Actions · Cloudflare Workers · Product-data APIs · Validation/deduplication · Email alerts",
       "bullets": [
-        "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts across multiple European markets.",
-        "Developed a Python/GitHub Actions deal-ingestion pipeline with external product-data APIs, validation, deduplication, and human-review gates to prevent unverified pricing or listings from being automatically published.",
-        "Implemented automated deployment, alert workflows, and market-specific site behaviour using GitHub Actions and Cloudflare."
+        "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts for multiple European markets.",
+        "Developed a Python/GitHub Actions ingestion pipeline that enriches external product data, validates prices and listings, deduplicates candidates, and routes uncertain submissions to human review.",
+        "Automated deployment, monitoring alerts, and market-specific routing through GitHub Actions, Cloudflare Workers, and DNS configuration."
       ]
     }
   ],
