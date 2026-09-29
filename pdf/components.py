@@ -332,10 +332,10 @@ def build_project(
         flowables.append(
             renderer.plain(
                 project["technologies"],
-                size=8.7,
-                leading=10.2,
+                size=9.5,
+                leading=11.2,
                 italic=True,
-                color=MUTED,
+                color=INK,
                 space_after=0.5,
             )
         )

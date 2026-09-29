@@ -171,7 +171,7 @@ class DocumentStyle:
 
 
 RESUME_STYLE = DocumentStyle(
-    name_size=19,
+    name_size=16,
     name_leading=22.0,
     name_space_after=1,
     contact_size=8.8,
@@ -211,7 +211,7 @@ RESUME_STYLE = DocumentStyle(
 )
 
 CV_STYLE = DocumentStyle(
-    name_size=19,
+    name_size=16,
     name_leading=22.0,
     name_space_after=1,
     contact_size=8.8,
@@ -237,8 +237,8 @@ CV_STYLE = DocumentStyle(
     summary_size=10.0,
     summary_leading=12.0,
     summary_space_after=5,
-    skills_size=10.2,
-    skills_leading=13.6,
+    skills_size=10.6,
+    skills_leading=14,
     skills_space_after=2.5,
     education_size=10.3,
     education_leading=13.2,

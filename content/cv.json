@@ -1,24 +1,24 @@
 {
   "name": "Jack Lee",
-  "location": "Roscommon, Ireland",
+  "location": "Galway, Ireland",
   "email": "jack@jack-lee.dev",
   "links": [
     { "label": "LinkedIn", "username": "jack-lee12", "url": "https://www.linkedin.com/in/jack-lee12" },
     { "label": "GitHub", "username": "JackLee504", "url": "https://github.com/JackLee504" },
     { "label": "Portfolio", "username": "jack-lee.dev", "url": "https://jack-lee.dev" }
   ],
-  "profile": "Final-year Computer Science & Information Technology student with 8 months' software engineering experience on a central CI/CD pipeline team at Ericsson. Experience building Python automation, cloud-native CI/CD infrastructure, developer tooling, and independent software systems spanning trading, web applications, and AI-assisted workflows.",
   "experience": [
     {
-      "title": "Software Engineering Intern",
+      "title": "Software Engineer Intern",
       "organisation": "Ericsson",
       "location": "Athlone, Co. Westmeath, Ireland",
       "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Independently refactored a monolithic 2,000+ line Python CI module into 14 executor-specific modules across approximately 25 development tasks, designing shared abstractions and runtime parameterisation to reduce duplicated logic and improve maintainability.",
-        "Developed and maintained Jenkins/Groovy and Spinnaker pipelines for build, deployment, testing, and cleanup workflows, including migrating test flows to lighter snapshot-based jobs to reduce execution time.",
-        "Built release-verification stages for cloud archive packaging and strengthened Artifactory/Nexus checks, identifying an undeclared ELF executable in production builds before release and raising remediation work.",
-        "Diagnosed CI/CD and cloud-native failures across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations, including resolving a blocker build regression and root-causing an RBAC cleanup failure to destructive Python file handling."
+        "Developed and maintained Jenkins/Groovy stages for build, test, deployment, and cleanup workflows; configured Spinnaker parameters and cross-pipeline integration, and migrated test flows to lighter snapshot-based jobs.",
+        "Independently split a 2,000+ line Python CI module into 14 shared and executor-specific modules across approximately 25 subtasks, adding runtime parameterisation and unit tests while maintaining pylint compliance.",
+        "Built Groovy verification stages for cloud archive packaging and audited production builds, finding an undeclared ELF executable; added unit-tested artifact-repository checks to confirm files were present.",
+        "Resolved a blocker build regression by tracing and reverting a faulty changeset; diagnosed Spinnaker-to-Jenkins authentication failures and a Kubernetes cleanup issue caused by Python file-write mode.",
+        "Updated Docker wrapper and build rules for SELinux volume mounts during parallel container execution, maintained Helm/Helmfile deployment configurations, and documented technical investigations."
       ]
     },
     {
@@ -41,7 +41,6 @@
       "organisation": "Casey's Londis",
       "location": "Roscommon, Ireland",
       "dates": "May 2024–Mar 2026",
-      "note": "Handled transactions and customer queries in a high-volume retail environment while coordinating with a small team during busy periods.",
       "bullets": [
         "Operated the till and handled cash and card transactions, balancing the register at the end of each shift.",
         "Resolved customer queries and complaints at the counter while keeping queues moving during peak times.",
@@ -53,7 +52,6 @@
       "organisation": "Blue Thunder",
       "location": "Roscommon Town, Ireland",
       "dates": "Apr 2022–Aug 2022",
-      "note": "Coordinated cashier and kitchen duties with clear handovers to keep customer orders accurate during high-volume shifts.",
       "bullets": [
         "Split time between the till and the kitchen, taking orders and preparing food to keep service moving during rushes.",
         "Used clear handovers between front-of-house and kitchen to ensure orders stayed accurate in a high-volume setting."
@@ -64,17 +62,27 @@
     {
       "title": "Multi-Broker Trading Platform",
       "context": "Personal project",
-      "technologies": "Python · scikit-learn · PyTorch · Gymnasium · PPO · IG/Capital.com/Alpaca APIs · SQLite · Walk-forward validation",
+      "technologies": "Deep Reinforcement Learning · Gymnasium · PPO · PyTorch · Stable-Baselines3 · scikit-learn · Time-Series Modelling",
       "bullets": [
         "Built a modular quantitative research and paper-trading platform spanning FX, CFDs, and US equities, integrating IG, Capital.com, and Alpaca demo APIs into separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
         "Developed reproducible supervised ML and reinforcement-learning pipelines with scikit-learn, PyTorch, Gymnasium, and PPO, combining causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, broker smoke tests, and sealed out-of-sample evaluation."
       ]
     },
     {
+      "title": "PlanAround",
+      "url": "https://github.com/JackLee504/Plan-Around",
+      "context": "Pixel Forge AI Hackathon, Aug 2026",
+      "technologies": "Next.js · Cloudflare Workers · Multimodal AI · Human-in-the-Loop AI · Deterministic Scheduling Algorithms · Serverless Architecture · Progressive Web Apps",
+      "bullets": [
+        "Built an offline-capable student-planning app that imports timetable screenshots or PDFs and assignment briefs, combining classes, commitments, deadlines, and scheduling preferences into actionable study sessions.",
+        "Designed deterministic workload calculation, scheduling, stale-plan detection, and replanning that preserves completed work; restricted AI to reviewable extraction of unstructured input rather than calendar decisions."
+      ]
+    },
+    {
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
       "context": "Personal project",
-      "technologies": "TypeScript · Node.js · MCP · CLI/TUI · Git worktrees · Multi-provider LLM orchestration",
+      "technologies": "Developer Tooling · CLI/TUI Systems · Model Context Protocol (MCP) · Multi-Process Orchestration · Dynamic LLM Routing · Provider Abstraction · Runtime Isolation · Configuration & Policy Engines",
       "bullets": [
         "Built an open-source, provider-agnostic engineering orchestrator that turns cross-cutting work into bounded tasks with explicit ownership, verification, handoff, and token-budget controls.",
         "Implemented shared deterministic routing, execution, and telemetry behind CLI, interactive TUI, and local STDIO MCP interfaces, isolating worktrees and run metadata outside target repositories.",
@@ -82,20 +90,10 @@
       ]
     },
     {
-      "title": "PlanAround",
-      "url": "https://github.com/JackLee504/Plan-Around",
-      "context": "Pixel Forge AI Hackathon, Aug 2026",
-      "technologies": "Next.js · React · TypeScript · Tailwind CSS · Cloudflare Workers · Featherless · Structured extraction",
-      "bullets": [
-        "Built an offline-capable student-planning app that imports timetable screenshots or PDFs and assignment briefs, combining classes, commitments, deadlines, and scheduling preferences into actionable study sessions.",
-        "Designed deterministic workload calculation, scheduling, stale-plan detection, and replanning that preserves completed work; restricted AI to reviewable extraction of unstructured input rather than calendar decisions."
-      ]
-    },
-    {
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
       "context": "Personal project",
-      "technologies": "Hugo · Python · GitHub Actions · Cloudflare Workers · Product-data APIs · Validation/deduplication · Email alerts",
+      "technologies": "Cloudflare Workers · Automated Data Pipelines · Programmatic Video Generation · CI/CD Automation · Data Validation ",
       "bullets": [
         "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts for multiple European markets.",
         "Developed a Python/GitHub Actions ingestion pipeline that enriches external product data, validates prices and listings, deduplicates candidates, and routes uncertain submissions to human review.",
@@ -104,19 +102,20 @@
     }
   ],
   "skills": [
-    ["Languages", "Python, TypeScript/JavaScript, Java, C#, C, SQL, Groovy, Bash"],
-    ["Cloud & DevOps", "AWS, Google Cloud, Azure DevOps, Terraform, Docker, Kubernetes, Jenkins, Spinnaker, Helm/Helmfile, GitHub Actions, Cloudflare"],
-    ["Web", "React, Next.js, Hugo, Tailwind CSS, PHP, HTML/CSS"],
-    ["AI & LLM", "Model Context Protocol, Claude API, LLM APIs, prompt engineering, RAG"],
-    ["Tools & Data", "Git, Gerrit, Linux, SQLite, Artifactory, Nexus, Jira"]
+    "Languages", "Python (automation/ML), TypeScript/JavaScript, Java, SQL, Groovy (Jenkins), C#, C, Bash",
+    "Cloud & Platform Engineering", "Jenkins pipelines, Spinnaker orchestration, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers, AWS, Google Cloud, Azure DevOps",
+    "AI & Machine Learning", "PyTorch, scikit-learn, Stable-Baselines3, Gymnasium/PPO, Model Context Protocol (MCP), multi-provider LLM orchestration, LLM APIs, structured extraction, RAG",
+    "Web & Application Development", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS, responsive design, offline-capable PWAs",
+    "Developer Tooling & Data", "Linux, Git/Gerrit, PostgreSQL, SQLite, Artifactory, Nexus, REST APIs, CI/CD automation, Jira, Confluence"
   ],
   "education": {
     "degree": "BSc (Hons) Computer Science & Information Technology",
     "institution": "University of Galway, Ireland",
     "dates": "2023–2027 (Expected)",
     "details": [
-      "Target classification: First-Class Honours (1.1). Second year: Second Class Honours, Grade 1 (2.1), 68% average.",
-      "Selected modules: Programming III, Data Structures & Algorithms, Database Systems, Software Engineering, Networks & Data Communications, Machine Learning."
+      "Third year: Second Class Honours, Grade 1 (2.1), 61% average.",
+      "Second year: Second Class Honours, Grade 1 (2.1), 68% average.",
+      "Key Modules: Programming III (78%), Object-Oriented Programming DS&A (68%), Object-Oriented Programming (65%), Software Engineering (68%), Database Systems (71%), Next Generation Technologies (68%), Web Development (68%)"
     ],
     "secondary": {
       "qualification": "Leaving Certificate",

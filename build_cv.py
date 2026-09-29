@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from html import escape
 from pathlib import Path
 
 from pypdf import PdfReader
@@ -55,12 +56,6 @@ def build_cv_story(renderer: PdfRenderer, content: dict):
     story = []
     story.extend(renderer.header(content["name"], build_contact_markup(content)))
 
-    story.extend(
-        build_section(
-            renderer, "Profile", [[renderer.summary_paragraph(content["profile"])]]
-        )
-    )
-
     experience_blocks = [build_role(renderer, role) for role in content["experience"]]
     story.extend(build_section(renderer, "Professional Experience", experience_blocks))
 
@@ -105,15 +100,22 @@ def build_education(renderer: PdfRenderer, education: dict):
     degree_block = [
         renderer.entry_header(title=education["degree"], dates=education["dates"])
     ]
-    degree_block.extend(
-        renderer.plain(
-            detail,
-            size=CV_STYLE.education_size,
-            leading=CV_STYLE.education_leading,
-            space_after=6 if index == len(details) - 1 else 0,
+    for index, detail in enumerate(details):
+        label, separator, value = detail.partition(": ")
+        formatted = (
+            f"<b>{escape(label)}:</b> {escape(value)}"
+            if separator
+            else escape(detail)
         )
-        for index, detail in enumerate(details)
-    )
+        degree_block.append(
+            renderer.plain(
+                formatted,
+                size=CV_STYLE.education_size,
+                leading=12,
+                space_after=3 if index == len(details) - 1 else 0,
+                markup=True,
+            )
+        )
     blocks.append(degree_block)
 
     secondary = education["secondary"]
@@ -126,12 +128,12 @@ def build_education(renderer: PdfRenderer, education: dict):
             renderer.plain(
                 secondary["institution"],
                 size=CV_STYLE.education_size,
-                leading=CV_STYLE.education_leading,
+                leading=12,
             ),
             renderer.plain(
                 secondary["details"],
                 size=CV_STYLE.education_size,
-                leading=CV_STYLE.education_leading,
+                leading=12,
             ),
         ]
     )
@@ -145,14 +147,16 @@ def add_additional_entry(renderer: PdfRenderer, entry: dict, index: int, total: 
     ]
     for item in entry["bullets"]:
         block.append(renderer.bullet(item))
-    block.append(
-        renderer.plain(
-            entry["note"],
-            size=CV_STYLE.education_size,
-            leading=CV_STYLE.education_leading,
-            space_after=4 if index < total - 1 else 0,
+    note = entry.get("note")
+    if note:
+        block.append(
+            renderer.plain(
+                note,
+                size=CV_STYLE.education_size,
+                leading=CV_STYLE.education_leading,
+                space_after=4 if index < total - 1 else 0,
+            )
         )
-    )
     return block
 
 
