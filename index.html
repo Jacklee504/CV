@@ -180,10 +180,11 @@
                 <p class="meta">Ericsson, Athlone, Co. Westmeath | January 2026&ndash;August 2026</p>
               </div>
               <ul>
-                <li>Independently refactored a monolithic 2,000+ line Python CI module into 14 executor-specific modules across approximately 25 development tasks, designing shared abstractions and runtime parameterisation to reduce duplicated logic and improve maintainability.</li>
-                <li>Developed and maintained Jenkins/Groovy and Spinnaker pipelines for build, deployment, testing, and cleanup workflows, including migrating test flows to lighter snapshot-based jobs to reduce execution time.</li>
-                <li>Built release-verification stages for cloud archive packaging and strengthened Artifactory/Nexus checks, identifying an undeclared ELF executable in production builds before release and raising remediation work.</li>
-                <li>Diagnosed CI/CD and cloud-native failures across Kubernetes, Docker, Helm/Helmfile, and pipeline integrations, including resolving a blocker build regression and root-causing an RBAC cleanup failure to destructive Python file handling.</li>
+                <li>"Independently split a 2,000+ line Python CI module into 14 shared and executor-specific modules across approximately 25 subtasks, adding runtime parameterisation and unit tests while maintaining pylint compliance.",</li>
+                <li>"Built Groovy verification stages for cloud archive packaging and audited production builds, finding an undeclared ELF executable; added unit-tested artifact-repository checks to confirm files were present.",</li>
+                <li>"Developed and maintained Jenkins/Groovy stages for build, test, deployment, and cleanup workflows; configured Spinnaker parameters and cross-pipeline integration, and migrated test flows to lighter snapshot-based jobs.",</li>
+                <li>"Resolved a blocker build regression by tracing and reverting a faulty changeset; diagnosed Spinnaker-to-Jenkins authentication failures and a Kubernetes cleanup issue caused by Python file-write mode.",</li>
+                <li>"Updated Docker wrapper and build rules for SELinux volume mounts during parallel container execution, maintained Helm/Helmfile deployment configurations, and documented technical investigations."</li>
               </ul>
             </article>
 

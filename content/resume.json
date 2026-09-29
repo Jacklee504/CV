@@ -33,6 +33,14 @@
   "other_experience": "Other experience: Cashier & Customer Service Representative, Casey's Londis (2024–2026); Kitchen Team Member, Blue Thunder (2022).",
   "projects": [
     {
+      "title": "Multi-Broker Trading Research Platform",
+      "technologies": "Deep Reinforcement Learning · PyTorch · Gymnasium/PPO · Stable-Baselines3 · scikit-learn",
+      "bullets": [
+        "Built a modular Python trading research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, separating market data, strategy, risk, execution, journaling, analytics, and UI components.",
+        "Developed reproducible paper-trading and research infrastructure including multi-broker session orchestration, broker smoke tests, SQLite journaling, and automated test/security gates."
+      ]
+    },
+    {
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
       "technologies": "TypeScript, Node.js, MCP, LLM APIs",
@@ -42,17 +50,9 @@
       ]
     },
     {
-      "title": "Multi-Broker Trading Research Platform",
-      "technologies": "Python, APIs, SQLite, testing, observability",
-      "bullets": [
-        "Built a modular Python trading research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, separating market data, strategy, risk, execution, journaling, analytics, and UI components.",
-        "Developed reproducible paper-trading and research infrastructure including multi-broker session orchestration, broker smoke tests, SQLite journaling, and automated test/security gates."
-      ]
-    },
-    {
       "title": "PlanAround",
       "url": "https://github.com/JackLee504/Plan-Around",
-      "technologies": "Next.js, React, TypeScript, Tailwind CSS, Cloudflare Workers, Featherless",
+      "technologies": "Next.js · Serverless Architecture · Multimodal AI · Deterministic Scheduling · Progressive Web Apps",
       "bullets": [
         "Built a student planning application that converts timetable screenshots and assignment briefs into realistic study schedules around lectures, commitments, and deadlines.",
         "Designed an explainable scheduling system that derives workload from ECTS, assessment weighting, and rubric structure, using AI only for structured extraction while keeping workload and scheduling deterministic."
@@ -61,7 +61,7 @@
     {
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
-      "technologies": "Hugo, Python, GitHub Actions, Cloudflare Workers, DNS",
+      "technologies": "Automated Data Pipelines · Cloudflare Workers · CI/CD Automation · Data Validation",
       "bullets": [
         "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts across multiple European markets.",
         "Developed a Python/GitHub Actions deal-ingestion pipeline with external product-data APIs, validation, deduplication, and human-review gates to prevent unverified pricing from being automatically published."
@@ -69,10 +69,11 @@
     }
   ],
   "skills": [
-    ["Languages", "Python, TypeScript/JavaScript, Java, C#, C, SQL, Groovy, Bash"],
-    ["Cloud & DevOps", "Docker, Kubernetes, Jenkins, Spinnaker, Helm/Helmfile, GitHub Actions, Cloudflare"],
-    ["Web", "React, Next.js, Hugo, Tailwind CSS, HTML/CSS"],
-    ["Tools & Data", "Git, Gerrit, SQLite, Artifactory, Nexus, Jira"]
+    ["Languages", "Python, TypeScript/JavaScript, Java, SQL, Groovy, C#, C"],
+    ["Cloud & Platform", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers"],
+    ["AI & ML", "PyTorch, scikit-learn, Stable-Baselines3, Gymnasium/PPO, MCP, multi-provider LLM orchestration"],
+    ["Web", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS"],
+    ["Tools & Data", "Linux, Git/Gerrit, PostgreSQL, SQLite, Artifactory, Nexus"]
   ],
   "education": {
     "degree": "BSc (Hons) Computer Science & Information Technology",

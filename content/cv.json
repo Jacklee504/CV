@@ -14,9 +14,9 @@
       "location": "Athlone, Co. Westmeath, Ireland",
       "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Developed and maintained Jenkins/Groovy stages for build, test, deployment, and cleanup workflows; configured Spinnaker parameters and cross-pipeline integration, and migrated test flows to lighter snapshot-based jobs.",
         "Independently split a 2,000+ line Python CI module into 14 shared and executor-specific modules across approximately 25 subtasks, adding runtime parameterisation and unit tests while maintaining pylint compliance.",
         "Built Groovy verification stages for cloud archive packaging and audited production builds, finding an undeclared ELF executable; added unit-tested artifact-repository checks to confirm files were present.",
+        "Developed and maintained Jenkins/Groovy stages for build, test, deployment, and cleanup workflows; configured Spinnaker parameters and cross-pipeline integration, and migrated test flows to lighter snapshot-based jobs.",
         "Resolved a blocker build regression by tracing and reverting a faulty changeset; diagnosed Spinnaker-to-Jenkins authentication failures and a Kubernetes cleanup issue caused by Python file-write mode.",
         "Updated Docker wrapper and build rules for SELinux volume mounts during parallel container execution, maintained Helm/Helmfile deployment configurations, and documented technical investigations."
       ]
@@ -62,7 +62,7 @@
     {
       "title": "Multi-Broker Trading Platform",
       "context": "Personal project",
-      "technologies": "Deep Reinforcement Learning · Gymnasium · PPO · PyTorch · Stable-Baselines3 · scikit-learn · Time-Series Modelling",
+      "technologies": "Deep Reinforcement Learning · Gymnasium · PPO · PyTorch · Stable-Baselines3 · scikit-learn",
       "bullets": [
         "Built a modular quantitative research and paper-trading platform spanning FX, CFDs, and US equities, integrating IG, Capital.com, and Alpaca demo APIs into separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
         "Developed reproducible supervised ML and reinforcement-learning pipelines with scikit-learn, PyTorch, Gymnasium, and PPO, combining causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, broker smoke tests, and sealed out-of-sample evaluation."
@@ -82,7 +82,7 @@
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
       "context": "Personal project",
-      "technologies": "Developer Tooling · CLI/TUI Systems · Model Context Protocol (MCP) · Multi-Process Orchestration · Dynamic LLM Routing · Provider Abstraction · Runtime Isolation · Configuration & Policy Engines",
+      "technologies": "Developer Tooling · CLI/TUI Systems · Model Context Protocol (MCP) · Multi-Process Orchestration · Dynamic Model Routing · Runtime Isolation · Policy Engines",
       "bullets": [
         "Built an open-source, provider-agnostic engineering orchestrator that turns cross-cutting work into bounded tasks with explicit ownership, verification, handoff, and token-budget controls.",
         "Implemented shared deterministic routing, execution, and telemetry behind CLI, interactive TUI, and local STDIO MCP interfaces, isolating worktrees and run metadata outside target repositories.",
@@ -102,11 +102,11 @@
     }
   ],
   "skills": [
-    "Languages", "Python (automation/ML), TypeScript/JavaScript, Java, SQL, Groovy (Jenkins), C#, C, Bash",
-    "Cloud & Platform Engineering", "Jenkins pipelines, Spinnaker orchestration, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers, AWS, Google Cloud, Azure DevOps",
-    "AI & Machine Learning", "PyTorch, scikit-learn, Stable-Baselines3, Gymnasium/PPO, Model Context Protocol (MCP), multi-provider LLM orchestration, LLM APIs, structured extraction, RAG",
-    "Web & Application Development", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS, responsive design, offline-capable PWAs",
-    "Developer Tooling & Data", "Linux, Git/Gerrit, PostgreSQL, SQLite, Artifactory, Nexus, REST APIs, CI/CD automation, Jira, Confluence"
+    ["Languages", "Python (automation/ML), TypeScript/JavaScript, Java, SQL, Groovy (Jenkins), C#, C, Bash"],
+    ["Cloud & Platform Engineering", "Jenkins pipelines, Spinnaker orchestration, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers, AWS, Google Cloud, Azure DevOps"],
+    ["AI & Machine Learning", "PyTorch, scikit-learn, Stable-Baselines3, Gymnasium/PPO, Model Context Protocol (MCP), multi-provider LLM orchestration, LLM APIs, structured extraction, RAG"],
+    ["Web & Application Development", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS, responsive design, offline-capable PWAs"],
+    ["Developer Tooling & Data", "Linux, Git/Gerrit, PostgreSQL, SQLite, Artifactory, Nexus, REST APIs, CI/CD automation, Jira, Confluence"]
   ],
   "education": {
     "degree": "BSc (Hons) Computer Science & Information Technology",
