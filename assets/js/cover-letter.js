@@ -66,7 +66,6 @@ const experienceFor = (cv, focus) => {
     return `At ${ericsson.organisation}, I ${lowerFirst(ericsson.bullets[0])} I also ${lowerFirst(ericsson.bullets[2])}`;
   }
 
-  return cv.profile;
 };
 
 const buildLetter = (cv, values) => {
@@ -78,7 +77,6 @@ const buildLetter = (cv, values) => {
   const applicationType = values.applicationType;
   const matchedTerms = supportedTermsIn(requirements).map(({ label }) => label);
   const greeting = hiringManager ? `Dear ${hiringManager},` : 'Dear Hiring Manager,';
-  const profile = cv.profile.replace(/\s+/g, ' ').trim();
   const applicationContext = applicationType === 'us-internship'
     ? 'As a University of Galway Computer Science & Information Technology student, I am seeking an opportunity to apply my practical engineering experience in an internship setting.'
     : 'As I work towards my degree at the University of Galway, I am seeking to begin my career in a graduate engineering role.';
@@ -89,7 +87,7 @@ const buildLetter = (cv, values) => {
     ? `The role's emphasis on ${joinedList(matchedTerms.slice(0, 4))} aligns well with the experience I have developed through internships and personal projects.`
     : 'I would welcome the opportunity to apply this experience in a new team and continue developing as an engineer.';
 
-  return `${greeting}\n\nI am writing to apply for the ${role} position at ${company}. ${applicationContext}\n\n${profile}\n\n${experienceFor(cv, values.focus)}\n\n${tailoring} ${requirementsSentence}\n\nThank you for considering my application. I would welcome the opportunity to discuss how my experience and interest in software engineering could contribute to ${company}.\n\nKind regards,\n${cv.name}`;
+  return `${greeting}\n\nI am writing to apply for the ${role} position at ${company}. ${applicationContext}\n\n${experienceFor(cv, values.focus)}\n\n${tailoring} ${requirementsSentence}\n\nThank you for considering my application. I would welcome the opportunity to discuss how my experience and interest in software engineering could contribute to ${company}.\n\nKind regards,\n${cv.name}`;
 };
 
 const showKeywordMatch = (requirements) => {
