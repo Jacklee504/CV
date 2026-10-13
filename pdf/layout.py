@@ -32,11 +32,11 @@ FONT_FILES = {
 
 INK = colors.HexColor("#111827")
 MUTED = colors.HexColor("#4B5563")
-RULE = colors.HexColor("#1F4E79")
+RULE = colors.HexColor("#354F70")
 
 INK_HEX = "#111827"
 MUTED_HEX = "#4B5563"
-RULE_HEX = "#1F4E79"
+RULE_HEX = "#354F70"
 
 PAGE_SIZE = LETTER
 PAGE_WIDTH, PAGE_HEIGHT = PAGE_SIZE
@@ -181,7 +181,7 @@ RESUME_STYLE = DocumentStyle(
     body_size=9.2,
     body_leading=11.1,
     bullet_size=9.2,
-    bullet_leading=11.1,
+    bullet_leading=11.3,
     bullet_space_after=2.5,
     bullet_indent=9,
     bullet_text_indent=18,

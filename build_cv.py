@@ -7,6 +7,7 @@ from html import escape
 from pathlib import Path
 
 from pypdf import PdfReader
+from reportlab.platypus import PageBreak
 
 from pdf.components import (
     PdfRenderer,
@@ -69,7 +70,9 @@ def build_cv_story(renderer: PdfRenderer, content: dict):
         build_project(renderer, project, with_context=True)
         for project in content["projects"]
     ]
-    story.extend(build_section(renderer, "Selected Projects", project_blocks))
+    story.extend(build_section(renderer, "Selected Projects", project_blocks[:1]))
+    story.append(PageBreak())
+    story.extend(build_section(renderer, "Selected Projects (continued)", project_blocks[1:]))
 
     story.extend(build_section(renderer, "Education", build_education(renderer, content["education"])))
 
