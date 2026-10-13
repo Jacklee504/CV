@@ -6,7 +6,7 @@
     { "label": "LinkedIn", "username": "jack-lee12", "url": "https://www.linkedin.com/in/jack-lee12" },
     { "label": "GitHub", "username": "JackLee504", "url": "https://github.com/JackLee504" }
   ],
-  "summary": "Final-year Computer Science & Information Technology student with 8 months' software engineering experience on a central CI/CD pipeline team at Ericsson, building Python automation, cloud-native CI/CD infrastructure, developer tooling, and independent software systems spanning trading, web applications, and AI-assisted workflows.",
+  "summary": "Final-year Computer Science & Information Technology student with 8 months' software engineering experience on Ericsson's CI/CD support and pipeline teams, building Python automation, cloud-native CI/CD infrastructure, developer tooling, and independent software systems spanning trading, web applications, and AI-assisted workflows.",
   "experience": [
     {
       "title": "Software Engineering Intern",
@@ -14,7 +14,7 @@
       "location": "Athlone, Ireland",
       "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Independently refactored a monolithic 2,000+ line Python CI module into 14 executor-specific modules across around 25 development tasks, designing shared abstractions and runtime parameterisation to reduce duplication.",
+        "Restructured a roughly 1,100-line Python CI decorators file into shared and executor-specific files, then introduced a parameterised factory that reduced the shared file to about 200 lines.",
         "Developed and maintained Jenkins/Groovy and Spinnaker pipelines for build, deployment, testing, and cleanup workflows, including migrating test flows to lighter snapshot-based jobs to reduce execution time.",
         "Built release-verification stages for cloud archive packaging and strengthened Artifactory/Nexus checks, identifying an undeclared ELF executable in production builds before release."
       ]
