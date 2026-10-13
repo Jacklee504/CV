@@ -27,19 +27,15 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260921-4" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261013-1" />
     <script defer src="assets/js/main.js?v=20260921-2"></script>
   </head>
-  <body>
+  <body class="portfolio-home">
     <a class="skip-link" href="#top">Skip to main content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#top">Jack Lee</a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="site-navigation" aria-expanded="false">Menu</button>
         <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -47,43 +43,34 @@
           <a href="#education">Education</a>
           <a href="#credentials">Credentials</a>
           <a href="#contact">Contact</a>
+          <a class="nav-cv" href="output/Jack_Lee_CV.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
         </nav>
       </div>
     </header>
 
     <main id="top" tabindex="-1">
       <section class="hero section">
-        <div class="container">
-          <p class="eyebrow">University of Galway | BSc (Hons) Computer Science &amp; Information Technology</p>
+        <div class="container hero-layout">
           <h1>Jack Lee</h1>
-          <p class="lead">
-            Final-year Computer Science student focused on software engineering, developer tooling, and CI/CD.
-          </p>
-          <p>
-            Software engineering experience on Ericsson&apos;s CI/CD platform team, with independent projects across
-            developer tooling, trading systems, full-stack applications, and AI-assisted workflows.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="output/Jack_Lee_CV.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
-            <a class="button ghost" href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="button ghost" href="mailto:jack@jack-lee.dev">Email me</a>
+          <div class="hero-intro">
+            <p class="hero-role">Software Engineer</p>
+            <p class="hero-location">Galway, Ireland</p>
+            <p class="hero-description">Final-year Computer Science student focused on software engineering, developer tooling, and CI/CD.</p>
           </div>
         </div>
       </section>
 
       <section id="projects" class="section">
         <div class="container">
-          <h2>Featured Projects</h2>
-          <p class="meta">More projects available on <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-          <div class="grid">
+          <h2>Projects</h2>
+          <div class="editorial-list">
 
-            <article class="card project-card">
-              <div class="card-head">
-                <h3>Multi-Broker Trading Platform <span class="project-context">&middot; Personal project</span></h3>
+            <details class="editorial-row project-row">
+              <summary><span class="row-number">01</span><span class="row-title">Multi-Broker Trading Platform</span><span class="row-descriptor">Paper-trading research</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
+              <div class="row-detail">
                 <p>
                   A modular Python research platform for designing and testing rules-based trading strategies across three brokers without risking capital.
                 </p>
-              </div>
               <ul>
                 <li>Separate market-data, strategy, risk, execution, journaling, analytics, and UI components keep the system testable and maintainable.</li>
                 <li>Reproducible paper-trading sessions orchestrated across IG, Capital.com, and Alpaca for FX, CFDs, and US equities.</li>
@@ -95,15 +82,15 @@
                 <li>SQLite</li>
                 <li>VPS monitoring</li>
               </ul>
-            </article>
+              </div>
+            </details>
 
-            <article class="card project-card">
-              <div class="card-head">
-                <h3><a class="project-title-link" href="https://github.com/JackLee504/dynamic-task-router" target="_blank" rel="noopener noreferrer">Dynamic Task Router</a> <span class="project-context">&middot; Personal project</span></h3>
+            <details class="editorial-row project-row">
+              <summary><span class="row-number">02</span><span class="row-title">Dynamic Task Router</span><span class="row-descriptor">Developer tooling</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
+              <div class="row-detail">
                 <p>
                   Routes development work to the right AI model instead of making the engineer pick every time.
                 </p>
-              </div>
               <ul>
                 <li>Classifies bounded tasks by complexity, risk, and role, then dispatches to Codex, Claude Code, Qwen, OpenCode, OpenRouter, or local Ollama models.</li>
                 <li>One shared routing/runtime layer exposed through a CLI, an interactive TUI, and an MCP server.</li>
@@ -117,15 +104,15 @@
                 <li>LLM APIs</li>
               </ul>
               <p class="project-links"><a href="https://github.com/JackLee504/dynamic-task-router" target="_blank" rel="noopener noreferrer" aria-label="View Dynamic Task Router source code on GitHub">View on GitHub &rarr;</a></p>
-            </article>
+              </div>
+            </details>
 
-            <article class="card project-card">
-              <div class="card-head">
-                <h3>PlanAround <span class="project-context">&middot; Pixel Forge AI Hackathon, August 2026</span></h3>
+            <details class="editorial-row project-row">
+              <summary><span class="row-number">03</span><span class="row-title">PlanAround</span><span class="row-descriptor">Study planning</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
+              <div class="row-detail">
                 <p>
                   Turns timetable screenshots and assignment briefs into a realistic study schedule that fits around lectures, commitments, and deadlines.
                 </p>
-              </div>
               <ul>
                 <li>AI only extracts structure from messy inputs; workload estimation and scheduling stay deterministic and explainable.</li>
                 <li>Workload is derived from ECTS, assessment weighting, and rubric structure, not guessed by the model.</li>
@@ -140,17 +127,17 @@
                 <li>Featherless</li>
               </ul>
               <p class="project-links">
-                <a href="https://planaround.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View PlanAround source code on GitHub">Visit PlanAround &rarr;</a>
+                <a href="https://planaround.vercel.app/" target="_blank" rel="noopener noreferrer">Visit PlanAround &rarr;</a>
               </p>
-            </article>
+              </div>
+            </details>
 
-            <article class="card project-card">
-              <div class="card-head">
-                <h3>Deal Ledger <span class="project-context">&middot; Personal project</span></h3>
+            <details class="editorial-row project-row">
+              <summary><span class="row-number">04</span><span class="row-title">Deal Ledger</span><span class="row-descriptor">Multilingual deal discovery</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
+              <div class="row-detail">
                 <p>
                   Building and maintaining a multilingual deal-discovery platform across European markets, with human review before anything is published.
                 </p>
-              </div>
               <ul>
                 <li>Market-specific routing, search, and email alerts across English, German, Dutch, and French.</li>
                 <li>A Python/GitHub Actions ingestion pipeline validates, deduplicates, and queues Amazon deal candidates for human review.</li>
@@ -163,7 +150,8 @@
                 <li>Cloudflare Workers</li>
               </ul>
               <p class="project-links"><a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Visit DealLedger</a></p>
-            </article>
+              </div>
+            </details>
 
           </div>
         </div>
@@ -172,12 +160,11 @@
       <section id="experience" class="section">
         <div class="container">
           <h2>Experience</h2>
-          <div class="timeline">
-            <article class="card">
-              <div class="card-head">
-                <h3>Software Engineering Intern</h3>
-                <p class="meta">Ericsson, Athlone, Co. Westmeath | January 2026&ndash;August 2026</p>
-              </div>
+          <div class="editorial-list">
+            <details class="editorial-row experience-row">
+              <summary><span class="row-number">2026</span><span class="row-title">Software Engineering Intern<small>Ericsson</small></span><span class="row-descriptor">CI/CD platform team</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
+              <div class="row-detail">
+              <p class="meta">Athlone, Co. Westmeath | January 2026&ndash;August 2026</p>
               <ul>
                 <li>Independently split a 2,000+ line Python CI module into 14 shared and executor-specific modules across approximately 25 subtasks, adding runtime parameterisation and unit tests while maintaining pylint compliance.</li>
                 <li>Built Groovy verification stages for cloud archive packaging and audited production builds, finding an undeclared ELF executable; added unit-tested artifact-repository checks to confirm files were present.</li>
@@ -185,13 +172,13 @@
                 <li>Resolved a blocker build regression by tracing and reverting a faulty changeset; diagnosed Spinnaker-to-Jenkins authentication failures and a Kubernetes cleanup issue caused by Python file-write mode.</li>
                 <li>Updated Docker wrapper and build rules for SELinux volume mounts during parallel container execution, maintained Helm/Helmfile deployment configurations, and documented technical investigations.</li>
               </ul>
-            </article>
-
-            <article class="card">
-              <div class="card-head">
-                <h3>Web Development Intern</h3>
-                <p class="meta">Ossark, Athlone, Co. Westmeath | May 2025&ndash;August 2025</p>
               </div>
+            </details>
+
+            <details class="editorial-row experience-row">
+              <summary><span class="row-number">2025</span><span class="row-title">Web Development Intern<small>Ossark</small></span><span class="row-descriptor">Client website delivery</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
+              <div class="row-detail">
+              <p class="meta">Athlone, Co. Westmeath | May 2025&ndash;August 2025</p>
               <ul>
                 <li>Contributed to client website projects through implementation, QA, and release, delivering responsive PHP/SCSS changes across multiple production sites.</li>
                 <li>Diagnosed frontend issues and translated client/team feedback into layout, usability, and responsive-design improvements without disrupting established pages.</li>
@@ -204,7 +191,8 @@
                 <a href="https://dailyirishproduce.ie/" target="_blank" rel="noopener noreferrer">Daily Irish Produce</a>,
                 and Capital Homes.
               </p>
-            </article>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -266,19 +254,24 @@
       <section id="education" class="section alt">
         <div class="container">
           <h2>Education</h2>
-
-          <article class="card">
-            <h3>B.Sc. (Hons) Computer Science &amp; Information Technology</h3>
-            <p class="meta">University of Galway, Ireland | 2023&ndash;2027</p>
+          <div class="editorial-list">
+          <details class="editorial-row education-row">
+            <summary><span class="row-number">01</span><span class="row-title">B.Sc. (Hons) Computer Science &amp; Information Technology</span><span class="row-descriptor">University of Galway</span><span class="row-date">2023&ndash;2027</span></summary>
+            <div class="row-detail">
+            <p class="meta">Galway, Ireland</p>
             <p>Third year: Second  Class Honours, Grade 1 (2.1), 63% average.</p>
             <p>Key Modules: Programming III (78%), Database Systems (71%), Object-Oriented Programming DS&A (68%), Software Engineering (68%), Next Generation Technologies (68%), Web Development (68%), Object-Oriented Programming (65%).</p>
-          </article>
+            </div>
+          </details>
 
-          <article class="card">
-            <h3>Leaving Certificate</h3>
-            <p class="meta">Scoil Mhuire, Strokestown, Co. Roscommon | 2017&ndash;2023</p>
+          <details class="editorial-row education-row">
+            <summary><span class="row-number">02</span><span class="row-title">Leaving Certificate</span><span class="row-descriptor">Scoil Mhuire</span><span class="row-date">2017&ndash;2023</span></summary>
+            <div class="row-detail">
+            <p class="meta">Strokestown, Co. Roscommon</p>
             <p>520 points across seven Higher-Level subjects, including H2s in German, Irish, Geography, and DCG.</p>
-          </article>
+            </div>
+          </details>
+          </div>
         </div>
       </section>
 
@@ -1364,50 +1357,49 @@
       <section id="credentials" class="section alt">
         <div class="container">
           <h2>Credentials</h2>
-          <p class="credential-intro">
-            Verified course-completion credentials and professional badges across AI, DevOps, Kubernetes, security, cloud, and data engineering.
+          <div class="credential-summary">
+            <p>AI &middot; DevOps &middot; Cloud &middot; Security</p>
             <a href="credentials.html">View all credentials <span aria-hidden="true">&rarr;</span></a>
-          </p>
+          </div>
         </div>
       </section>
 
       <section id="additional" class="section">
         <div class="container">
           <h2>Additional Experience &amp; Activities</h2>
-          <div class="timeline">
-            <article class="card">
-              <div class="card-head">
-                <h3>Cashier &amp; Customer Service Representative</h3>
-                <p class="meta">Casey&apos;s Londis, Roscommon Town | May 2024&ndash;March 2026</p>
-              </div>
+          <div class="editorial-list">
+            <details class="editorial-row additional-row">
+              <summary><span class="row-number">01</span><span class="row-title">Casey&apos;s Londis</span><span class="row-descriptor">Customer service and retail</span><span class="row-date">May 2024&ndash;Mar 2026</span></summary>
+              <div class="row-detail">
+              <p class="meta">Cashier &amp; Customer Service Representative | Roscommon Town</p>
               <p>Handled transactions and customer queries in a high-volume retail environment while coordinating with a small team during busy periods.</p>
-            </article>
-
-            <article class="card">
-              <div class="card-head">
-                <h3>Cashier &amp; Kitchen Team Member</h3>
-                <p class="meta">Blue Thunder, Roscommon Town | April 2022&ndash;August 2022</p>
               </div>
+            </details>
+
+            <details class="editorial-row additional-row">
+              <summary><span class="row-number">02</span><span class="row-title">Blue Thunder</span><span class="row-descriptor">Cashier and kitchen team</span><span class="row-date">Apr&ndash;Aug 2022</span></summary>
+              <div class="row-detail">
+              <p class="meta">Cashier &amp; Kitchen Team Member | Roscommon Town</p>
               <p>Coordinated cashier and kitchen duties with clear handovers to keep customer orders accurate during high-volume shifts.</p>
-            </article>
+              </div>
+            </details>
           </div>
-          <ul>
-            <li>Build independent software projects alongside coursework, with interests in AI tools, web platforms, and algorithmic trading systems.</li>
-            <li>Former competitive soccer and Gaelic football player, including a soccer Player of the Year award; member of the University of Galway Pool &amp; Snooker Society.</li>
-          </ul>
+          <p class="outside-work">Outside work: football &middot; pool &amp; snooker</p>
+          <p class="outside-work-detail">Former competitive soccer and Gaelic football player, including a soccer Player of the Year award; member of the University of Galway Pool &amp; Snooker Society.</p>
+          <p class="outside-work-detail">I build independent software projects alongside coursework, with interests in AI tools, web platforms, and algorithmic trading systems.</p>
         </div>
       </section>
 
       <section id="contact" class="section alt">
         <div class="container">
           <h2>Contact</h2>
-          <p>
-            Email: <a href="mailto:jack@jack-lee.dev">jack@jack-lee.dev</a><br />
-            LinkedIn: <a href="https://www.linkedin.com/in/jack-lee12" target="_blank" rel="noopener noreferrer">linkedin.com/in/jack-lee12</a><br />
-            GitHub: <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">github.com/JackLee504</a><br />
-            CV: <a href="output/Jack_Lee_CV.pdf" target="_blank" rel="noopener noreferrer">Jack_Lee_CV.pdf</a> &middot;
-            <a href="output/Jack_Lee_Software_Engineering_Resume.pdf" target="_blank" rel="noopener noreferrer">One-page resume (PDF)</a>
-          </p>
+          <a class="contact-email" href="mailto:jack@jack-lee.dev">jack@jack-lee.dev <span aria-hidden="true">&rarr;</span></a>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/jack-lee12" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">&rarr;</span></a>
+            <a href="https://github.com/JackLee504" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&rarr;</span></a>
+            <a href="output/Jack_Lee_CV.pdf" target="_blank" rel="noopener noreferrer">View CV <span aria-hidden="true">&rarr;</span></a>
+            <a href="output/Jack_Lee_Software_Engineering_Resume.pdf" target="_blank" rel="noopener noreferrer">One-page resume <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
       </section>
     </main>

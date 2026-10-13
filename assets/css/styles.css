@@ -889,3 +889,639 @@ a {
     transition: none;
   }
 }
+
+/* Quiet editorial layout for the portfolio homepage. */
+.portfolio-home {
+  --bg: #f9f9f6;
+  --surface: #f9f9f6;
+  --text: #14181b;
+  --muted: #627185;
+  --accent: #4f6988;
+  --accent-strong: #354f70;
+  --border: #cbd3dc;
+  background: var(--bg);
+  animation: none;
+  line-height: 1.5;
+}
+
+.portfolio-home .container {
+  width: min(1488px, calc(100% - clamp(48px, 11vw, 176px)));
+}
+
+.portfolio-home .site-header {
+  background: var(--bg);
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+
+.portfolio-home .header-inner {
+  min-height: 5.75rem;
+}
+
+.portfolio-home .brand {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+
+.portfolio-home .site-nav {
+  gap: clamp(0.7rem, 2.1vw, 2.25rem);
+  align-items: center;
+}
+
+.portfolio-home .site-nav a {
+  padding: 0.35rem 0;
+  border-radius: 0;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.portfolio-home .site-nav a:hover,
+.portfolio-home .site-nav a:focus-visible,
+.portfolio-home .site-nav a.is-active {
+  color: var(--accent-strong);
+  background: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35rem;
+}
+
+.portfolio-home .site-nav .nav-cv {
+  color: var(--accent-strong);
+  margin-left: clamp(0.2rem, 2vw, 1.5rem);
+}
+
+.portfolio-home .nav-toggle {
+  color: var(--accent-strong);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.2rem;
+}
+
+.portfolio-home .section {
+  padding: 4.5rem 0;
+}
+
+.portfolio-home .section.alt {
+  background: transparent;
+  border: 0;
+  animation: none;
+}
+
+.portfolio-home .hero {
+  padding: clamp(4rem, 6vw, 6.5rem) 0 2.5rem;
+}
+
+.portfolio-home .hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  align-items: center;
+  column-gap: clamp(3rem, 7vw, 8rem);
+}
+
+.portfolio-home h1 {
+  max-width: none;
+  margin: 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(6rem, 10.3vw, 11rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.92;
+  white-space: nowrap;
+}
+
+.portfolio-home .hero-intro {
+  padding-top: 1rem;
+}
+
+.portfolio-home .hero-role {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: 0.015em;
+  line-height: 1.1;
+}
+
+.portfolio-home .hero-location {
+  margin: 0.5rem 0 1.5rem;
+  color: var(--accent);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.portfolio-home .hero-description {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--muted);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.portfolio-home h2 {
+  display: block;
+  margin: 0;
+  padding: 0 0 1.3rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--accent-strong);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.27em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.portfolio-home .section h2::after {
+  display: none;
+}
+
+.portfolio-home .editorial-row {
+  border-bottom: 1px solid var(--border);
+}
+
+.portfolio-home .editorial-row summary {
+  display: grid;
+  grid-template-columns: minmax(50px, 0.12fr) minmax(0, 1fr) minmax(170px, 0.78fr) 1.5rem;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2.5rem);
+  min-height: 7rem;
+  padding: 1.2rem 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.portfolio-home .editorial-row summary::-webkit-details-marker {
+  display: none;
+}
+
+.portfolio-home .row-number,
+.portfolio-home .row-descriptor,
+.portfolio-home .row-date {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.45vw, 1.4rem);
+}
+
+.portfolio-home .row-title {
+  color: var(--text);
+  font-size: clamp(1.75rem, 2.8vw, 3rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.portfolio-home .row-title small {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--accent);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.portfolio-home .row-arrow {
+  color: var(--accent);
+  font-size: 1.75rem;
+  line-height: 1;
+  text-align: right;
+  transition: transform 180ms ease-out;
+}
+
+.portfolio-home .editorial-row summary:hover .row-title,
+.portfolio-home .editorial-row summary:focus-visible .row-title {
+  color: var(--accent-strong);
+}
+
+.portfolio-home .editorial-row[open] .row-arrow {
+  transform: rotate(90deg);
+}
+
+.portfolio-home .row-detail {
+  max-width: 78ch;
+  margin: 0 0 2.5rem 11%;
+  color: #364454;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.portfolio-home .row-detail p {
+  margin-bottom: 0.8rem;
+}
+
+.portfolio-home .row-detail ul:not(.project-chips) {
+  margin: 0.9rem 0;
+  padding-left: 1.4rem;
+}
+
+.portfolio-home .row-detail li + li {
+  margin-top: 0.4rem;
+}
+
+.portfolio-home .row-detail .project-chips {
+  gap: 0.3rem 1rem;
+  margin-top: 1.3rem;
+}
+
+.portfolio-home .row-detail .project-chips li {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--muted);
+  background: transparent;
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.portfolio-home .project-links a,
+.portfolio-home .credential-summary a,
+.portfolio-home .contact-links a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.portfolio-home .project-links a:hover,
+.portfolio-home .credential-summary a:hover,
+.portfolio-home .contact-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.portfolio-home .skills-groups {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  padding: 2.2rem 0 0;
+}
+
+.portfolio-home .skill-group {
+  min-width: 0;
+  padding: 0 2rem;
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.portfolio-home .skill-group:first-child {
+  padding-left: 0;
+}
+
+.portfolio-home .skill-group:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.portfolio-home .skill-group > p {
+  margin-bottom: 1rem;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.portfolio-home .skill-group > p strong {
+  font-weight: 400;
+}
+
+.portfolio-home .skill-group .project-chips {
+  display: block;
+}
+
+.portfolio-home .skill-group .project-chips li {
+  width: fit-content;
+  margin: 0.28rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--muted);
+  background: transparent;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.portfolio-home .education-row summary,
+.portfolio-home .additional-row summary {
+  grid-template-columns: minmax(50px, 0.12fr) minmax(0, 1fr) minmax(170px, 0.6fr) auto;
+}
+
+.portfolio-home .education-row .row-title,
+.portfolio-home .additional-row .row-title {
+  font-size: clamp(1.55rem, 2.2vw, 2.3rem);
+}
+
+.portfolio-home .row-date {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.portfolio-home .credential-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 1.3rem;
+}
+
+.portfolio-home .credential-summary p {
+  margin: 0;
+}
+
+.portfolio-home .credential-summary a {
+  white-space: nowrap;
+}
+
+.portfolio-home .outside-work {
+  margin: 2.5rem 0 0;
+  color: var(--accent-strong);
+  font-size: 1.25rem;
+}
+
+.portfolio-home .outside-work-detail {
+  max-width: 70ch;
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.portfolio-home .contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: clamp(2.5rem, 6.5vw, 7rem);
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-home .contact-email:hover {
+  color: var(--accent-strong);
+}
+
+.portfolio-home .contact-email span {
+  color: var(--accent);
+  font-size: 0.55em;
+  letter-spacing: 0;
+}
+
+.portfolio-home .contact-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0 0;
+  font-size: 1.3rem;
+}
+
+.portfolio-home .contact-links span {
+  margin-left: 0.5rem;
+}
+
+.portfolio-home .site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.25rem 0;
+  font-size: 1rem;
+}
+
+.portfolio-home .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@media (max-width: 1150px) {
+  .portfolio-home .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .portfolio-home h1 {
+    font-size: clamp(5rem, 12vw, 9rem);
+  }
+
+  .portfolio-home .hero-intro {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  .portfolio-home .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-home .site-nav {
+    position: absolute;
+    top: 5.75rem;
+    right: max(24px, 5.5vw);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 220px;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--bg);
+    box-shadow: none;
+  }
+
+  .portfolio-home .site-nav.is-open {
+    display: flex;
+  }
+
+  .portfolio-home .site-nav a {
+    padding: 0.55rem 0;
+  }
+
+  .portfolio-home .site-nav .nav-cv {
+    margin: 0.4rem 0 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .portfolio-home .editorial-row summary {
+    grid-template-columns: 3rem minmax(0, 1fr) 1.5rem;
+    gap: 1rem;
+  }
+
+  .portfolio-home .row-descriptor {
+    grid-column: 2;
+    margin-top: -0.5rem;
+  }
+
+  .portfolio-home .row-arrow,
+  .portfolio-home .row-date {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .portfolio-home .education-row summary,
+  .portfolio-home .additional-row summary {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+  }
+
+  .portfolio-home .row-detail {
+    margin-left: 4rem;
+  }
+
+  .portfolio-home .skills-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 0;
+  }
+
+  .portfolio-home .skill-group:nth-child(2) {
+    border-right: 0;
+  }
+
+  .portfolio-home .skill-group:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .portfolio-home .contact-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-home .header-inner {
+    min-height: 4.75rem;
+  }
+
+  .portfolio-home .site-nav {
+    top: 4.75rem;
+  }
+
+  .portfolio-home .section {
+    padding: 3.3rem 0;
+  }
+
+  .portfolio-home .hero {
+    padding-top: 4.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .portfolio-home .hero-layout {
+    gap: 1.75rem;
+  }
+
+  .portfolio-home h1 {
+    font-size: clamp(4.2rem, 16vw, 6rem);
+    letter-spacing: -0.08em;
+  }
+
+  .portfolio-home .hero-role {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .portfolio-home .hero-description {
+    font-size: 0.82rem;
+  }
+
+  .portfolio-home .editorial-row summary {
+    min-height: 7.25rem;
+    gap: 0.7rem;
+    padding: 1.25rem 0;
+  }
+
+  .portfolio-home .row-title {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+  }
+
+  .portfolio-home .row-descriptor,
+  .portfolio-home .row-number,
+  .portfolio-home .row-date {
+    font-size: 1rem;
+  }
+
+  .portfolio-home .row-arrow {
+    font-size: 1.4rem;
+  }
+
+  .portfolio-home .row-detail {
+    margin: 0 0 2rem 4rem;
+    font-size: 0.98rem;
+  }
+
+  .portfolio-home .education-row summary,
+  .portfolio-home .additional-row summary {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.6rem 0.85rem;
+  }
+
+  .portfolio-home .education-row .row-descriptor,
+  .portfolio-home .additional-row .row-descriptor {
+    grid-column: 2;
+  }
+
+  .portfolio-home .row-date {
+    grid-column: 2;
+    grid-row: auto;
+    text-align: left;
+  }
+
+  .portfolio-home .skills-groups {
+    gap: 2.25rem 1rem;
+  }
+
+  .portfolio-home .skill-group {
+    padding: 0;
+    border: 0;
+  }
+
+  .portfolio-home .skill-group > p {
+    font-size: 1.4rem;
+  }
+
+  .portfolio-home .skill-group .project-chips li {
+    font-size: 1rem;
+  }
+
+  .portfolio-home .credential-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-size: 1.1rem;
+  }
+
+  .portfolio-home .contact-email {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .portfolio-home .contact-links {
+    gap: 1.25rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media print {
+  .portfolio-home .site-header {
+    display: none;
+  }
+
+  .portfolio-home .section {
+    padding: 1.5rem 0;
+  }
+
+  .portfolio-home .editorial-row {
+    break-inside: avoid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-home .row-arrow {
+    transition: none;
+  }
+}
