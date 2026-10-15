@@ -918,7 +918,8 @@ a {
   min-height: 5.75rem;
 }
 
-.portfolio-home .brand {
+.portfolio-home .brand,
+.cover-letter-page .brand {
   font-family: "Source Serif 4", Georgia, serif;
   font-size: 1.65rem;
   font-weight: 400;
@@ -1217,6 +1218,79 @@ a {
 .portfolio-home .education-row .row-title,
 .portfolio-home .additional-row .row-title {
   font-size: clamp(1.55rem, 2.2vw, 2.3rem);
+}
+
+.portfolio-home .education-results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 1.2rem 0 1.8rem;
+}
+
+.portfolio-home .education-results > div {
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+}
+
+.portfolio-home .education-results dt,
+.portfolio-home .education-label {
+  color: var(--muted);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.portfolio-home .education-results dd {
+  display: flex;
+  flex-direction: column;
+  margin: 0.35rem 0 0;
+  line-height: 1.35;
+}
+
+.portfolio-home .education-results dd strong {
+  color: var(--text);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.portfolio-home .education-results dd span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.portfolio-home .education-row .education-label {
+  margin-bottom: 0.4rem;
+}
+
+.portfolio-home .education-row .row-detail .education-modules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portfolio-home .education-modules li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.portfolio-home .row-detail .education-modules li + li {
+  margin-top: 0;
+}
+
+.portfolio-home .education-modules li span:last-child {
+  flex: none;
+  color: var(--accent-strong);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .portfolio-home .row-date {
@@ -1596,6 +1670,11 @@ a {
   .portfolio-home .education-row .row-detail,
   .portfolio-home .additional-row .row-detail {
     margin-left: 2.85rem;
+  }
+
+  .portfolio-home .education-results,
+  .portfolio-home .education-row .row-detail .education-modules {
+    grid-template-columns: 1fr;
   }
 
   .portfolio-home .education-row .row-descriptor,
