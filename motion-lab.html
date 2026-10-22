@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motion Lab | Jack Lee Portfolio</title>
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        background: #f9f9f6;
+        color: #14181b;
+        font-family: Arial, sans-serif;
+      }
+      .lab-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 3rem;
+        padding: 0.55rem 1rem;
+        border-bottom: 1px solid #cbd3dc;
+        font-size: 0.78rem;
+      }
+      .lab-header strong { font-weight: 600; }
+      .lab-header span { color: #627185; }
+      .lab-header a { color: #354f70; white-space: nowrap; }
+      iframe { width: 100%; height: 100%; border: 0; }
+      @media (max-width: 600px) {
+        .lab-header span { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="lab-header">
+      <div><strong>Portfolio motion lab</strong> <span>Toggle ideas in the panel on the page</span></div>
+      <a href="index.html">Open clean homepage</a>
+    </header>
+    <iframe src="index.html?motion-lab=1" title="Portfolio animation showcase"></iframe>
+  </body>
+</html>

@@ -1356,11 +1356,17 @@ a {
 }
 
 .portfolio-home .contact-links {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.25rem clamp(2.5rem, 5vw, 6rem);
   padding: 2rem 0 0;
   font-size: 1.3rem;
+}
+
+.portfolio-home .contact-links a {
+  display: inline-flex;
+  align-items: center;
 }
 
 .portfolio-home .contact-links span {
@@ -1589,10 +1595,6 @@ a {
 
   .portfolio-home .skill-group:nth-child(3) {
     padding-left: 0;
-  }
-
-  .portfolio-home .contact-links {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
