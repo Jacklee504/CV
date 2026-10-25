@@ -34,25 +34,25 @@
   "projects": [
     {
       "title": "Multi-Broker Trading Research Platform",
-      "technologies": "Deep Reinforcement Learning · PyTorch · Gymnasium/PPO · Stable-Baselines3 · scikit-learn",
+      "technologies": "Python · PyTorch · scikit-learn · Time-Series Validation · Risk Modelling",
       "bullets": [
-        "Built a modular Python trading research platform integrating IG, Capital.com, and Alpaca across FX, CFDs, and US equities, separating market data, strategy, risk, execution, journaling, analytics, and UI components.",
-        "Developed reproducible paper-trading and research infrastructure including multi-broker session orchestration, broker smoke tests, SQLite journaling, and automated test/security gates."
+        "Built a modular Python trading research platform with separate market-data, strategy, risk, execution, journaling, and analytics components.",
+        "Developed time-aware research and repeatable paper-trading workflows with causal features, bid/ask execution modelling, risk checks, trade journals, and automated verification."
       ]
     },
     {
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
-      "technologies": "TypeScript, Node.js, MCP, LLM APIs",
+      "technologies": "TypeScript · Node.js · MCP · Policy-Driven Routing · Isolated Worktrees",
       "bullets": [
         "Built a provider-agnostic engineering orchestrator that routes bounded development tasks across local and cloud AI models by complexity, risk, and role, exposed through CLI, TUI, and MCP interfaces.",
-        "Added support for multiple coding/model providers including Codex, Claude Code, Qwen, OpenCode, OpenRouter, and local Ollama, with isolated worktrees and verification steps."
+        "Added provider-agnostic model discovery, isolated worktrees, run telemetry, and verification steps for reviewable code changes."
       ]
     },
     {
       "title": "PlanAround",
       "url": "https://github.com/JackLee504/Plan-Around",
-      "technologies": "Next.js · Serverless Architecture · Multimodal AI · Deterministic Scheduling · Progressive Web Apps",
+      "technologies": "Next.js · TypeScript · Cloudflare Workers · Deterministic Scheduling · Offline PWA",
       "bullets": [
         "Built a student planning application that converts timetable screenshots and assignment briefs into realistic study schedules around lectures, commitments, and deadlines.",
         "Designed an explainable scheduling system that derives workload from ECTS, assessment weighting, and rubric structure, using AI only for structured extraction while keeping workload and scheduling deterministic."
@@ -61,19 +61,19 @@
     {
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
-      "technologies": "Automated Data Pipelines · Cloudflare Workers · CI/CD Automation · Data Validation",
+      "technologies": "Hugo · Python · GitHub Actions · Product-Data Validation · Review-Gated Publishing",
       "bullets": [
-        "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts across multiple European markets.",
-        "Developed a Python/GitHub Actions deal-ingestion pipeline with external product-data APIs, validation, deduplication, and human-review gates to prevent unverified pricing from being automatically published."
+        "Built and operate a US deal-discovery site with searchable deal pages and exact-item email alerts.",
+        "Developed a Python ingestion and review pipeline that checks product data, suppresses duplicates, and requires manual price verification before publication."
       ]
     }
   ],
   "skills": [
     ["Languages", "Python, TypeScript/JavaScript, Java, SQL, Groovy, C#, C"],
     ["Cloud & Platform", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers"],
-    ["AI & ML", "PyTorch, scikit-learn, Stable-Baselines3, Gymnasium/PPO, MCP, multi-provider LLM orchestration"],
+    ["AI & ML", "PyTorch, scikit-learn, Gymnasium/PPO, multi-provider model routing"],
     ["Web", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS"],
-    ["Tools & Data", "Linux, Git/Gerrit, PostgreSQL, SQLite, Artifactory, Nexus"]
+    ["Tools & Data", "Linux, Git/Gerrit, MCP, PostgreSQL, SQLite, Artifactory/Nexus"]
   ],
   "education": {
     "degree": "BSc (Hons) Computer Science & Information Technology",

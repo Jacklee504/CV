@@ -71,18 +71,19 @@
               <summary><span class="row-number">01</span><span class="row-title">Multi-Broker Trading Platform</span><span class="row-descriptor">Paper-trading research</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
               <div class="row-detail">
                 <p>
-                  A modular Python research platform for designing and testing rules-based trading strategies across three brokers without risking capital.
+                  A modular Python platform for researching, simulating, and paper-testing trading strategies with explicit risk controls.
                 </p>
               <ul>
-                <li>Separate market-data, strategy, risk, execution, journaling, analytics, and UI components keep the system testable and maintainable.</li>
-                <li>Reproducible paper-trading sessions orchestrated across IG, Capital.com, and Alpaca for FX, CFDs, and US equities.</li>
-                <li>SQLite journaling, broker smoke tests, and automated test/security gates make runs repeatable and observable.</li>
+                <li>Separated market data, strategy, risk, execution, journaling, and analytics into testable components.</li>
+                <li>Built time-aware research workflows with causal features, chronological evaluation, and bid/ask execution modelling to avoid misleading backtests.</li>
+                <li>Orchestrated repeatable paper sessions with risk checks, trade journals, and automated verification so results can be inspected and reproduced.</li>
               </ul>
-              <ul class="project-chips" aria-label="Technologies">
+              <ul class="project-chips" aria-label="Skills and technologies">
                 <li>Python</li>
-                <li>IG &middot; Capital.com &middot; Alpaca</li>
-                <li>SQLite</li>
-                <li>VPS monitoring</li>
+                <li>PyTorch &amp; scikit-learn</li>
+                <li>Time-series validation</li>
+                <li>Causal feature engineering</li>
+                <li>Risk &amp; execution modelling</li>
               </ul>
               </div>
             </details>
@@ -91,19 +92,19 @@
               <summary><span class="row-number">02</span><span class="row-title">Dynamic Task Router</span><span class="row-descriptor">Developer tooling</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
               <div class="row-detail">
                 <p>
-                  Routes development work to the right AI model instead of making the engineer pick every time.
+                  A developer tool that routes bounded engineering tasks by capability, risk, and cost while keeping human review in the workflow.
                 </p>
               <ul>
-                <li>Classifies bounded tasks by complexity, risk, and role, then dispatches to Codex, Claude Code, Qwen, OpenCode, OpenRouter, or local Ollama models.</li>
-                <li>One shared routing/runtime layer exposed through a CLI, an interactive TUI, and an MCP server.</li>
-                <li>Isolated worktrees and verification steps keep routed runs reviewable and separated from the primary working tree.</li>
+                <li>Uses explicit task and provider policies to select a model and effort level without hard-coding one vendor.</li>
+                <li>Shares routing, execution, and run telemetry across the CLI, interactive TUI, and MCP server.</li>
+                <li>Supports isolated worktrees, ownership boundaries, and verification steps for reviewable code changes.</li>
               </ul>
-              <ul class="project-chips" aria-label="Technologies">
-                <li>TypeScript</li>
-                <li>Node.js</li>
+              <ul class="project-chips" aria-label="Skills and technologies">
+                <li>TypeScript &amp; Node.js</li>
                 <li>MCP</li>
-                <li>CLI &amp; TUI</li>
-                <li>LLM APIs</li>
+                <li>Policy-driven model routing</li>
+                <li>Process orchestration</li>
+                <li>Isolated worktrees</li>
               </ul>
               <p class="project-links"><a href="https://github.com/JackLee504/dynamic-task-router" target="_blank" rel="noopener noreferrer" aria-label="View Dynamic Task Router source code on GitHub">View on GitHub &rarr;</a></p>
               </div>
@@ -118,15 +119,14 @@
               <ul>
                 <li>AI only extracts structure from messy inputs; workload estimation and scheduling stay deterministic and explainable.</li>
                 <li>Workload is derived from ECTS, assessment weighting, and rubric structure, not guessed by the model.</li>
-                <li>Recurring commitments, progress tracking, JSON backup, and ICS calendar export in a responsive PWA.</li>
+                <li>Preserves completed work when plans change, with validated local data and offline support in a PWA.</li>
               </ul>
-              <ul class="project-chips" aria-label="Technologies">
-                <li>Next.js</li>
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Tailwind CSS</li>
+              <ul class="project-chips" aria-label="Skills and technologies">
+                <li>Next.js &amp; TypeScript</li>
                 <li>Cloudflare Workers</li>
-                <li>Featherless</li>
+                <li>Multimodal extraction</li>
+                <li>Deterministic scheduling</li>
+                <li>Offline-capable PWA</li>
               </ul>
               <p class="project-links">
                 <a href="https://planaround.vercel.app/" target="_blank" rel="noopener noreferrer">Visit PlanAround &rarr;</a>
@@ -135,23 +135,24 @@
             </details>
 
             <details class="editorial-row project-row">
-              <summary><span class="row-number">04</span><span class="row-title">Deal Ledger</span><span class="row-descriptor">Multilingual deal discovery</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
+              <summary><span class="row-number">04</span><span class="row-title">Deal Ledger</span><span class="row-descriptor">Deal discovery</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
               <div class="row-detail">
                 <p>
-                  Building and maintaining a multilingual deal-discovery platform across European markets, with human review before anything is published.
+                  Building and maintaining a US deal-discovery site with automated candidate research and human review before publication.
                 </p>
               <ul>
-                <li>Market-specific routing, search, and email alerts across English, German, Dutch, and French.</li>
-                <li>A Python/GitHub Actions ingestion pipeline validates, deduplicates, and queues Amazon deal candidates for human review.</li>
-                <li>GitHub Actions and Cloudflare automate deployment, alerting, and market-specific behaviour.</li>
+                <li>Built searchable deal pages and item alerts around a structured catalogue.</li>
+                <li>Developed a Python ingestion pipeline that checks product data, suppresses duplicates, and prepares candidates for review.</li>
+                <li>Kept publishing behind manual price and listing checks, with automated site builds and deployment.</li>
               </ul>
-              <ul class="project-chips" aria-label="Technologies">
+              <ul class="project-chips" aria-label="Skills and technologies">
                 <li>Hugo</li>
                 <li>Python</li>
                 <li>GitHub Actions</li>
-                <li>Cloudflare Workers</li>
+                <li>Product-data validation</li>
+                <li>Review-gated publishing</li>
               </ul>
-              <p class="project-links"><a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Visit DealLedger</a></p>
+              <p class="project-links"><a href="https://dealledger.eu" target="_blank" rel="noopener noreferrer">Visit DealLedger &rarr;</a></p>
               </div>
             </details>
 
@@ -217,36 +218,38 @@
               </ul>
             </div>
             <div class="skill-group">
-              <p><strong>Cloud &amp; DevOps</strong></p>
-              <ul class="project-chips" aria-label="Cloud and DevOps">
+              <p><strong>Platform &amp; CI</strong></p>
+              <ul class="project-chips" aria-label="Platform and CI/CD">
                 <li>Docker</li>
                 <li>Kubernetes</li>
                 <li>Jenkins</li>
                 <li>Spinnaker</li>
                 <li>Helm / Helmfile</li>
                 <li>GitHub Actions</li>
-                <li>Cloudflare</li>
+                <li>Cloudflare Workers</li>
               </ul>
             </div>
             <div class="skill-group">
-              <p><strong>Web</strong></p>
-              <ul class="project-chips" aria-label="Web technologies">
+              <p><strong>Web &amp; Apps</strong></p>
+              <ul class="project-chips" aria-label="Web and application technologies">
                 <li>React</li>
                 <li>Next.js</li>
                 <li>Hugo</li>
                 <li>Tailwind CSS</li>
-                <li>HTML / CSS</li>
+                <li>PHP / SCSS</li>
+                <li>Offline PWAs</li>
               </ul>
             </div>
             <div class="skill-group">
-              <p><strong>Tools &amp; Data</strong></p>
-              <ul class="project-chips" aria-label="Tools and data">
-                <li>Git</li>
-                <li>Gerrit</li>
+              <p><strong>AI &amp; Tools</strong></p>
+              <ul class="project-chips" aria-label="AI, tools and data">
+                <li>PyTorch</li>
+                <li>scikit-learn</li>
+                <li>Gymnasium / PPO</li>
+                <li>MCP</li>
+                <li>Git / Gerrit</li>
                 <li>SQLite</li>
-                <li>Artifactory</li>
-                <li>Nexus</li>
-                <li>Jira</li>
+                <li>Artifactory / Nexus</li>
               </ul>
             </div>
           </div>
@@ -260,7 +263,6 @@
           <details class="editorial-row education-row">
             <summary><span class="row-number">01</span><span class="row-title">B.Sc. (Hons) Computer Science &amp; Information Technology</span><span class="row-descriptor">University of Galway</span><span class="row-date">2023&ndash;2027</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
             <div class="row-detail">
-            <p class="meta">Galway, Ireland</p>
             <dl class="education-results">
               <div><dt>Third year</dt><dd><strong>61%</strong><span>Second Class Honours, Grade 1 (2.1)</span></dd></div>
               <div><dt>Second year</dt><dd><strong>68%</strong><span>Second Class Honours, Grade 1 (2.1)</span></dd></div>
@@ -1386,7 +1388,11 @@
               <summary><span class="row-number">01</span><span class="row-title">Casey&apos;s Londis</span><span class="row-descriptor">Customer service and retail</span><span class="row-date">May 2024&ndash;Mar 2026</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
               <div class="row-detail">
               <p class="meta">Cashier &amp; Customer Service Representative | Roscommon Town</p>
-              <p>Handled transactions and customer queries in a high-volume retail environment while coordinating with a small team during busy periods.</p>
+              <ul>
+                <li>Handled cash and card transactions and balanced the register at the end of each shift.</li>
+                <li>Resolved customer queries and complaints while keeping queues moving during peak periods.</li>
+                <li>Worked with a small team to replenish stock and keep the shop floor presentable.</li>
+              </ul>
               </div>
             </details>
 
@@ -1394,13 +1400,30 @@
               <summary><span class="row-number">02</span><span class="row-title">Blue Thunder</span><span class="row-descriptor">Cashier and kitchen team</span><span class="row-date">Apr&ndash;Aug 2022</span><span class="row-arrow" aria-hidden="true">&rarr;</span></summary>
               <div class="row-detail">
               <p class="meta">Cashier &amp; Kitchen Team Member | Roscommon Town</p>
-              <p>Coordinated cashier and kitchen duties with clear handovers to keep customer orders accurate during high-volume shifts.</p>
+              <ul>
+                <li>Took orders and prepared food, splitting time between the till and kitchen during rushes.</li>
+                <li>Used clear handovers between front-of-house and kitchen to keep orders accurate.</li>
+              </ul>
               </div>
             </details>
           </div>
-          <p class="outside-work">Outside work: football &middot; pool &amp; snooker</p>
-          <p class="outside-work-detail">Former competitive soccer and Gaelic football player, including a soccer Player of the Year award; member of the University of Galway Pool &amp; Snooker Society.</p>
-          <p class="outside-work-detail">I build independent software projects alongside coursework, with interests in AI tools, web platforms, and algorithmic trading systems.</p>
+          <div class="outside-work">
+            <h3>Outside work</h3>
+            <div class="outside-work-areas">
+              <div>
+                <h4>Football</h4>
+                <p>Former competitive soccer and Gaelic football player, including a soccer Player of the Year award.</p>
+              </div>
+              <div>
+                <h4>Pool &amp; snooker</h4>
+                <p>Member of the University of Galway Pool &amp; Snooker Society.</p>
+              </div>
+              <div>
+                <h4>Independent projects</h4>
+                <p>I build software alongside coursework, with interests in AI tools, web platforms, and algorithmic trading systems.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

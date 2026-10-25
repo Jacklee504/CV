@@ -1035,6 +1035,11 @@ a {
   text-transform: uppercase;
 }
 
+.portfolio-home #projects h2,
+.portfolio-home #experience h2 {
+  font-size: 0.85rem;
+}
+
 .portfolio-home .section h2::after {
   display: none;
 }
@@ -1106,6 +1111,10 @@ a {
   color: #364454;
   font-size: 1.05rem;
   line-height: 1.65;
+}
+
+.portfolio-home .project-row .row-detail {
+  max-width: min(80%, calc(100% - 4rem));
 }
 
 .portfolio-home .row-detail p {
@@ -1224,7 +1233,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
-  margin: 1.2rem 0 1.8rem;
+  margin: 1.2rem 0 1.1rem;
 }
 
 .portfolio-home .education-results > div {
@@ -1261,6 +1270,8 @@ a {
 }
 
 .portfolio-home .education-row .education-label {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
   margin-bottom: 0.4rem;
 }
 
@@ -1319,15 +1330,43 @@ a {
 
 .portfolio-home .outside-work {
   margin: 2.5rem 0 0;
-  color: var(--accent-strong);
-  font-size: 1.25rem;
 }
 
-.portfolio-home .outside-work-detail {
-  max-width: 70ch;
-  margin: 0.7rem 0 0;
+.portfolio-home .outside-work h3 {
+  margin: 0 0 1.3rem;
+  color: var(--accent-strong);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.7rem, 2.3vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.portfolio-home .outside-work-areas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.portfolio-home .outside-work-areas > div {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.portfolio-home .outside-work-areas h4 {
+  margin: 0 0 0.55rem;
+  color: var(--accent-strong);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.portfolio-home .outside-work-areas p {
+  margin: 0;
   color: var(--muted);
   font-size: 1rem;
+  line-height: 1.65;
 }
 
 .portfolio-home .contact-email {
@@ -1596,6 +1635,10 @@ a {
   .portfolio-home .skill-group:nth-child(3) {
     padding-left: 0;
   }
+
+  .portfolio-home .outside-work-areas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 600px) {
@@ -1609,6 +1652,10 @@ a {
 
   .portfolio-home .section {
     padding: 3.3rem 0;
+  }
+
+  .portfolio-home:not(.credentials-page) .section {
+    padding: 2rem 0;
   }
 
   .portfolio-home .hero {
@@ -1634,13 +1681,27 @@ a {
   }
 
   .portfolio-home .editorial-row summary {
-    min-height: 7.25rem;
-    gap: 0.7rem;
+    grid-template-columns: minmax(0, 1fr) 1.5rem;
+    min-height: 0;
+    gap: 0.4rem 0.8rem;
     padding: 1.25rem 0;
   }
 
+  .portfolio-home .row-number {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   .portfolio-home .row-title {
+    grid-column: 1;
+    grid-row: 2;
     font-size: clamp(1.7rem, 7vw, 2.2rem);
+  }
+
+  .portfolio-home .row-descriptor {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 0;
   }
 
   .portfolio-home .row-descriptor,
@@ -1650,28 +1711,34 @@ a {
   }
 
   .portfolio-home .row-arrow {
+    grid-column: 2;
+    grid-row: 2;
     font-size: 1.4rem;
   }
 
   .portfolio-home .row-detail {
-    margin: 0 0 2rem 4rem;
+    margin: 0 0 2rem;
     font-size: 0.98rem;
+  }
+
+  .portfolio-home .project-row .row-detail {
+    max-width: 100%;
   }
 
   .portfolio-home .education-row summary,
   .portfolio-home .additional-row summary {
-    grid-template-columns: 2rem minmax(0, 1fr) 1.5rem;
-    gap: 0.6rem 0.85rem;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .portfolio-home .education-row .row-arrow,
   .portfolio-home .additional-row .row-arrow {
-    grid-column: 3;
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .portfolio-home .education-row .row-detail,
   .portfolio-home .additional-row .row-detail {
-    margin-left: 2.85rem;
+    margin-left: 0;
   }
 
   .portfolio-home .education-results,
@@ -1681,13 +1748,13 @@ a {
 
   .portfolio-home .education-row .row-descriptor,
   .portfolio-home .additional-row .row-descriptor {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .portfolio-home .row-date {
     grid-column: 2;
-    grid-row: auto;
-    text-align: left;
+    grid-row: 1;
+    text-align: right;
   }
 
   .portfolio-home .skills-groups {
@@ -1702,6 +1769,11 @@ a {
 
   .portfolio-home .skill-group > p {
     font-size: 1.4rem;
+  }
+
+  .portfolio-home .outside-work-areas {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .portfolio-home .row-detail .project-chips {

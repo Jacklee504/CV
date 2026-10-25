@@ -62,17 +62,17 @@
     {
       "title": "Multi-Broker Trading Platform",
       "context": "Personal project",
-      "technologies": "Deep Reinforcement Learning · Gymnasium · PPO · PyTorch · Stable-Baselines3 · scikit-learn",
+      "technologies": "Python · PyTorch · scikit-learn · Time-Series Validation · Risk & Execution Modelling",
       "bullets": [
-        "Built a modular quantitative research and paper-trading platform spanning FX, CFDs, and US equities, integrating IG, Capital.com, and Alpaca demo APIs into separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
-        "Developed reproducible supervised ML and reinforcement-learning pipelines with scikit-learn, PyTorch, Gymnasium, and PPO, combining causal feature engineering, chronological walk-forward validation, broker-realistic bid/ask execution, broker smoke tests, and sealed out-of-sample evaluation."
+        "Built a modular quantitative research and paper-trading platform with separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
+        "Developed ML and reinforcement-learning experiments with causal features, chronological evaluation, and bid/ask execution modelling; added repeatable paper sessions, trade journals, and automated checks."
       ]
     },
     {
       "title": "PlanAround",
       "url": "https://github.com/JackLee504/Plan-Around",
       "context": "Pixel Forge AI Hackathon, Aug 2026",
-      "technologies": "Next.js · Cloudflare Workers · Multimodal AI · Human-in-the-Loop AI · Deterministic Scheduling Algorithms · Serverless Architecture · Progressive Web Apps",
+      "technologies": "Next.js · TypeScript · Cloudflare Workers · Multimodal Extraction · Deterministic Scheduling · Offline PWA",
       "bullets": [
         "Built an offline-capable student-planning app that imports timetable screenshots or PDFs and assignment briefs, combining classes, commitments, deadlines, and scheduling preferences into actionable study sessions.",
         "Designed deterministic workload calculation, scheduling, stale-plan detection, and replanning that preserves completed work; restricted AI to reviewable extraction of unstructured input rather than calendar decisions."
@@ -82,31 +82,31 @@
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
       "context": "Personal project",
-      "technologies": "Developer Tooling · CLI/TUI Systems · Model Context Protocol (MCP) · Multi-Process Orchestration · Dynamic Model Routing · Runtime Isolation · Policy Engines",
+      "technologies": "TypeScript · Node.js · MCP · Policy-Driven Model Routing · Isolated Worktrees",
       "bullets": [
         "Built an open-source, provider-agnostic engineering orchestrator that turns cross-cutting work into bounded tasks with explicit ownership, verification, handoff, and token-budget controls.",
         "Implemented shared deterministic routing, execution, and telemetry behind CLI, interactive TUI, and local STDIO MCP interfaces, isolating worktrees and run metadata outside target repositories.",
-        "Added configuration-driven model discovery and routing policies for Codex, Claude Code, Qwen, OpenCode, OpenRouter, and local Ollama workflows."
+        "Added configuration-driven model discovery and routing policies across local and cloud providers."
       ]
     },
     {
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
       "context": "Personal project",
-      "technologies": "Cloudflare Workers · Automated Data Pipelines · Programmatic Video Generation · CI/CD Automation · Data Validation ",
+      "technologies": "Hugo · Python · GitHub Actions · Product-Data Validation · Review-Gated Publishing",
       "bullets": [
-        "Built and operate a multilingual Hugo deal-discovery platform with market-specific routing, search, and email alerts for multiple European markets.",
-        "Developed a Python/GitHub Actions ingestion pipeline that enriches external product data, validates prices and listings, deduplicates candidates, and routes uncertain submissions to human review.",
-        "Automated deployment, monitoring alerts, and market-specific routing through GitHub Actions, Cloudflare Workers, and DNS configuration."
+        "Built and operate a US deal-discovery site with searchable deal pages and exact-item email alerts.",
+        "Developed a Python ingestion pipeline that checks product data, suppresses duplicates, and prepares candidates for human review.",
+        "Kept publishing behind manual price and listing checks, with automated site builds and deployment."
       ]
     }
   ],
   "skills": [
     ["Languages", "Python (automation/ML), TypeScript/JavaScript, Java, SQL, Groovy (Jenkins), C#, C, Bash"],
     ["Cloud & Platform Engineering", "Jenkins pipelines, Spinnaker orchestration, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers, AWS, Google Cloud, Azure DevOps"],
-    ["AI & Machine Learning", "PyTorch, scikit-learn, Stable-Baselines3, Gymnasium/PPO, Model Context Protocol (MCP), multi-provider LLM orchestration, LLM APIs, structured extraction, RAG"],
+    ["AI & Machine Learning", "PyTorch, scikit-learn, Gymnasium/PPO, multi-provider model routing, structured extraction"],
     ["Web & Application Development", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS, responsive design, offline-capable PWAs"],
-    ["Developer Tooling & Data", "Linux, Git/Gerrit, PostgreSQL, SQLite, Artifactory, Nexus, REST APIs, CI/CD automation, Jira, Confluence"]
+    ["Developer Tooling & Data", "Linux, Git/Gerrit, MCP, PostgreSQL, SQLite, Artifactory/Nexus"]
   ],
   "education": {
     "degree": "BSc (Hons) Computer Science & Information Technology",
