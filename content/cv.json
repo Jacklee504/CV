@@ -14,11 +14,11 @@
       "location": "Athlone, Co. Westmeath, Ireland",
       "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Restructured a roughly 1,100-line Python CI decorators file into shared and executor-specific files, then introduced a parameterised factory that reduced the shared file to about 200 lines.",
-        "Built Groovy verification stages for cloud archive packaging and audited production builds, finding an undeclared ELF executable; added unit-tested artifact-repository checks to confirm files were present.",
-        "Developed and maintained Jenkins/Groovy stages for build, test, deployment, and cleanup workflows; configured Spinnaker parameters and cross-pipeline integration, and migrated test flows to lighter snapshot-based jobs.",
-        "Resolved a blocker build regression by tracing and reverting a faulty changeset; diagnosed Spinnaker-to-Jenkins authentication failures and a Kubernetes cleanup issue caused by Python file-write mode.",
-        "Updated Docker wrapper and build rules for SELinux volume mounts during parallel container execution, maintained Helm/Helmfile deployment configurations, and documented technical investigations."
+        "Developed and maintained Jenkins/Groovy stages for build, test, deployment, and cleanup; configured Spinnaker parameters and cross-pipeline job integrations.",
+        "Reduced test execution time by moving heavyweight flows to snapshot-based jobs; resolved a blocker build regression and diagnosed Spinnaker-to-Jenkins authentication failures.",
+        "Built Groovy release checks for cloud archive packages and unit-tested Artifactory/Nexus file verification, uncovering an undeclared executable in production builds.",
+        "Modularised Python CI tooling into shared and executor-specific modules with runtime parameterisation and unit tests.",
+        "Diagnosed a Kubernetes namespace cleanup failure, updated Docker tooling for SELinux-compatible parallel container runs, and maintained Helm/Helmfile deployment configurations."
       ]
     },
     {

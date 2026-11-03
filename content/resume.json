@@ -14,9 +14,10 @@
       "location": "Athlone, Ireland",
       "dates": "Jan 2026–Aug 2026",
       "bullets": [
-        "Restructured a roughly 1,100-line Python CI decorators file into shared and executor-specific files, then introduced a parameterised factory that reduced the shared file to about 200 lines.",
-        "Developed and maintained Jenkins/Groovy and Spinnaker pipelines for build, deployment, testing, and cleanup workflows, including migrating test flows to lighter snapshot-based jobs to reduce execution time.",
-        "Built release-verification stages for cloud archive packaging and strengthened Artifactory/Nexus checks, identifying an undeclared ELF executable in production builds before release."
+        "Developed and supported Jenkins/Groovy and Spinnaker pipelines for build, test, deployment, and cleanup on Ericsson's cloud-native telecom platform.",
+        "Reduced test execution time by moving heavyweight flows to snapshot-based jobs and making pipelines configurable for different callers.",
+        "Strengthened release checks for cloud archive packages and Artifactory/Nexus artifacts, uncovering an undeclared executable in production builds before release.",
+        "Modularised Python CI tooling with parameterisation and unit tests; diagnosed a blocker build regression, Spinnaker-to-Jenkins authentication failures, and Kubernetes cleanup errors."
       ]
     },
     {
