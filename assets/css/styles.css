@@ -1117,6 +1117,37 @@ a {
   max-width: min(80%, calc(100% - 4rem));
 }
 
+.portfolio-home .project-experiment {
+  max-width: 78ch;
+  padding-top: 1.8rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.portfolio-home .project-experiment-label {
+  margin: 0 0 0.45rem;
+  color: var(--accent-strong);
+  font-family: "Sora", "Avenir Next", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.portfolio-home .project-experiment p:last-child {
+  margin: 0;
+}
+
+.portfolio-home .project-experiment strong {
+  color: var(--text);
+}
+
+.portfolio-home .project-experiment a {
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
 .portfolio-home .row-detail p {
   margin-bottom: 0.8rem;
 }

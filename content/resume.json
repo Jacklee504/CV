@@ -35,7 +35,7 @@
   "projects": [
     {
       "title": "Multi-Broker Trading Research Platform",
-      "technologies": "Python · PyTorch · scikit-learn · Time-Series Validation · Risk Modelling",
+      "technologies": "Python · ML Research · Time-Series Validation · Risk Controls · Testing",
       "bullets": [
         "Built a modular Python trading research platform with separate market-data, strategy, risk, execution, journaling, and analytics components.",
         "Developed time-aware research and repeatable paper-trading workflows with causal features, bid/ask execution modelling, risk checks, trade journals, and automated verification."
@@ -44,7 +44,7 @@
     {
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
-      "technologies": "TypeScript · Node.js · MCP · Policy-Driven Routing · Isolated Worktrees",
+      "technologies": "TypeScript · MCP · Multi-Model Routing · CLI/TUI · Verification",
       "bullets": [
         "Built a provider-agnostic engineering orchestrator that routes bounded development tasks across local and cloud AI models by complexity, risk, and role, exposed through CLI, TUI, and MCP interfaces.",
         "Added provider-agnostic model discovery, isolated worktrees, run telemetry, and verification steps for reviewable code changes."
@@ -53,7 +53,7 @@
     {
       "title": "PlanAround",
       "url": "https://github.com/JackLee504/Plan-Around",
-      "technologies": "Next.js · TypeScript · Cloudflare Workers · Deterministic Scheduling · Offline PWA",
+      "technologies": "Next.js · TypeScript · Cloudflare Workers · AI Extraction · Scheduling · Offline PWA",
       "bullets": [
         "Built a student planning application that converts timetable screenshots and assignment briefs into realistic study schedules around lectures, commitments, and deadlines.",
         "Designed an explainable scheduling system that derives workload from ECTS, assessment weighting, and rubric structure, using AI only for structured extraction while keeping workload and scheduling deterministic."
@@ -62,7 +62,7 @@
     {
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
-      "technologies": "Hugo · Python · GitHub Actions · Product-Data Validation · Review-Gated Publishing",
+      "technologies": "Python · API Integration · Data Pipelines · Fuzzy Search · Email Alerts · CI/CD",
       "bullets": [
         "Built and operate a US deal-discovery site with searchable deal pages and exact-item email alerts.",
         "Developed a Python ingestion and review pipeline that checks product data, suppresses duplicates, and requires manual price verification before publication."
@@ -70,10 +70,10 @@
     }
   ],
   "skills": [
-    ["Languages", "Python, TypeScript/JavaScript, Java, SQL, Groovy, C#, C"],
-    ["Cloud & Platform", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers"],
+    ["Languages", "Python, TypeScript/JavaScript, Java, SQL, Groovy"],
+    ["Cloud & Platform", "Jenkins, Spinnaker, Docker, Kubernetes, Helm/Helmfile, GitHub Actions, Cloudflare Workers"],
     ["AI & ML", "PyTorch, scikit-learn, Gymnasium/PPO, multi-provider model routing"],
-    ["Web", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS"],
+    ["Web", "React, Next.js, Tailwind CSS, PHP/SCSS"],
     ["Tools & Data", "Linux, Git/Gerrit, MCP, PostgreSQL, SQLite, Artifactory/Nexus"]
   ],
   "education": {

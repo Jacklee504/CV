@@ -62,7 +62,7 @@
     {
       "title": "Multi-Broker Trading Platform",
       "context": "Personal project",
-      "technologies": "Python · PyTorch · scikit-learn · Time-Series Validation · Risk & Execution Modelling",
+      "technologies": "Python · ML Research · Time-Series Validation · Data Pipelines · Risk & Execution Modelling · Automated Testing",
       "bullets": [
         "Built a modular quantitative research and paper-trading platform with separate market-data, strategy, risk, execution, journaling, analytics, and research layers.",
         "Developed ML and reinforcement-learning experiments with causal features, chronological evaluation, and bid/ask execution modelling; added repeatable paper sessions, trade journals, and automated checks."
@@ -72,7 +72,7 @@
       "title": "PlanAround",
       "url": "https://github.com/JackLee504/Plan-Around",
       "context": "Pixel Forge AI Hackathon, Aug 2026",
-      "technologies": "Next.js · TypeScript · Cloudflare Workers · Multimodal Extraction · Deterministic Scheduling · Offline PWA",
+      "technologies": "Next.js · TypeScript · Cloudflare Workers · AI Extraction · Scheduling Algorithms · Offline PWA",
       "bullets": [
         "Built an offline-capable student-planning app that imports timetable screenshots or PDFs and assignment briefs, combining classes, commitments, deadlines, and scheduling preferences into actionable study sessions.",
         "Designed deterministic workload calculation, scheduling, stale-plan detection, and replanning that preserves completed work; restricted AI to reviewable extraction of unstructured input rather than calendar decisions."
@@ -82,7 +82,7 @@
       "title": "Dynamic Task Router",
       "url": "https://github.com/JackLee504/dynamic-task-router",
       "context": "Personal project",
-      "technologies": "TypeScript · Node.js · MCP · Policy-Driven Model Routing · Isolated Worktrees",
+      "technologies": "TypeScript · Node.js · MCP · Multi-Model Orchestration · Policy-Driven Routing · CLI/TUI Development",
       "bullets": [
         "Built an open-source, provider-agnostic engineering orchestrator that turns cross-cutting work into bounded tasks with explicit ownership, verification, handoff, and token-budget controls.",
         "Implemented shared deterministic routing, execution, and telemetry behind CLI, interactive TUI, and local STDIO MCP interfaces, isolating worktrees and run metadata outside target repositories.",
@@ -93,7 +93,7 @@
       "title": "Deal Ledger",
       "url": "https://dealledger.eu",
       "context": "Personal project",
-      "technologies": "Hugo · Python · GitHub Actions · Product-Data Validation · Review-Gated Publishing",
+      "technologies": "Python · API Integration · Data Pipelines · Fuzzy Search · Automated Alerts · CI/CD",
       "bullets": [
         "Built and operate a US deal-discovery site with searchable deal pages and exact-item email alerts.",
         "Developed a Python ingestion pipeline that checks product data, suppresses duplicates, and prepares candidates for human review.",
@@ -102,10 +102,10 @@
     }
   ],
   "skills": [
-    ["Languages", "Python (automation/ML), TypeScript/JavaScript, Java, SQL, Groovy (Jenkins), C#, C, Bash"],
-    ["Cloud & Platform Engineering", "Jenkins pipelines, Spinnaker orchestration, Docker, Kubernetes, Helm/Helmfile, Terraform, GitHub Actions, Cloudflare Workers, AWS, Google Cloud, Azure DevOps"],
+    ["Languages", "Python (automation/ML), TypeScript/JavaScript, Java, SQL, Groovy (Jenkins), Bash"],
+    ["Cloud & Platform Engineering", "Jenkins pipelines, Spinnaker orchestration, Docker, Kubernetes, Helm/Helmfile, GitHub Actions, Cloudflare Workers"],
     ["AI & Machine Learning", "PyTorch, scikit-learn, Gymnasium/PPO, multi-provider model routing, structured extraction"],
-    ["Web & Application Development", "React, Next.js, Tailwind CSS, Hugo, PHP/SCSS, responsive design, offline-capable PWAs"],
+    ["Web & Application Development", "React, Next.js, Tailwind CSS, PHP/SCSS, responsive design, offline-capable PWA"],
     ["Developer Tooling & Data", "Linux, Git/Gerrit, MCP, PostgreSQL, SQLite, Artifactory/Nexus"]
   ],
   "education": {
